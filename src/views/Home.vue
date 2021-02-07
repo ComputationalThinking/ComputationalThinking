@@ -1,5 +1,7 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    这里是home
+  </div>
 </template>
 
 <script>

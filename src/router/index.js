@@ -10,6 +10,17 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  // {
+  //   path: '/HomeIcon',
+  //   name: 'HomeIcon',
+  //   component: () => import('../views/Home.vue')
+  // },
+  {
+    path: '/HomeReturn',
+    name: 'HomeReturn',
+    component: () =>
+      import('../views/Home.vue')
+  },
   {
     path: '/computerthought',
     name: 'ComputerThought',
@@ -38,6 +49,11 @@ const routes = [
     path: '/cs4c',
     name: 'Cs4c',
     component: () => import('../views/CS4C.vue')
+  },
+  {
+    path: '/icon',
+    name: 'Icon',
+    component: () => import('../views/Message.vue')
   }
 ]
 
