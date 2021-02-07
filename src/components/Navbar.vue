@@ -40,10 +40,15 @@
             <el-menu-item index="5">
               <router-link :to="{ name: 'Cs4c' }">CS4C</router-link>
             </el-menu-item>
-            <div class="icon">
+            <!-- <div class="icon">
                 <router-link :to="{ name: 'Icon' }">
                   <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>
                 </router-link>
+            </div> -->
+            <div class="icon">
+                <a href="">
+                  <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>
+                </a>
             </div>
           </el-menu>
         </div>
@@ -99,6 +104,9 @@ export default {
 } */
 </style>
 <style scoped>
+a{
+  text-decoration: none;
+}
 .navbar-title {
   background-color: #fff;
   /* width:15%; */

@@ -49,11 +49,6 @@ const routes = [
     path: '/cs4c',
     name: 'Cs4c',
     component: () => import('../views/CS4C.vue')
-  },
-  {
-    path: '/icon',
-    name: 'Icon',
-    component: () => import('../views/Message.vue')
   }
 ]
 
