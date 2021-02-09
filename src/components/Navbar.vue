@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <div class="navbar_rame">
+    <div class="navbar_frame">
     <el-row>
       <el-col :span="8">
         <div class="navbar-warp1">
@@ -81,7 +81,7 @@ export default {
   padding: 0% !important;
   text-align: center;
 }
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 1340px) {
   .el-menu-item{
     width: 7em;
   }
@@ -95,7 +95,7 @@ export default {
   }
 }
 @media screen and (max-width: 1000px) {
-  .navbar_rame{
+  .navbar_frame{
     width: 1000px;
   }
 }
@@ -103,6 +103,7 @@ export default {
   
 } */
 </style>
+
 <style scoped>
 a{
   text-decoration: none;
