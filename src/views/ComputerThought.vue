@@ -2,13 +2,14 @@
   <div class="Thought">
     <!-- <h1>This is an 计算机思维 page</h1> -->
     <div class="thougut-top">
-      <el-carousel :interval="4000" type="card" height="200px">
-        <el-carousel-item v-for="item in 6" :key="item">
+      <el-carousel :interval="4000" indicator-position="outside" height="420px">
+        <el-carousel-item v-for="(index,item) in images" :key="item">
           <!-- <h3 class="medium">{{ item }}</h3> -->
+          <img :src="index.pic" alt="" style="width: 100%; height: 100%;">
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div class="wrap">
+    <div class="wrap" id="intro">
       <div class="introduction-left">
         <span>计算思维简介</span>
         <p>{{ introduction }}</p>
@@ -76,67 +77,81 @@ export default {
       history: '',
       picture1: require('@/assets/images/introduction.jpg'),
       picture2: require('@/assets/images/introduction.jpg'),
-      picture3: require('@/assets/images/introduction.jpg')
+      picture3: require('@/assets/images/introduction.jpg'),
+      images: [
+        {pic: require('@/assets/images/pic2.jpg')},
+        {pic: require('@/assets/images/pic3.jpg')},
+        {pic: require('@/assets/images/pic4.jpg')},
+        {pic: require('@/assets/images/pic5.jpg')},
+        {pic: require('@/assets/images/pic6.jpg')},
+        {pic: require('@/assets/images/pic7.jpg')}
+      ]
     }
   }
 }
 </script>
 
+<style>
+  body{
+    width: 100%;
+    overflow-x: hidden;
+  }
+  @media screen and (max-width: 1000px) {
+    body{
+      overflow-x: scroll;
+    }
+  }
+</style>
+
 <style scoped>
   .Thought{
+    /* padding: 20px; */
     width: 80%;
-    padding: 20px;
     margin: 0 auto;
   }
   .thought-top{
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+    margin-top: 300px;
   }
-  .el-carousel__item h3 {
-    color: #475669;
-    font-size: 14px;
-    opacity: 0.75;
-    line-height: 200px;
-    margin: 0;
-  }
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
+  #intro{
+    height: auto;
   }
   .wrap{
     padding: 20px;
     width: 100%;
-    height: auto;
+    margin-top: 30px;
+    height: fit-content;
   }
   .introduction-left{
     width: 50%;
     height: auto;
     float: left;
-    padding-top: 30px;
+    /* padding-top: 30px; */
     margin-left: 5%;
   }
   .introduction-left span{
-    font-size: 38px;
+    font-size: 260%;
   }
   .introduction-left p{
     margin-top: 50px;
-    line-height: 26px;
+    font-size: 100%;
+    line-height: 29px;
   }
   .introduction-right{
     width: auto;
     height: auto;
   }
   .introduction-right img{
-    width: 300px;
-    height: 300px;
+    width: 27%;
+    height: auto;
+    margin-top: 1%;
     margin-left: 9%;
   }
   .wrap-top{
     width: fit-content;
     border-bottom: 5px solid rgb(132, 134, 134);
     margin: 0 auto;
-    font-size: 38px;
+    font-size: 230%;
   }
   .history-bottom{
     border: 5px solid rgb(138, 138, 139);
@@ -191,4 +206,22 @@ export default {
     margin: 0 auto;
     margin-top: 30px;
   }
+  @media screen and (max-width: 1200px) {
+    .wrap{
+      margin-top: 116px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .Thought{
+      width: 800px;
+    }
+    .wrap{
+      margin-top: 30px;
+    }
+  @media screen and (max-width: 990px) {
+    .wrap{
+      margin-top: 100px;
+    }
+  }
+}
 </style>
