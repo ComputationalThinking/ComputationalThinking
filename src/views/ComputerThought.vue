@@ -1,7 +1,8 @@
 <template>
   <div class="Thought">
     <!-- <h1>This is an 计算机思维 page</h1> -->
-    <div class="thougut-top">
+    <div class="thought-body">
+      <div class="thougut-top">
       <el-carousel :interval="4000" indicator-position="outside" height="420px">
         <el-carousel-item v-for="(index,item) in images" :key="item">
           <!-- <h3 class="medium">{{ item }}</h3> -->
@@ -65,6 +66,8 @@
 
       </div>
     </div>
+    </div>
+   
   </div>
 </template>
 
@@ -106,6 +109,10 @@ export default {
 <style scoped>
   .Thought{
     /* padding: 20px; */
+    width: 100%;
+    /* margin: 0 auto; */
+  }
+  .thought-body{
     width: 80%;
     margin: 0 auto;
   }
@@ -213,7 +220,10 @@ export default {
   }
   @media screen and (max-width: 1000px) {
     .Thought{
-      width: 800px;
+      width: 1000px;
+    }
+    .thought-body{
+      widows: 800px;
     }
     .wrap{
       margin-top: 30px;
