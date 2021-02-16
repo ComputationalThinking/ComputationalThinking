@@ -7,7 +7,7 @@
     </div>
     <div class="intro">
       <!-- <h1>this is 成果介绍页面</h1> -->
-      <div class="wrap">
+      <div class="wrap" id="race-country">
         <span>国内外赛事：</span>
         <div>
           <div class="race">
@@ -42,7 +42,18 @@
         
       </div>
       <div class="wrap">
-        <span>科研成果</span>
+        <span>科研成果：</span>
+        <div class="result">
+          <div class="result-left">
+            <img :src="pic7" alt="">
+            <span>LAST NEWS</span>
+            <div class="result-left-p">成果××××××××××××××××成果××××××××××××××××成果××××××××××××××××成果××××××××××××××××</div>
+          </div>
+          <div class="result-right">
+
+          </div>
+        </div>
+        
       </div>
       <div class="wrap">
         <span>涉及领域</span>
@@ -67,6 +78,9 @@ export default {
       pic2: require('@/assets/images/m2.jpg'),
       pic3: require('@/assets/images/m3.jpg'),
       pic4: require('@/assets/images/m4.jpg'),
+      pic5: require('@/assets/images/m5.jpg'),
+      pic6: require('@/assets/images/m6.jpg'),
+      pic7: require('@/assets/images/m7.jpg')
     }
   }
 }
@@ -107,15 +121,19 @@ export default {
   }
   .wrap span{
     font-size: 240%;
-    /* float: left; */
+    margin: 20px;
   }
   .wrap{
     border: 1px solid rgb(138, 138, 139);
     width: 80%;
-    height: 450px;
+    height: 500px;
     margin: 0 auto;
     margin-top: 30px;
+    padding-top: 10px;
     display: block;
+  }
+  #race-country{
+    background: rgb(230, 231, 231);
   }
   .race{
     width: 20%;
@@ -135,11 +153,61 @@ export default {
   .race-p{
     width: 100%;
     margin-top: 10px;
+    font-size: 16px;
   }
+  .result{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .result-left{
+    width: 20%;
+    height: 350px;
+    margin-left: 8%;
+    padding: 5px;
+    float: left;
+    border: 1px solid rgb(138, 138, 139);
+
+  }
+  .result-left img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .result-left span{
+    font-size: 25px;
+    /* padding-top: 10px; */
+  }
+  .result-left-p{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .result-right{
+    width: 60%;
+    height: 350px;
+    margin-left: 30%;
+    border: 1px solid rgb(138, 138, 139);
+    border-left: 5px solid rgb(10, 10, 10);
+  }
+
+
+  @media screen and (max-width: 1400px) {
+     .race-p{
+      font-size: 14px;
+    }
+   }
   @media screen and (max-width: 1200px) {
   .introduction-top{
       height: 150px;
     }
+  .race-p{
+      font-size: 13px;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .race-p{
+    font-size: 12px;
+  }
   }
   @media screen and (max-width: 1000px) {
   .introduction-top{
@@ -152,5 +220,6 @@ export default {
   .wrap{
     width: 800px;
   }
+
 }
 </style>
