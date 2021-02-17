@@ -47,7 +47,21 @@
         <p  class="wrap-top-p">聚焦</p>
       </div>
       <div class="focus-bottom">
-
+        <div class="focus-bottom-content">
+          <p>提出者</p>
+          <img :src="img4" alt="">
+          <div class="focus-p">{{ para2 }}{{ para2 }}{{ para2 }}</div>
+        </div>
+        <div class="focus-bottom-content">
+          <p>特点</p>
+          <img :src="img5" alt="">
+          <div class="focus-p">{{ para2 }}{{ para2 }}{{ para2 }}</div>
+        </div>
+        <div class="focus-bottom-content">
+          <p>代表人物</p>
+          <img :src="img6" alt="">
+          <div class="focus-p">{{ para2 }}{{ para2 }}{{ para2 }}</div>
+        </div>
       </div>
     </div>
     <div class="wrap">
@@ -63,7 +77,18 @@
         <p  class="wrap-top-p">运用领域</p>
       </div>
       <div class="field-bottom">
-
+        <div class="field-botttom-content">
+          <img :src="img1" alt="">
+          <div class="field-botttom-content-p">{{ para1 }}{{ para1 }}{{ para1 }}</div>
+        </div>
+        <div class="field-botttom-content">
+          <img :src="img2" alt="">
+          <div class="field-botttom-content-p">{{ para1 }}{{ para1 }}{{ para1 }}</div>
+        </div>
+        <div class="field-botttom-content">
+          <img :src="img3" alt="">
+          <div class="field-botttom-content-p">{{ para1 }}{{ para1 }}{{ para1 }}</div>
+        </div>
       </div>
     </div>
     </div>
@@ -88,7 +113,15 @@ export default {
         {pic: require('@/assets/images/pic5.jpg')},
         {pic: require('@/assets/images/pic6.jpg')},
         {pic: require('@/assets/images/pic7.jpg')}
-      ]
+      ],
+      img1: require('@/assets/images/pic2.jpg'),
+      img2: require('@/assets/images/m6.jpg'),
+      img3: require('@/assets/images/m5.jpg'),
+      img4: require('@/assets/images/m14.jpg'),
+      img5: require('@/assets/images/m15.jpg'),
+      img6: require('@/assets/images/m12.jpg'),
+      para1: '领域×××××××××××××××××××××',
+      para2: '聚焦××××××××××××'
     }
   }
 }
@@ -128,6 +161,7 @@ export default {
     width: 100%;
     margin-top: 30px;
     height: fit-content;
+    border: 1px solid rgb(132, 134, 134);
   }
   .introduction-left{
     width: 50%;
@@ -189,29 +223,75 @@ export default {
 
 
   .focus-bottom{
-    border: 5px solid rgb(138, 138, 139);
-    width: 80%;
-    height: 300px;
+    /* border: 1px solid rgb(138, 138, 139); */
+    width: 100%;
+    height: auto;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
   }
-
-
+  .focus-bottom-content{
+    width: 16%;
+    margin: 20px;
+    text-align: center;
+  }
+  .focus-bottom-content img{
+    width: 100%;
+    height: 180px;
+  }
+  .focus-bottom-content p{
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  .focus-p{
+    width: 100%;
+    height: 130px;
+    border: 1px solid rgb(138, 138, 139);
+    margin-top: 15px;
+    background: rgb(233, 233, 232);
+    padding: 20px;
+    line-height: 30px;
+  }
   .learn-bottom{
     border: 5px solid rgb(138, 138, 139);
     width: 80%;
-    height: 300px;
+    height: 400px;
     margin: 0 auto;
     margin-top: 30px;
+   
   }
 
 
   .field-bottom{
-    border: 5px solid rgb(138, 138, 139);
-    width: 80%;
-    height: 300px;
-    margin: 0 auto;
-    margin-top: 30px;
+    /* border: 1px solid rgb(138, 138, 139); */
+    width: 100%;
+    height: auto;
+    /* margin: 0 auto; */
+    /* margin-top: 30px; */
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+    padding: 10px;
+  }
+  .field-botttom-content{
+    width: 26%;
+    height: auto;
+    /* border: 1px solid rgb(138, 138, 139); */
+
+  }
+  .field-botttom-content img{
+    width: 100%;
+    height: 230px;
+  }
+  .field-botttom-content-p{
+    margin-top: 20px;
+    padding: 30px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid rgb(138, 138, 139);
+    background: rgb(231, 233, 233);
+    line-height: 30px;
   }
   @media screen and (max-width: 1200px) {
     .wrap{
