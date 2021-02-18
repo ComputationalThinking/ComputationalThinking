@@ -5,11 +5,15 @@
         <div style="float:left">
           <div class="title">计算思维研究实验室</div>
           <div class="title_en">Computational Thinking Research Laboratory</div>
-          <div class="icon"></div>
+          <div class="icon">
+            <img :src="icon"/>
+          </div>
         </div>
-        <div class="big_icon"></div>
+        <div class="big_icon">
+          <img :src="bigicon"/>
+        </div>
       </div>
-      <div class="body" style="height:25em">
+      <div class="body" style="height:25em;margin-top:0em">
         <div class="message_text">相关资讯情况</div>
         <div class="line"></div>
         <div class="message" style="margin-left:5%;background-color: #4C5870;">实验室资讯</div>
@@ -18,12 +22,32 @@
       </div>
       <div class="body" style="width:100%">
         <div class="computer_left">
-          <div class="computer_content" style="background:#3D3D3B"></div>
-          <div class="computer_content" style="background:#4C5870"></div>
+          <div class="computer_content" style="background:#3D3D3B">
+            <div class="computer_title">
+              计算思维
+            </div>
+          </div>
+          <div class="computer_content" style="background:#4C5870">
+            <div class="computer_title">
+              我们的实验室
+            </div>
+          </div>
         </div>
         <div class="computer_right">
-          <div class="computer_content" style="background:#F2F2F2"></div>
-          <div class="computer_content" style="background:#fff"></div>
+          <div class="computer_content" style="background:#F2F2F2">
+            <div class="computer_top">
+              <img :src="upicon" style="width:2em;height:2em;"/>
+            </div>
+            <div class="computer_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+            </div>
+          </div>
+          <div class="computer_content" style="background:#fff">
+            <div class="computer_top"></div>
+            <div class="computer_text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+            </div>
+          </div>
         </div>
       </div>
       <div class="body">
@@ -51,11 +75,19 @@ export default {
   name: 'Home',
   components: {},
   data() {
-    return {}
+    return {
+      icon: require('@/assets/images/computer.png'),
+      bigicon: require('@/assets/images/AI.png'),
+      upicon: require('@/assets/images/upicon.png')
+    }
   }
 }
 </script>
 <style>
+img{
+  width: 100%;
+  height: 100%;
+}
 body{
   width: 100%;
   overflow-x: hidden;
@@ -93,19 +125,17 @@ body{
   margin-top: 25px;
 }
 .icon{
-  /* margin-left: 10%; */
   margin-top: 15px;
-  width: 200px;
-  height: 200px;
-  background: coral;
+  width: 120px;
+  height: 120px;
 }
 .big_icon{
   float: left;
-  width: 350px;
-  height: 350px;
+  width: 280px;
+  height: 280px;
   margin-left: 10%;
   margin-top: 30px;
-  background: cornflowerblue;
+  /* background: cornflowerblue; */
 }
 .body{
   width: 80%;
@@ -117,7 +147,7 @@ body{
 .message_text{
   text-align: center;
   margin: 0 auto;
-  font-size: 1.5em;
+  font-size: 1.75em;
   font-weight: bolder;
   color: #003366;
 }
@@ -127,7 +157,7 @@ body{
   height: 0.5em;
   border-radius: 16px;
   background: #003366;
-  margin-top: 0.3125em;
+  margin-top: 0.625em;
 }
 .message{
   width: 30%;
@@ -162,6 +192,32 @@ body{
 .computer_content{
   width: 100%;
   height: 50%;
+}
+.computer_top{
+  /* background: #663600; */
+  width: 100%;
+  height: 3em;
+  padding-left: 4em;
+  padding-top: 1em;
+}
+.computer_text{
+  width: 75%;
+  height: 12em;
+  margin: 0 auto;
+  color: #999;
+  font-size: 1em;
+  line-height: 2em;
+  margin-top: 3em;
+  overflow: hidden;
+}
+.computer_title{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 3em;
+  font-weight: bolder;
+  color: #fff;
+  padding-top: 3em;
 }
 .teacher{
   width: 40%;
@@ -218,16 +274,6 @@ body{
   }
 }
 @media screen and (max-width: 1250px) {
-  .big_icon{
-    margin-left: 6%;
-    margin-top: 30px;
-    width: 340px;
-    height: 340px;
-  }
-  .icon{
-    width: 190px;
-    height: 190px;
-  }
   .head{
     padding-left: 8%;
   }
@@ -236,21 +282,11 @@ body{
   }
 }
 @media screen and (max-width: 1200px) {
-  .big_icon{
-    margin-left: 4%;
-    margin-top: 50px;
-    width: 320px;
-    height: 320px;
-  }
   .head{
     padding-left: 6.5%;
   }
   .body{
     width: 95%;
-  }
-  .icon{
-    width: 180px;
-    height: 180px;
   }
   .title{
     font-size: 2.5em;
@@ -260,11 +296,6 @@ body{
   }
 }
 @media screen and (max-width: 1100px) {
-  .big_icon{
-    margin-top: 55px;
-    width: 315px;
-    height: 315px;
-  }
   .head{
     padding-left: 5%;
   }
