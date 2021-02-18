@@ -24,20 +24,20 @@
         <p  class="wrap-top-p">计算思维历史</p>
       </div>
       <div class="history-bottom">
-        <div class="history-bottom1">
-          <div class="history-bottom-left">
-            <img :src="picture2" alt="">
+        <div class="history">
+          <div class="history-l">
+            <img :src="img7" alt="">
           </div>
-          <div class="history-bottom-right">
-            <p>×××××××××××</p>
+          <div class="history-l">
+            <p>{{ para1 }}</p>
           </div>
         </div>
-        <div class="history-bottom1">
-          <div class="history-bottom-left">
-            <p>×××××××××××</p>
+        <div class="history">
+          <div class="history-l">
+            <p>{{ para1 }}</p>
           </div>
-           <div class="history-bottom-right">
-            <img :src="picture3" alt="">
+          <div class="history-l">
+            <img :src="img7" alt="">
           </div>
         </div>
       </div>
@@ -64,12 +64,23 @@
         </div>
       </div>
     </div>
-    <div class="wrap">
+    <div class="wrap" id="learn-what">
       <div class="wrap-top">
         <p  class="wrap-top-p">学什么</p>
       </div>
       <div class="learn-bottom">
-        
+        <div class="learn-img">
+          <div class="learn"><img :src="img1" alt=""></div>
+          <div class="learn"><img :src="img1" alt=""></div>
+          <div class="learn"><img :src="img1" alt=""></div>
+          <div class="learn"><img :src="img1" alt=""></div>
+        </div>
+        <div class="learn-p">
+          <div class="learn-i"><p>{{ para1 }}</p></div>
+          <div class="learn-i"><p>{{ para1 }}</p></div>
+          <div class="learn-i"><p>{{ para1 }}</p></div>
+          <div class="learn-i"><p>{{ para1 }}</p></div>
+        </div>
       </div>
     </div>
     <div class="wrap">
@@ -120,6 +131,8 @@ export default {
       img4: require('@/assets/images/m14.jpg'),
       img5: require('@/assets/images/m15.jpg'),
       img6: require('@/assets/images/m12.jpg'),
+      img7: require('@/assets/images/pic8.jpg'),
+      img8: require('@/assets/images/pic9.jpg'),
       para1: '领域×××××××××××××××××××××',
       para2: '聚焦××××××××××××'
     }
@@ -161,7 +174,7 @@ export default {
     width: 100%;
     margin-top: 30px;
     height: fit-content;
-    border: 1px solid rgb(132, 134, 134);
+    /* border: 1px solid rgb(132, 134, 134); */
   }
   .introduction-left{
     width: 50%;
@@ -195,30 +208,28 @@ export default {
     font-size: 230%;
   }
   .history-bottom{
-    border: 5px solid rgb(138, 138, 139);
-    width: 80%;
+    /* border: 5px solid rgb(138, 138, 139); */
+    width: 100%;
     height: auto;
     margin: 0 auto;
     margin-top: 30px;
   }
-  .history-bottom1{
-    width: auto;
+  .history{
+    width: 100%;
     height: auto;
+    display: flex;
+    justify-content: space-around;
   }
-  .history-bottom-left{
+  .history-l{
     width: 50%;
-    float: left;
-  }
-  .history-bottom-left img{
-    width: 300px;
     height: 300px;
+    /* float: left; */
+    border: 1px solid rgb(138, 138, 139);
+    background: rgb(233, 233, 232);
   }
-  .history-bottom-left p{
-    float: left;
-  }
-  .history-bottom-right img{
-    width: 300px;
-    height: 300px;
+  .history-l img{
+    width: 100%;
+    height: 100%;
   }
 
 
@@ -253,15 +264,47 @@ export default {
     padding: 20px;
     line-height: 30px;
   }
+  #learn-what{
+    background: rgb(233, 233, 232);
+  }
   .learn-bottom{
-    border: 5px solid rgb(138, 138, 139);
-    width: 80%;
-    height: 400px;
-    margin: 0 auto;
-    margin-top: 30px;
+    /* border: 5px solid rgb(138, 138, 139); */
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    /* margin: 30px; */
+    /* margin-top: 30px; */
    
   }
+  .learn-img{
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid rgb(138, 138, 139);
+    display: flex;
+    justify-content: space-around;
+  }
+  .learn{
+    width: 17%;
+    height: 200px;
+  }
+  .learn img{
+    width: 100%;
+    height: 100%;
+  }
 
+
+  .learn-p{
+    width: 100%;
+    height: auto;
+    border-top: 1px solid rgb(138, 138, 139);
+    display: flex;
+    justify-content: space-around;
+  }
+  .learn-i{
+    width: 17%;
+    height: 200px;
+    border: 1px solid rgb(138, 138, 139);
+  }
 
   .field-bottom{
     /* border: 1px solid rgb(138, 138, 139); */
