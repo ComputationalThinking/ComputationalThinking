@@ -146,10 +146,6 @@ export default {
 }
 </script>
 <style>
-img{
-  width: 100%;
-  height: 100%;
-}
 body{
   width: 100%;
   overflow-x: hidden;
@@ -162,6 +158,10 @@ body{
 </style>
 
 <style scoped>
+img{
+  width: 100%;
+  height: 100%;
+}
 .head{
   width: 100%;
   height:auto;
