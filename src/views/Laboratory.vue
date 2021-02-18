@@ -9,14 +9,14 @@
     </div>
     <div class="right">
       <div :style="mem4"><img :src="pic2"></div>
-      <div class="picc" :style="mem5">
-        bb
+      <div :style="mem5" class="picc">
+        <img :src="pic1" style="width:100%">
       </div>
-      <div class="picc" :style="mem6">
-        aa
+      <div :style="mem6" class="picc">
+        <img :src="pic3" style="width:100%">
       </div>
-      <div class="picc" :style="mem7">
-        cc
+      <div :style="mem7" class="picc">
+        <img :src="pic4" style="width:100%">
       </div>
     </div>
   </div>
@@ -27,10 +27,10 @@ export default {
   name:'laboratory',
   data(){
     return {
-      pic1:require("@/assets/images/ren1.png"),
+      pic1:require("@/assets/images/点击实验地点.png"),
       pic2:require("@/assets/images/image1.png"),
-      pic3:require("@/assets/images/ren2.png"),
-      pic4:require("@/assets/images/女.jpg"),
+      pic3:require("@/assets/images/点击实验室介绍.png"),
+      pic4:require("@/assets/images/点击人员介绍.png"),
       mem1: "",
       mem2: "",
       mem3: "",
@@ -56,21 +56,21 @@ export default {
       this.mem3 = "";
     },
     click1() {
-      this.mem4 = "display: none";
-      this.mem5 = "display: block";
-      this.mem6 = "display: none";
-      this.mem7 = "display: none";
+      this.mem4 = "visibility: hidden";
+      this.mem5 = "visibility: visible";
+      this.mem6 = "visibility: hidden";
+      this.mem7 = "visibility: hidden";
     },
     click2() {
-      this.mem4 = "display: none";
-      this.mem5 = "display: none";
+      this.mem4 = "visibility: hidden";
+      this.mem5 = "visibility: hidden";
       this.mem6 = "visibility: visible";
-      this.mem7 = "display: none";
+      this.mem7 = "visibility: hidden";
     },
     click3() {
-      this.mem4 = "display: none";
-      this.mem5 = "display: none";
-      this.mem6 = "display: none";
+      this.mem4 = "visibility: hidden";
+      this.mem5 = "visibility: hidden";
+      this.mem6 = "visibility: hidden";
       this.mem7 = "visibility: visible";
     },
   }
@@ -120,5 +120,6 @@ export default {
 .picc{
   height: 41.1em;
   margin-top: -41.1em;
+  visibility: hidden;
 }
 </style>
