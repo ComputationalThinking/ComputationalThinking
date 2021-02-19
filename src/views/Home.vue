@@ -16,7 +16,7 @@
       <div class="body" style="height:25em;margin-top:0em;background: #f4f7f8;width:100%">
         <div class="message_text">相关资讯情况</div>
         <div class="line"></div>
-        <div @click="MessageClick()" class="message" style="margin-left:15%;background-color: #4C5870;">实验室资讯</div>
+        <div @click="MessageInformationClick()" class="message" style="margin-left:15%;background-color: #4C5870;">实验室资讯</div>
         <div @click="MessageClick()" class="message" style="background-color: #A2A9AF;">国内资讯</div>
         <div @click="MessageClick()" class="message" style="background-color: #fff;color:#5C5C5C">国外资讯</div>
       </div>
@@ -132,6 +132,9 @@ export default {
   methods: {
     MessageClick () {
       this.$router.push({path:'/Message'})
+    },
+    MessageInformationClick () {
+      this.$router.push({path:'/information'})
     },
     LaboratoryClick () {
       this.$router.push({path:'/Laboratory'})
