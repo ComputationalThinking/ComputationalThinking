@@ -89,7 +89,24 @@
             </p>
           </div>
         </div>
-        <div class="rightForeDynamic"></div>
+        <div class="rightForeDynamic">
+          <div class="rightForeDynamicTop">
+            <img :src="img3" alt="" />
+            <div class="img3Intro">
+              <p class="img3Intro1">
+                ISTE Criteria for calculating thinking capacity
+              </p>
+              <p class="img3Intro2">
+                ISTE Criteria for calculating thinking capacity Lorem ipsum
+                dolor sit amet, Aenean laoreet. Proin gravida ...
+              </p>
+            </div>
+          </div>
+          <div class="rightForeDynamicBottom">
+            <img :src="img4" alt="" />
+            <p class="img4Btn">More</p>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -103,6 +120,8 @@ export default {
       currentIndex: 0,
       img1: require('@/assets/images/u5.png'),
       img2: require('@/assets/images/u6.png'),
+      img3: require('@/assets/images/u8.png'),
+      img4: require('@/assets/images/u9.png'),
       infor1: 'ISTE计算思维能力标准...',
       infor2:
         '任正非对自己独特的经经历年和管理哲学的坚持，成就了华为过去的辉煌...',
@@ -201,7 +220,7 @@ export default {
 /* 实验室动态部分 */
 .message {
   width: 100vw;
-  height: 2500px;
+  height: 2600px;
   padding: 5% 8%;
   background-color: rgb(245, 249, 250);
 }
@@ -234,10 +253,16 @@ section {
 .inforEdu .leftInforEdu,
 .foreDynamic .leftForeDynamic {
   flex: 1;
+  position: relative;
+  /* top: -15px; */
   height: 300px;
   padding: 30px 40px;
   /* background-color: #f8f8ff; */
   background-color: rgb(255, 255, 255);
+}
+.laboratory .mainly .labDynamic .rightLabDynamic {
+  position: relative;
+  top: -15px;
 }
 .inforEdu .leftInforEdu,
 .foreDynamic .leftForeDynamic {
@@ -294,6 +319,8 @@ section {
 .inforEdu .rightInforEdu {
   flex: 1;
   height: 400px;
+  /* position: relative;
+  top: -15px; */
 }
 .inforEdu .rightInforEdu .bigBox {
   width: 100%;
@@ -342,7 +369,9 @@ section {
 }
 .inforEdu .rightInforEdu .bigBox .leftImgs .leftTop:hover,
 .inforEdu .rightInforEdu .bigBox .leftImgs .leftBottom:hover,
-.inforEdu .rightInforEdu .bigBox .rightImgs:hover {
+.inforEdu .rightInforEdu .bigBox .rightImgs:hover,
+.rightForeDynamicBottom p:hover,
+.rightForeDynamicTop:hover {
   box-shadow: 5px 5px 15px #868686;
 }
 .inforEdu .rightInforEdu .bigBox .leftImgs .leftBottom .btn {
@@ -439,5 +468,74 @@ section {
 }
 .foreDynamic .rightForeDynamic {
   flex: 1;
+}
+.title11 {
+  margin-bottom: 40px;
+}
+.rightForeDynamic {
+  flex: 1;
+  height: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  /* row-gap: 1rem; */
+}
+.rightForeDynamicTop {
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.rightForeDynamicBottom {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.rightForeDynamicTop img {
+  flex: 2;
+  width: 30%;
+  height: 100%;
+}
+.rightForeDynamicTop .img3Intro {
+  flex: 1;
+}
+.rightForeDynamicTop .img3Intro1 {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.rightForeDynamicTop .img3Intro2 {
+  font-size: 6px;
+}
+.rightForeDynamicBottom img {
+  flex: 1;
+  height: 80%;
+  width: 80%;
+  cursor: pointer;
+}
+.rightForeDynamicBottom p {
+  flex: 1;
+  background-color: #23cf9f;
+  height: 70%;
+  width: 75%;
+  border-radius: 8px;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  /* position: relative; */
+  line-height: 160px;
+  cursor: pointer;
+  /* top: -3px; */
+}
+@media screen and (max-width: 1000px) {
+  .message {
+    width: 1000px;
+  }
 }
 </style>

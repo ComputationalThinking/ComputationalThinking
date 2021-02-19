@@ -75,8 +75,11 @@ template {
   text-decoration: none;
   font-family: Helvetica, 'PingFag SC', 'Microsoft YeHei', sans-serif;
 }
-.home {
+.CS4C {
   width: 100vw;
+}
+.home {
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   background: url('../assets/images/5.jpg');
@@ -194,7 +197,7 @@ template {
   justify-content: center;
   flex-direction: column;
   /* padding: 60px 120px; */
-  width: 100vw;
+  width: 100%;
   align-items: center;
 }
 
@@ -327,6 +330,9 @@ template {
 @media screen and (max-width: 1000px) {
   template {
     overflow-x: scroll;
+  }
+  .CS4C {
+    width: 1000px;
   }
 }
 </style>
