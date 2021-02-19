@@ -8,7 +8,7 @@
       <p @click="click3" @mouseover="mouseOver3" @mouseleave="mouseLeave" :style="mem3" class="class4">实验室相关人员</p>
     </div>
     <div class="right">
-      <div :style="mem4"><img :src="pic1"></div>
+      <div :style="mem4"><img :src="pic1" style="height:40.8em"></div>
       <div :style="mem5" class="picc">
         <img :src="pic2" style="height: 42.3em;">
         <div style="margin-top:-33em;font-family:FangSong;margin-left:6em;">
@@ -42,7 +42,9 @@
           <br><br>走过的路和读过的书，本质上是一样的，只有经历了才会称为你的阅历，最终形成你的格局。这是这些五星的事物，让你能保持清澈的头脑看待自己的人生和这个世界。
           <br><br>三毛说：读书多了，容颜自然改变，许多时候，自己可能以为许多看过的书籍都成了过眼云烟，不复记忆，其实他们仍是潜在的。在气质里，在谈吐上，在胸襟的无涯，当然也可以显露在生活和文字里。
         </p>
-        <p style="font-family:SimSun;font-size:20px;margin-top:5em;margin-left:10em">更多人员 >></p>
+        <router-link to='member'>
+          <p style="font-family:SimSun;font-size:20px;margin-top:5em;margin-left:10em">更多人员 >></p>
+        </router-link>
         <div style="margin-top:-30em;margin-left:30em">
           <img :src="pic8" style="width:24.6em;">
         </div>
@@ -57,14 +59,14 @@ export default {
   name:'laboratory',
   data(){
     return {
-      pic1:require("@/assets/images/image1.png"),
+      pic1:require("@/assets/images/image2.png"),
       pic2:require("@/assets/images/点击实验地点.png"),
       pic3:require("@/assets/images/点击实验室介绍.png"),
       pic4:require("@/assets/images/点击人员介绍.png"),
       pic5:require("@/assets/images/map.png"),
       pic6:require("@/assets/images/pos1.jpg"),
       pic7:require("@/assets/images/pos2.jpg"),
-      pic8:require("@/assets/images/for.png"),
+      pic8:require("@/assets/images/test.png"),
       mem1: "",
       mem2: "",
       mem3: "",
@@ -118,37 +120,37 @@ export default {
   overflow: hidden;
 }
 .left{
-  width: 40%;
+  width: 38.5em;
   float: left;
   height: 41.1em;
 }
 .right{
-  width: 60%;
+  width: 50em;
   float: left;
   height: 41.1em;
 }
 .class1{
   width: 100%;
   font-size: 400%;
-  margin-left: 25%;
+  margin-left: 2.6em;
   margin-top: 2em;
 }
 .class2{
   font-size: 550%;
-  margin-left: 50%;
+  margin-left: 3.4em;
   margin-top: 0%;
   width: 100%;
 }
 .class3{
   color: rgb(160, 159, 159);
   font-size: 170%;
-  margin-left: 35%;
+  margin-left: 8em;
   margin-top: 3em;
 }
 .class4{
   color: rgb(160, 159, 159);
   font-size: 170%;
-  margin-left: 35%;
+  margin-left: 8em;
   margin-top: 1em;
 }
 .picc{
