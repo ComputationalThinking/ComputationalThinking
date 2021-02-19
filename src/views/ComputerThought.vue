@@ -70,16 +70,16 @@
       </div>
       <div class="learn-bottom">
         <div class="learn-img">
-          <div class="learn"><img :src="img1" alt=""></div>
-          <div class="learn"><img :src="img1" alt=""></div>
-          <div class="learn"><img :src="img1" alt=""></div>
-          <div class="learn"><img :src="img1" alt=""></div>
+          <div class="learn"><img :src="img9" alt=""></div>
+          <div class="learn"><img :src="img10" alt=""></div>
+          <div class="learn"><img :src="img11" alt=""></div>
+          <div class="learn"><img :src="img12" alt=""></div>
         </div>
         <div class="learn-p">
-          <div class="learn-i"><p>{{ para1 }}</p></div>
-          <div class="learn-i"><p>{{ para1 }}</p></div>
-          <div class="learn-i"><p>{{ para1 }}</p></div>
-          <div class="learn-i"><p>{{ para1 }}</p></div>
+          <div class="learn-i" id="learn-one"><p>{{ para1 }}</p></div>
+          <div class="learn-i" id="learn-two"><p>{{ para1 }}</p></div>
+          <div class="learn-i" id="learn-three"><p>{{ para1 }}</p></div>
+          <div class="learn-i" id="learn-four"><p>{{ para1 }}</p></div>
         </div>
       </div>
     </div>
@@ -133,7 +133,11 @@ export default {
       img6: require('@/assets/images/m12.jpg'),
       img7: require('@/assets/images/pic8.jpg'),
       img8: require('@/assets/images/pic9.jpg'),
-      para1: '领域×××××××××××××××××××××',
+      img9: require('@/assets/images/m16.jpg'),
+      img10: require('@/assets/images/m17.jpg'),
+      img11: require('@/assets/images/m18.jpg'),
+      img12: require('@/assets/images/m19.jpg'),
+      para1: '领域××××××××××××××××',
       para2: '聚焦××××××××××××'
     }
   }
@@ -257,7 +261,7 @@ export default {
   }
   .focus-p{
     width: 100%;
-    height: 130px;
+    height: auto;
     border: 1px solid rgb(138, 138, 139);
     margin-top: 15px;
     background: rgb(233, 233, 232);
@@ -284,8 +288,8 @@ export default {
     justify-content: space-around;
   }
   .learn{
-    width: 17%;
-    height: 200px;
+    width: 15%;
+    height: 170px;
   }
   .learn img{
     width: 100%;
@@ -301,11 +305,22 @@ export default {
     justify-content: space-around;
   }
   .learn-i{
-    width: 17%;
-    height: 200px;
+    width: 15%;
+    height: 170px;
     border: 1px solid rgb(138, 138, 139);
   }
-
+  #learn-one{
+    background: rgb(233, 194, 202);
+  }
+  #learn-two{
+    background: rgb(255, 255, 255);
+  }
+  #learn-three{
+    background: rgb(127, 223, 191);
+  }
+  #learn-four{
+    background: rgb(255, 255, 255);
+  }
   .field-bottom{
     /* border: 1px solid rgb(138, 138, 139); */
     width: 100%;
