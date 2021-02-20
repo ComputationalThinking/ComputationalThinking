@@ -16,7 +16,7 @@
             <p>E-mail: valleyqq@swu.edu.cn;yangjuan923@yahoo.com</p><br>
         </div>
     </div>
-    <div class="xia">
+    <div class="xia"><br>
         <p style="line-height:30px">
             EMPLOYMENT & EDUCATION ——— Professor of Psychology, Social Psychology, 2014-present, Southwest University, China.
             Visiting Scholar, 2013-2014, Department of Psychology, Peking University.
@@ -45,6 +45,23 @@ export default {
 </script>
 
 <style>
+body{
+  width: 100%;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 1000px) {
+  body{
+    overflow-x: scroll;
+  }
+}
+</style>
+
+<style scoped>
+.white{
+  height: 70px;
+  width: 100%;
+  float: top;
+}
 .shang{
     height: 28.125em;
     float: top;
@@ -53,6 +70,7 @@ export default {
     font-size: 400%;
     font-weight:500;
     color:#494949;
+    width: 20em;
 }
 .kuang{
     margin-top: 10%;
@@ -89,5 +107,10 @@ export default {
     float: top;
     width:63%;
     min-width: 800px;
+}
+@media screen and (max-width: 1000px) {
+  .detailmes{
+    width: 1000px;
+  }
 }
 </style>

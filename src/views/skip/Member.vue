@@ -104,25 +104,37 @@ export default {
 </script>
 
 <style>
+body{
+  width: 100%;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 1000px) {
+  body{
+    overflow-x: scroll;
+  }
+}
+</style>
+<style scoped>
 .white{
   height: 70px;
   width: 100%;
   float: top;
 }
 .word{
+  margin-left: 10.3%;
   color: black;
   width: 100%;
-  margin:0px auto;
-  text-align:center;
   height:10em;
   float: top;
   margin-bottom: 3em;
 }
 .word1{
+  margin-left: 500px;
   font-size: 170%;
   margin-top: 1em;
 }
 .word2{
+  margin-left: 340px;
   width: 100%;
   font-size: 400%;
   font-weight: 600;
@@ -133,30 +145,31 @@ export default {
   margin:2em auto;
   border:none;
   border-top:4px solid black;
+  margin-left: 400px;
 }
 .teacher{
-  margin:70px auto;
-  width: 1050px;
+  width: 100%;
+  margin-left: 10.3%;
   float: top;
   height:19.61em;
   display: flex;
   margin-bottom: 0px;
 }
 .stu{
-  margin:50px auto;
-  width: 1200px;
+  margin-top: 3em;
+  width: 100%;
   height: 22.9em;
   float: top;
   display: flex;
-  margin-bottom: 0px;
+  margin-left: 10.3%;
 }
 .zuo{
+  margin-left: 75px;
   background-color: black;
   width: 29em;
   height: 100%;
   float: left;
   flex:1;
-  margin-right: 7em;
 }
 .you{
   float: left;
@@ -164,6 +177,7 @@ export default {
   width: 29em;
   height: 100%;
   flex:1;
+  margin-left: 25%;
 }
 .picture{
   width: 100%;
@@ -182,5 +196,10 @@ export default {
   float: left;
   height: 23.7em;
   flex:1;
+}
+@media screen and (max-width: 1000px) {
+  .member{
+    width: 1000px;
+  }
 }
 </style>
