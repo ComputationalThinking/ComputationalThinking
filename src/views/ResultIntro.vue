@@ -75,7 +75,7 @@
       </div>
       <div class="wrap" id="involve">
         <div class="involve-left"><img :src="pic12" alt=""></div>
-        <div class="involve-center"><span>涉及领域：</span><p>{{ p3 }}{{ p3 }}{{ p3 }}{{ p3 }}{{ p3 }}</p></div>
+        <div class="involve-center"><span>涉及领域：</span><p>{{ p3 }}{{ p3 }}{{ p3 }}{{ p3 }}</p></div>
         <div class="involve-right"><img :src="pic13" alt=""></div>
       </div>
       <div class="wrap" id="app-d">
@@ -129,18 +129,6 @@ export default {
   }
 }
 </script>
-
-<style>
-  body{
-    width: 100%;
-    overflow-x: hidden;
-  }
-  @media screen and (max-width: 1000px) {
-    body{
-      overflow-x: scroll;
-    }
-  }
-</style>
 
 <style scoped>
   .introduction-top{
@@ -292,7 +280,7 @@ export default {
   }
   .involve-center p{
     margin-top: 40px;
-    line-height: 40px;
+    line-height: 30px;
   }
    .involve-right{
     width: 33.33%;

@@ -144,17 +144,6 @@ export default {
 }
 </script>
 
-<style>
-  body{
-    width: 100%;
-    overflow-x: hidden;
-  }
-  @media screen and (max-width: 1000px) {
-    body{
-      overflow-x: scroll;
-    }
-  }
-</style>
 
 <style scoped>
   .Thought{
