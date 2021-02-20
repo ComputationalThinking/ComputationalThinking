@@ -23,7 +23,7 @@
           <div class="rightLabDynamic">
             <div class="dynamicBox">
               <p
-                @click="InformationDetailClick()"
+                @click="InformationDetailClick(a)"
                 class="dynamic"
                 v-for="(index, item) in dynamics"
                 :key="item"
@@ -229,8 +229,13 @@ export default {
     }
   },
   methods: {
-    InformationDetailClick() {
-      this.$router.push({ path: '/information_detail' })
+    InformationDetailClick(a) {
+      this.$router.push({
+        path: 'information_detail',
+        params: {
+          editType: a
+        }
+      })
     }
   }
 }
