@@ -22,7 +22,12 @@
           </div>
           <div class="rightLabDynamic">
             <div class="dynamicBox">
-              <p class="dynamic" v-for="(index, item) in dynamics" :key="item">
+              <p
+                @click="InformationDetailClick()"
+                class="dynamic"
+                v-for="(index, item) in dynamics"
+                :key="item"
+              >
                 <span class="title">{{ index.title }}</span>
                 <span class="time">{{ index.time }}</span>
               </p>
@@ -37,7 +42,12 @@
       <div class="inforEdu">
         <div class="leftInforEdu">
           <div class="information">
-            <p class="infor" v-for="(index, item) in informations" :key="item">
+            <p
+              @click="InformationDetailClick()"
+              class="infor"
+              v-for="(index, item) in informations"
+              :key="item"
+            >
               <span class="title">{{ index.title }}</span>
               <span class="time">{{ index.time }}</span>
             </p>
@@ -83,7 +93,12 @@
       <div class="foreDynamic">
         <div class="leftForeDynamic">
           <div class="information">
-            <p class="infor" v-for="(index, item) in foreigns" :key="item">
+            <p
+              @click="InformationDetailClick()"
+              class="infor"
+              v-for="(index, item) in foreigns"
+              :key="item"
+            >
               <span class="title">{{ index.title }}</span>
               <span class="time">{{ index.time }}</span>
             </p>
@@ -212,11 +227,16 @@ export default {
         ]
       }
     }
+  },
+  methods: {
+    InformationDetailClick() {
+      this.$router.push({ path: '/information_detail' })
+    }
   }
 }
 </script>
 
-<style>
+<style scoped>
 /* 实验室动态部分 */
 .message {
   width: 100vw;
@@ -372,7 +392,8 @@ section {
 .inforEdu .rightInforEdu .bigBox .rightImgs:hover,
 .rightForeDynamicBottom p:hover,
 .rightForeDynamicTop:hover {
-  box-shadow: 5px 5px 15px #868686;
+  /* box-shadow: 5px 5px 15px #868686; */
+  box-shadow: 2px 2px 8px #a7a7a7;
 }
 .inforEdu .rightInforEdu .bigBox .leftImgs .leftBottom .btn {
   width: 100%;
@@ -433,7 +454,8 @@ section {
   border: 1px solid #dddddd;
 }
 .activities .act:hover {
-  box-shadow: 5px 5px 15px #868686;
+  /* box-shadow: 5px 5px 15px #868686; */
+  box-shadow: 2px 2px 8px #a7a7a7;
 }
 .activities .act img {
   width: 100%;
@@ -532,6 +554,10 @@ section {
   line-height: 160px;
   cursor: pointer;
   /* top: -3px; */
+}
+.dynamic:hover,
+.infor:hover {
+  color: #0066cc;
 }
 @media screen and (max-width: 1000px) {
   .message {

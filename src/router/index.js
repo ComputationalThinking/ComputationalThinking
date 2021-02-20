@@ -31,7 +31,7 @@ const routes = [
     path: '/information_detail',
     name: 'Information_detail',
     component: () =>
-      import('../views/message_content/information_detail.vue')
+    import('../views/message_content/information_detail.vue')
   },
   {
     path: '/computerthought',
