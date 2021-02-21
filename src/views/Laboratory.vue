@@ -8,7 +8,7 @@
       <p @click="click3" @mouseover="mouseOver3" @mouseleave="mouseLeave" :style="mem3" class="class4">实验室相关人员</p>
     </div>
     <div class="right">
-      <div :style="mem4"><img :src="pic1" style="height:40.8em"></div>
+      <div :style="mem4"><img :src="pic1" style="width:93%"></div>
       <div :style="mem5" class="picc" style="margin-top:-80%">
         <img :src="pic2" class="ppp1">
         <div style="margin-top:-63%;font-family:FangSong;margin-left:11%;">
@@ -20,13 +20,13 @@
           <div style="margin-top:5%;margin-left:54%;"><img :src="pic7" style="width:70%;"></div>
         </div>
       </div>
-      <div :style="mem6" class="picc" style="margin-top:-50%">
+      <div :style="mem6" class="picc" style="margin-top:-50.5%">
         <img :src="pic3" class="ppp2">
         <div style="margin-top:-60%;font-family:FangSong;margin-left:6%;">
           <p style="font-size:130%">人才需求：</p>
-          <div style="width:48%;margin-top:10%;margin-left:-6%;font-size:100%;height:250px">计算思维是一种对解决问题非常有效的特殊思维方式，适用范围很广。无论设计学、历史，还是地理，每个学科都应该包含一种计算思维方法。
-            <br><br>很重要的问题是，核心教育学科可以没有计算思维吗？
-            <br><br>在美国，很多人似乎认为这是可以的，但我不这么认为——至少在学校层面不行。因为计算思维方法需要了解什么是可能的、如何应用计算思维的经验，以及执行它的机器的相关知识。我不认为你只在其他学科中就能学到这点；这里需要有一个锚点来培养这些现代基础知识。
+          <div style="width:48%;margin-top:10%;margin-left:-6%;font-size:100%;height:250px">计算思维是一种对解决问题非常有效的特殊思维方式，适用范围很广。每个学科都应该包含一种计算思维方法。
+            <br>很重要的问题是，核心教育学科可以没有计算思维吗？
+            <br>在美国，很多人似乎认为这是可以的，但我不这么认为——至少在学校层面不行。因为计算思维方法需要了解什么是可能的、如何应用计算思维的经验，以及执行它的机器的相关知识。我不认为你只在其他学科中就能学到这点；这里需要有一个锚点来培养这些现代基础知识。
           </div>
           <div class="aaa">
             <p class="dic">研究方向:</p>
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <div :style="mem7" class="picc" style="margin-top:-36%">
+      <div :style="mem7" class="picc" style="margin-top:-305px">
           <img :src="pic4" class="ppp3">
           <div style="margin-top:-70%;font-family:FangSong;margin-left:10%;">
           <p style="font-size:26px;font-family:Arial;">Selina</p>
@@ -127,8 +127,8 @@ body{
 <style scoped>
 .laboratory{
   color: black;
-  height: 41.1em;
   overflow: hidden;
+  height: 41.1em;
 }
 .left{
   width: 400px;
@@ -220,6 +220,7 @@ body{
 @media screen and (max-width: 1000px) {
   .laboratory{
     width: 1000px;
+    height:490px;
   }
 }
 </style>
