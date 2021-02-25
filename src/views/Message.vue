@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <p class="title13">活 动</p>
+      <p class="title13" style="width:40px;">活 动</p>
       <div class="activities">
         <div
           class="act"
@@ -82,7 +82,9 @@
         >
           <img :src="item.currentImg" alt="" class="img" />
           <div class="intro">
-            <p class="title4">{{ item.title }}</p>
+            <p class="title4" style="margin-bottom:20px;margin-top:10px;">
+              {{ item.title }}
+            </p>
             <p class="title5">{{ item.intro }}</p>
           </div>
         </div>
@@ -109,11 +111,10 @@
             <img :src="img3" alt="" />
             <div class="img3Intro">
               <p class="img3Intro1">
-                ISTE Criteria for calculating thinking capacity
+                {{ infor3 }}
               </p>
               <p class="img3Intro2">
-                ISTE Criteria for calculating thinking capacity Lorem ipsum
-                dolor sit amet, Aenean laoreet. Proin gravida ...
+                {{ infor4 }}
               </p>
             </div>
           </div>
@@ -140,6 +141,9 @@ export default {
       infor1: 'ISTE计算思维能力标准...',
       infor2:
         '任正非对自己独特的经经历年和管理哲学的坚持，成就了华为过去的辉煌...',
+      infor3: 'ISTE Criteria for calculating thinking capacity',
+      infor4:
+        'ISTE Criteria for calculating thinking capacity Lorem ipsum dolor sit amet, Aenean laoreet. Proin gravida ...',
       images: [
         { pic: require('@/assets/images/u1.jpg') },
         { pic: require('@/assets/images/u2.jpg') },
