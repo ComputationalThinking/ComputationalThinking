@@ -46,13 +46,12 @@
           <div class="result-left">
             <img :src="pic7" alt="">
             <span>LAST NEWS</span>
-            <div class="result-left-p">{{ p1 }}</div>
+            <div class="result-left-p">{{ p2 }}</div>
           </div>
           <div class="result-right">
             <div class="result-right-detail">
               <div class="detail-left"><img :src="pic11" alt=""></div>
               <div class="detail-right">
-                {{ p2 }}
                 {{ p2 }}
               </div>
             </div>
@@ -60,13 +59,11 @@
               <div class="detail-left"><img :src="pic9" alt=""></div>
               <div class="detail-right">
                 {{ p2 }}
-                {{ p2 }}
               </div>
             </div>
             <div class="result-right-detail">
               <div class="detail-left"><img :src="pic10" alt=""></div>
               <div class="detail-right">
-                {{ p2 }}
                 {{ p2 }}
               </div>
             </div>
@@ -75,7 +72,7 @@
       </div>
       <div class="wrap" id="involve">
         <div class="involve-left"><img :src="pic12" alt=""></div>
-        <div class="involve-center"><span>涉及领域：</span><p>{{ p3 }}{{ p3 }}{{ p3 }}{{ p3 }}</p></div>
+        <div class="involve-center"><span>涉及领域：</span><p>{{ p3 }}</p></div>
         <div class="involve-right"><img :src="pic13" alt=""></div>
       </div>
       <div class="wrap" id="app-d">
@@ -83,15 +80,15 @@
         <div class="app">
           <div class="app-left">
             <img :src="pic5" alt="">
-            <p>{{ p4 }}{{ p4 }}</p>
+            <div class="app-p"><p>{{ p5 }}{{ p5 }}</p></div>
           </div>
           <div class="app-center">
             <img :src="pic6" alt="">
-            <p>{{ p4 }}{{ p4 }}</p>
+            <div class="app-p"><p>{{ p6 }}{{ p6 }}</p></div>
           </div>
           <div class="app-right">
             <img :src="pic2" alt="">
-            <p>{{ p4 }}{{ p4 }}</p>
+            <div class="app-p"><p>{{ p7 }}{{ p7 }}</p></div>
           </div>
         </div>
       </div>
@@ -122,9 +119,12 @@ export default {
       pic12: require('@/assets/images/m12.jpg'),
       pic13: require('@/assets/images/m13.jpg'),
       p1: '成果×××××××××××××××××× 成果×××××××××××××××××× 成果×××××××××××××××××× 成果××××××××××××××××××',
-      p2: '成果×××××××××××××××××××× 成果××××××××××××××××××× ',
-      p3: '领域×××××××××××××××××××× 领域×××××××××××××××××× ',
-      p4: '实例××××××××××××××××××××××× '
+      p2: '计算思维具有概念化、抽象化、有限性、自动化、可解释性、关联性等特征，是融合了数学、工程与科学思维的一种跨学科思维。',
+      p3: '计算思维是应用可用于计算机学科中，比如zhi计算机编程，计算机应用等领域。计算思维吸取了问题解决所采用的一般数学思维方法，现实世界中巨大复杂系统的设计与评估的一般工程思维方法，以及复杂性、智能、心理、人类行为的理解等的一般科学思维方法。计算思维建立在计算过程的能力和限制之上，由人由机器执行。计算方法和模型使我们敢于去处理那些原本无法由个人独立完成的问题求解和系统设计。',
+      p4: '实例××××××××××××××××××××××× ',
+      p5: '计算机领域的研究',
+      p6: '人工智能领域的研究',
+      p7: '教育教学的研究等'
     }
   }
 }
@@ -231,6 +231,9 @@ export default {
     line-height: 28px;
     font-size: 16px;
   }
+  .result-left-p:hover{
+    color: rgb(2, 85, 133);
+  }
   .result-right{
     width: 55%;
     height: auto;
@@ -241,7 +244,7 @@ export default {
   }
   .result-right-detail{
     width: 100%;
-    height: 120px;
+    height: 130px;
     margin: 8px;
     padding: 5px;
     border-bottom: 1px solid rgb(117, 114, 114);
@@ -261,6 +264,9 @@ export default {
     line-height: 28px;
     padding: 20px;
     font-size: 16px;
+  }
+  .detail-right:hover{
+    color: rgb(2, 85, 133);
   }
   .involve-left{
     width: 33.33%;
@@ -302,16 +308,34 @@ export default {
     width: 28%;
     height: auto;
     border: 1px solid rgb(138, 138, 139);
+    transition-duration: 0.5s;
+  }
+  .app-left:hover{
+    -webkit-box-shadow: #ccc 0px 10px 10px;
+    -moz-box-shadow: #ccc 0px 10px 10px;
+    box-shadow: #ccc 0px 10px 10px;
   }
    .app-center{
     width: 28%;
     height: auto;
     border: 1px solid rgb(138, 138, 139);
+    transition-duration: 0.5s;
+  }
+  .app-center:hover{
+    -webkit-box-shadow: #ccc 0px 10px 10px;
+    -moz-box-shadow: #ccc 0px 10px 10px;
+    box-shadow: #ccc 0px 10px 10px;
   }
    .app-right{
     width: 28%;
     height: auto;
     border: 1px solid rgb(138, 138, 139);
+    transition-duration: 0.5s;
+  }
+  .app-right:hover{
+    -webkit-box-shadow: #ccc 0px 10px 10px;
+    -moz-box-shadow: #ccc 0px 10px 10px;
+    box-shadow: #ccc 0px 10px 10px;
   }
   .app img{
     width: 100%;
@@ -320,11 +344,35 @@ export default {
     padding: 30px;
     font-size: 16px;
   }
+  .app-p{
+    overflow: hidden;
+  }
   @media screen and (max-width: 1400px) {
-     .race-p{
+  .race-p{
       font-size: 14px;
     }
-   }
+  #sci-result{
+    height: 640px;
+  }
+  .involve-left{
+    height: 470px;
+  }
+  .involve-left img{
+    height: 470px;
+  }
+  .involve-center{
+    height: 470px;
+  }
+  .involve-right{
+    height: 470px;
+  }
+  .involve-right img{
+    height: 470px;
+  }
+  .app img{
+    height: 250px;
+    }
+  }
   @media screen and (max-width: 1200px) {
   .introduction-top{
       height: 150px;
@@ -332,11 +380,17 @@ export default {
   .race-p{
       font-size: 13px;
     }
+  .result-right-detail{
+    height: 150px;
+    }
   }
   @media screen and (max-width: 1100px) {
     .race-p{
     font-size: 12px;
   }
+   .app img{
+    height: 220px;
+    }
   }
   @media screen and (max-width: 1000px) {
   .introduction-top{
@@ -349,6 +403,8 @@ export default {
   .wrap{
     width: 800px;
   }
-
+  .app img{
+    height: 200px;
+  }
 }
 </style>
