@@ -197,6 +197,40 @@ body{
   height: 23.7em;
   flex:1;
 }
+@media screen and (max-width: 1200px) {
+  .word1{
+    margin-left: 33%;
+  }
+  .word2{
+    margin-left: 17%;
+  }
+  .hr{
+    margin-left: 23%;
+  }
+  .teacher{
+    height: 11.81em;
+    margin-left: 9.2%;
+  }
+  .zuo{
+    margin-left: 105px;
+    width: 17em;
+  }
+  .you{
+    margin-left: 115px;
+    width: 17em;
+  }
+  .stu1,.stu2{
+    width: 10em;
+    height: 13.7em;
+  }
+  .stu{
+    height: 13.9em;
+    margin-left: 15.3%;
+  }
+  .pic{
+    width: 89%;
+  }
+}
 @media screen and (max-width: 1000px) {
   .member{
     width: 1000px;

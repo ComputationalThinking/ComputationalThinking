@@ -1,5 +1,6 @@
 <template>
   <div class="detailmes">
+    <router-link to='member'><p class="return">返回 >></p></router-link>
     <div class="shang">
         <div class="con1">
             <div class="kuang"></div>
@@ -57,6 +58,12 @@ body{
 </style>
 
 <style scoped>
+.return{
+  font-size: 20px;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 80px;
+}
 .white{
   height: 70px;
   width: 100%;
