@@ -5,8 +5,7 @@
 			<div class="head_time">{{time}}</div>
 			<hr/>
 			<div class="text">
-				华龙网-新重庆客户端12月31日13时42分讯（许义丽）深化媒体融合传播，强化新闻舆论宣传。近日，重庆理工大学第三届校媒领军论坛如期举行。
-				学校党委副书记张晓洪，纪委书记、监察专员张绍荣，华龙网教育频道主编、重庆舆情研究院院长王大伦，及学校相关负责人、教师通讯员、学生记者代表共300余人出席会议。会议由重庆理工大学党委宣传部副部长、党委网络工作部副部长李洪普主持。
+				{{content}}
 			</div>
 			<div class="back" @click="Back">
 				<span style="margin-right:.5em"><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
@@ -21,11 +20,14 @@ export default {
   data () {
     return {
       id: '',
+			content: '华龙网-新重庆客户端12月31日13时42分讯（许义丽）深化媒体融合传播，强化新闻舆论宣传。近日，重庆理工大学第三届校媒领军论坛如期举行。学校党委副书记张晓洪，纪委书记、监察专员张绍荣，华龙网教育频道主编、重庆舆情研究院院长王大伦，及学校相关负责人、教师通讯员、学生记者代表共300余人出席会议。会议由重庆理工大学党委宣传部副部长、党委网络工作部副部长李洪普主持。',
 			time: '2021/2/17 23:09'
     }
   },
   created () {
     this.id = this.$route.query.id
+		if(this.$route.query.content != null)
+			this.content = this.$route.query.content
   },
 	methods: {
 		Back () {

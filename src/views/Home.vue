@@ -134,7 +134,7 @@ export default {
       this.$router.push({path:'/Message'})
     },
     MessageInformationClick () {
-      this.$router.push({path:'/information'})
+      this.$router.push({path:'/Information'})
     },
     LaboratoryClick () {
       this.$router.push({path:'/Laboratory'})
