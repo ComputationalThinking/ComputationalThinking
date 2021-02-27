@@ -13,28 +13,28 @@
           <div class="race">
             <h3>标题1</h3>
             <img :src="pic1" alt="">
-            <div class="race-p">
+            <div class="race-p" @click="open">
               国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××
             </div>
           </div>
           <div class="race">
             <h3>标题2</h3>
             <img :src="pic2" alt="">
-            <div class="race-p">
+            <div class="race-p" @click="open">
               国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××
             </div>
           </div>
           <div class="race">
             <h3>标题3</h3>
             <img :src="pic3" alt="">
-            <div class="race-p">
+            <div class="race-p" @click="open">
               国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××
             </div>
           </div>
           <div class="race">
             <h3>标题4</h3>
             <img :src="pic4" alt="">
-            <div class="race-p">
+            <div class="race-p" @click="open">
               国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××
             </div>
           </div>
@@ -46,24 +46,24 @@
           <div class="result-left">
             <img :src="pic7" alt="">
             <span>LAST NEWS</span>
-            <div class="result-left-p">{{ p2 }}</div>
+            <div class="result-left-p" @click="open2">{{ p2 }}</div>
           </div>
           <div class="result-right">
             <div class="result-right-detail">
               <div class="detail-left"><img :src="pic11" alt=""></div>
-              <div class="detail-right">
+              <div class="detail-right" @click="open2">
                 {{ p2 }}
               </div>
             </div>
             <div class="result-right-detail">
               <div class="detail-left"><img :src="pic9" alt=""></div>
-              <div class="detail-right">
+              <div class="detail-right" @click="open2">
                 {{ p2 }}
               </div>
             </div>
             <div class="result-right-detail">
               <div class="detail-left"><img :src="pic10" alt=""></div>
-              <div class="detail-right">
+              <div class="detail-right" @click="open2">
                 {{ p2 }}
               </div>
             </div>
@@ -72,7 +72,17 @@
       </div>
       <div class="wrap" id="involve">
         <div class="involve-left"><img :src="pic12" alt=""></div>
-        <div class="involve-center"><span>涉及领域：</span><p>{{ p3 }}</p></div>
+        
+        <div class="involve-center">
+          <el-popover
+            placement="top-start"
+            title="计算思维涉及领域"
+            width="600"
+            trigger="hover"
+            content="涉及领域甚是宽广，计算思维是应用可用于计算机学科中，比如zhi计算机编程，计算机应用等领域。计算思维吸取了问题解决所采用的一般数学思维方法，现实世界中巨大复杂系统的设计与评估的一般工程思维方法，以及复杂性、智能、心理、人类行为的理解等的一般科学思维方法。计算思维建立在计算过程的能力和限制之上，由人由机器执行。计算方法和模型使我们敢于去处理那些原本无法由个人独立完成的问题求解和系统设计。">
+            <div slot="reference" class="involve-p"><p style="font-size: 30px;">涉及领域：</p><br><p>{{ p3 }}</p></div>
+          </el-popover>
+          </div>
         <div class="involve-right"><img :src="pic13" alt=""></div>
       </div>
       <div class="wrap" id="app-d">
@@ -126,7 +136,19 @@ export default {
       p6: '人工智能领域的研究',
       p7: '教育教学的研究等'
     }
-  }
+  },
+   methods: {
+      open() {
+        this.$alert('计算机思维设计大赛第一名<br>计算机思维设计大赛第一名<br>计算机思维设计大赛第一名<br>计算机思维设计大赛第一名<br>', '赛事', {
+          dangerouslyUseHTMLString: true
+        });
+      },
+      open2(){
+        this.$alert('成果：×××<br>时间：×××<br>参赛人：×××<br>国际影响：×××<br>', '取得成果', {
+          dangerouslyUseHTMLString: true
+        });
+      }
+    }
 }
 </script>
 
@@ -199,6 +221,9 @@ export default {
     width: 100%;
     margin-top: 10px;
     font-size: 16px;
+  }
+   .race-p:hover{
+    color: rgb(2, 85, 133);
   }
   .result{
     width: 100%;
@@ -284,9 +309,10 @@ export default {
     /* border: 1px solid rgb(138, 138, 139); */
     background: rgb(230, 231, 231);
   }
-  .involve-center p{
-    margin-top: 40px;
+  .involve-p p{
+    /* margin-top: 40px; */
     line-height: 30px;
+    font-size: 18px;
   }
    .involve-right{
     width: 33.33%;
@@ -383,6 +409,21 @@ export default {
   .result-right-detail{
     height: 150px;
     }
+  .involve-left{
+    height: 550px;
+  }
+  .involve-left img{
+    height: 550px;
+  }
+  .involve-center{
+    height: 550px;
+  }
+  .involve-right{
+    height: 550px;
+  }
+  .involve-right img{
+    height: 550px;
+  }
   }
   @media screen and (max-width: 1100px) {
     .race-p{
@@ -391,6 +432,21 @@ export default {
    .app img{
     height: 220px;
     }
+  .involve-left{
+    height: 580px;
+  }
+  .involve-left img{
+    height: 580px;
+  }
+  .involve-center{
+    height: 580px;
+  }
+  .involve-right{
+    height: 580px;
+  }
+  .involve-right img{
+    height: 580px;
+  }
   }
   @media screen and (max-width: 1000px) {
   .introduction-top{
@@ -406,5 +462,6 @@ export default {
   .app img{
     height: 200px;
   }
+
 }
 </style>
