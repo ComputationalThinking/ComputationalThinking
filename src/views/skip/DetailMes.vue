@@ -1,6 +1,5 @@
 <template>
   <div class="detailmes">
-    <router-link to='member'><p class="return">返回 >></p></router-link>
     <div class="shang">
         <div class="con1">
             <div class="kuang"></div>
@@ -30,6 +29,7 @@
         <p> AWARDS & HONORS </p><br>
         <p>Excellent Doctoral thesis, Chongqing Educational commission, 2010</p>
     </div>
+    <router-link to='member'><p class="return">返回 >></p></router-link>
     <div class="white"></div>
   </div>
 </template>
@@ -46,23 +46,12 @@ export default {
 </script>
 
 <style>
-body{
-  width: 100%;
-  overflow-x: hidden;
-}
-@media screen and (max-width: 1000px) {
-  body{
-    overflow-x: scroll;
-  }
-}
 </style>
 
 <style scoped>
 .return{
   font-size: 20px;
-  position: absolute;
-  margin-top: 50px;
-  margin-left: 80px;
+  margin-left: 80%;
 }
 .white{
   height: 70px;
@@ -70,6 +59,7 @@ body{
   float: top;
 }
 .shang{
+    width: 100%;
     height: 28.125em;
     float: top;
 }
@@ -77,7 +67,7 @@ body{
     font-size: 400%;
     font-weight:500;
     color:#494949;
-    width: 20em;
+    width: 5em;
 }
 .kuang{
     margin-top: 10%;

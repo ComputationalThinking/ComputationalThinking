@@ -35,9 +35,9 @@
         </div>
       </div>
       <div :style="mem7" class="picc" style="margin-top:-305px">
-          <img :src="pic4" class="ppp3">
-          <div style="margin-top:-70%;font-family:FangSong;margin-left:10%;">
-          <p style="font-size:26px;font-family:Arial;">Selina</p>
+        <img :src="pic4" class="ppp3">
+        <div style="margin-top:-70%;font-family:FangSong;margin-left:10%;">
+          <p style="font-size:26px;font-family:Arial;" class="name">Selina</p>
           <p style="font-size:100%;margin-top:5em;margin-left:-10%;width:48%;height:250px">不读书，不知道路在何方；不行路，不明白书中含义。
             <br><br>走过的路和读过的书，本质上是一样的，只有经历了才会称为你的阅历，最终形成你的格局。这是这些五星的事物，让你能保持清澈的头脑看待自己的人生和这个世界。
             <br><br>三毛说：读书多了，容颜自然改变，许多时候，自己可能以为许多看过的书籍都成了过眼云烟，不复记忆，其实他们仍是潜在的。在气质里，在谈吐上，在胸襟的无涯，当然也可以显露在生活和文字里。
@@ -114,15 +114,6 @@ export default {
 </script>
 
 <style>
-body{
-  width: 100%;
-  overflow-x: hidden;
-}
-@media screen and (max-width: 1000px) {
-  body{
-    overflow-x: scroll;
-  }
-}
 </style>
 <style scoped>
 .laboratory{
@@ -187,14 +178,8 @@ body{
   font-size:18px;
 }
 @media screen and (max-width: 1500px) {
-  .class1{
-    font-size: 300%;
-  }
-  .class2{
-    font-size: 450%;
-  }
-  .class3,.class4{
-    font-size: 120%;
+  .laboratory{
+    height: 40em;
   }
   .left{
     width: 21%;
@@ -217,10 +202,24 @@ body{
     margin-top: -24em;
   }
 }
+@media screen and (max-width: 1300px) {
+  .ppp3{
+    margin-top: 1em;
+  }
+  .class1{
+    font-size: 300%;
+  }
+  .class2{
+    font-size: 450%;
+  }
+  .class3,.class4{
+    font-size: 120%;
+  }
+}
 @media screen and (max-width: 1000px) {
   .laboratory{
     width: 1000px;
-    height:490px;
+    height: 31.1em;
   }
 }
 </style>
