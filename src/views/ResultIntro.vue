@@ -69,37 +69,39 @@
             </div>
           </div>
         </div>  
+        <router-link to="resultList">
+        <div class="result-link">更多成果>></div>
+        </router-link>
       </div>
       <div class="wrap" id="involve">
         <div class="involve-left"><img :src="pic12" alt=""></div>
         
         <div class="involve-center">
-          <el-popover
-            placement="top-start"
-            title="计算思维涉及领域"
-            width="600"
-            trigger="hover"
-            content="涉及领域甚是宽广，计算思维是应用可用于计算机学科中，比如zhi计算机编程，计算机应用等领域。计算思维吸取了问题解决所采用的一般数学思维方法，现实世界中巨大复杂系统的设计与评估的一般工程思维方法，以及复杂性、智能、心理、人类行为的理解等的一般科学思维方法。计算思维建立在计算过程的能力和限制之上，由人由机器执行。计算方法和模型使我们敢于去处理那些原本无法由个人独立完成的问题求解和系统设计。">
-            <div slot="reference" class="involve-p"><p style="font-size: 30px;">涉及领域：</p><br><p>{{ p3 }}</p></div>
-          </el-popover>
-          </div>
+          <p style="font-size: 30px;">涉及领域：</p><br><p>{{ p3 }}</p>
+        </div>
         <div class="involve-right"><img :src="pic13" alt=""></div>
       </div>
       <div class="wrap" id="app-d">
         <span>应用实例</span>
         <div class="app">
-          <div class="app-left">
-            <img :src="pic5" alt="">
-            <div class="app-p"><p>{{ p5 }}{{ p5 }}</p></div>
-          </div>
-          <div class="app-center">
+          <router-link to="appExample1" class="app-left">
+            <div >
+              <img :src="pic5" alt="">
+              <div class="app-p"><p>{{ p5 }}{{ p5 }}</p></div>
+            </div>
+          </router-link>
+          <router-link to="appExample1" class="app-center">
+          <div >
             <img :src="pic6" alt="">
             <div class="app-p"><p>{{ p6 }}{{ p6 }}</p></div>
           </div>
-          <div class="app-right">
+          </router-link>
+          <router-link to="appExample1" class="app-right">
+          <div >
             <img :src="pic2" alt="">
             <div class="app-p"><p>{{ p7 }}{{ p7 }}</p></div>
           </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -130,7 +132,7 @@ export default {
       pic13: require('@/assets/images/m13.jpg'),
       p1: '成果×××××××××××××××××× 成果×××××××××××××××××× 成果×××××××××××××××××× 成果××××××××××××××××××',
       p2: '计算思维具有概念化、抽象化、有限性、自动化、可解释性、关联性等特征，是融合了数学、工程与科学思维的一种跨学科思维。',
-      p3: '计算思维是应用可用于计算机学科中，比如zhi计算机编程，计算机应用等领域。计算思维吸取了问题解决所采用的一般数学思维方法，现实世界中巨大复杂系统的设计与评估的一般工程思维方法，以及复杂性、智能、心理、人类行为的理解等的一般科学思维方法。计算思维建立在计算过程的能力和限制之上，由人由机器执行。计算方法和模型使我们敢于去处理那些原本无法由个人独立完成的问题求解和系统设计。',
+      p3: '计算思维是应用可用于计算机学科中，比如计算机编程，计算机应用等领域。计算思维吸取了问题解决所采用的一般数学思维方法，现实世界中巨大复杂系统的设计与评估的一般工程思维方法，以及复杂性、智能、心理、人类行为的理解等的一般科学思维方法。计算思维建立在计算过程的能力和限制之上，由人由机器执行。计算方法和模型使我们敢于去处理那些原本无法由个人独立完成的问题求解和系统设计。',
       p4: '实例××××××××××××××××××××××× ',
       p5: '计算机领域的研究',
       p6: '人工智能领域的研究',
@@ -275,6 +277,14 @@ export default {
     border-bottom: 1px solid rgb(117, 114, 114);
     display: block;
   }
+  .result-link{
+    width: auto;
+    margin-left: 78%;
+    margin-top: 10px;
+  }
+  .result-link:hover{
+    color: blue;
+  }
   .detail-left img{
     width: 100%;
     height: auto;
@@ -309,7 +319,7 @@ export default {
     /* border: 1px solid rgb(138, 138, 139); */
     background: rgb(230, 231, 231);
   }
-  .involve-p p{
+  .involve-center p{
     /* margin-top: 40px; */
     line-height: 30px;
     font-size: 18px;
@@ -380,25 +390,14 @@ export default {
   #sci-result{
     height: 640px;
   }
-  .involve-left{
-    height: 470px;
-  }
-  .involve-left img{
-    height: 470px;
-  }
-  .involve-center{
-    height: 470px;
-  }
-  .involve-right{
-    height: 470px;
-  }
-  .involve-right img{
-    height: 470px;
-  }
   .app img{
     height: 250px;
     }
+  .involve-center p{
+    line-height: 28px;
+    font-size: 17px;
   }
+}
   @media screen and (max-width: 1200px) {
   .introduction-top{
       height: 150px;
@@ -409,21 +408,7 @@ export default {
   .result-right-detail{
     height: 150px;
     }
-  .involve-left{
-    height: 550px;
-  }
-  .involve-left img{
-    height: 550px;
-  }
-  .involve-center{
-    height: 550px;
-  }
-  .involve-right{
-    height: 550px;
-  }
-  .involve-right img{
-    height: 550px;
-  }
+
   }
   @media screen and (max-width: 1100px) {
     .race-p{
@@ -432,21 +417,7 @@ export default {
    .app img{
     height: 220px;
     }
-  .involve-left{
-    height: 580px;
-  }
-  .involve-left img{
-    height: 580px;
-  }
-  .involve-center{
-    height: 580px;
-  }
-  .involve-right{
-    height: 580px;
-  }
-  .involve-right img{
-    height: 580px;
-  }
+
   }
   @media screen and (max-width: 1000px) {
   .introduction-top{
@@ -462,6 +433,9 @@ export default {
   .app img{
     height: 200px;
   }
-
+  .involve-center p{
+    line-height: 22px;
+    font-size: 15px;
+  }
 }
 </style>

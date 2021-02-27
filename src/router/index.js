@@ -71,6 +71,16 @@ const routes = [
     path: '/cs4c',
     name: 'Cs4c',
     component: () => import('../views/CS4C.vue')
+  },
+  {
+    path: '/resultList',
+    name: 'resultList',
+    component: () => import('../views/resultMore/resultList.vue')
+  },
+  {
+    path: '/appExample1',
+    name: 'appExample1',
+    component: () => import('../views/appExample/appExample1.vue')
   }
 ]
 
