@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <div :style="mem7" class="picc" style="margin-top:-305px">
+      <div :style="mem7" class="picc3">
         <img :src="pic4" class="ppp3">
         <div style="margin-top:-70%;font-family:FangSong;margin-left:10%;">
           <p style="font-size:26px;font-family:Arial;" class="name">Selina</p>
@@ -158,8 +158,11 @@ export default {
   margin-top: 1em;
   width: 100%;
 }
-.picc{
+.picc,.picc3{
   visibility: hidden;
+}
+.picc3{
+  margin-top:-305px;
 }
 .pos{
   font-size: 25px;
@@ -176,6 +179,85 @@ export default {
 }
 .dicc{
   font-size:18px;
+}
+@media screen and (min-width: 4500px){
+  .right{
+    width: 20%;
+  }
+  .left{
+    margin-left: 34%;
+    margin-top: 3em;
+  }
+  .laboratory{
+    height: 60em;
+  }
+  .picc3{
+    margin-top: -330px;
+  }
+}
+@media screen and (min-width: 3500px) and (max-width:4500px){
+  .right{
+    width: 25%;
+  }
+  .left{
+    margin-left: 28%;
+    margin-top: 1em;
+  }
+  .laboratory{
+    height: 60em;
+  }
+  .picc3{
+    margin-top: -315px;
+  }
+}
+@media screen and (min-width: 2800px) and (max-width:3500px){
+  .right{
+    width: 30%;
+  }
+  .left{
+    margin-left: 24%;
+  }
+  .laboratory{
+    height: 60em;
+  }
+}
+@media screen and (min-width: 2300px) and (max-width:2800px){
+  .right{
+    width: 35%;
+  }
+  .left{
+    margin-left: 20%;
+  }
+  .laboratory{
+    height: 60em;
+  }
+}
+@media screen and (min-width: 2000px) and (max-width:2300px){
+  .right{
+    width: 40%;
+  }
+  .left{
+    margin-left: 18%;
+  }
+  .laboratory{
+    height: 60em;
+  }
+}
+@media screen and (min-width: 1800px) and (max-width:2000px){
+  .right{
+    width: 45%;
+  }
+  .left{
+    margin-left: 15%;
+  }
+}
+@media screen and (min-width: 1600px) and (max-width:1800px){
+  .right{
+    width: 50%;
+  }
+  .left{
+    margin-left: 10%;
+  }
 }
 @media screen and (max-width: 1500px) {
   .laboratory{

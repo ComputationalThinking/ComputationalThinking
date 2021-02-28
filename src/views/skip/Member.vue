@@ -24,29 +24,29 @@
     <div class="stu">
       <div style="width:80%;margin:0 auto">
         <router-link to='detailmes'>
-          <div style="width:25%;height: 22.9em;float: left;">
+          <div style="width:25%;float: left;">
             <div @mouseover="mouseOver3" @mouseleave="mouseLeave" :style="peo3" class="stu1">
               <img class="picture" :src="pic2">
             </div>
           </div>
         </router-link>
         <router-link to='detailmes'>
-          <div style="width:25%;height: 22.9em;float: left;">
+          <div style="width:25%;float: left;">
             <div @mouseover="mouseOver4" @mouseleave="mouseLeave" :style="peo4" class="stu2">
               <img class="picture" :src="pic2">
             </div>
           </div>
         </router-link>
         <router-link to='detailmes'>
-          <div style="width:25%;height: 22.9em;float: left;">
-            <div @mouseover="mouseOver5" @mouseleave="mouseLeave" :style="peo5" class="stu2">
+          <div style="width:25%;float: left;">
+            <div @mouseover="mouseOver5" @mouseleave="mouseLeave" :style="peo5" class="stu3">
               <img class="picture" :src="pic2">
             </div>
           </div>
         </router-link>
         <router-link to='detailmes'>
-          <div style="width:25%;height: 22.9em;float: left;">
-            <div @mouseover="mouseOver6" @mouseleave="mouseLeave" :style="peo6" class="stu2">
+          <div style="width:25%;float: left;">
+            <div @mouseover="mouseOver6" @mouseleave="mouseLeave" :style="peo6" class="stu4">
               <img class="picture" :src="pic2">
             </div>
           </div>
@@ -56,29 +56,29 @@
     <div class="stu">
       <div style="width:80%;margin:0 auto">
         <router-link to='detailmes'>
-          <div style="width:25%;height: 22.9em;float: left;">
-            <div @mouseover="mouseOver3" @mouseleave="mouseLeave" :style="peo3" class="stu1">
+          <div style="width:25%;float: left;">
+            <div @mouseover="mouseOver7" @mouseleave="mouseLeave" :style="peo7" class="stu1">
               <img class="picture" :src="pic2">
             </div>
           </div>
         </router-link>
         <router-link to='detailmes'>
-          <div style="width:25%;height: 22.9em;float: left;">
-            <div @mouseover="mouseOver4" @mouseleave="mouseLeave" :style="peo4" class="stu2">
+          <div style="width:25%;float: left;">
+            <div @mouseover="mouseOver8" @mouseleave="mouseLeave" :style="peo8" class="stu2">
               <img class="picture" :src="pic2">
             </div>
           </div>
         </router-link>
         <router-link to='detailmes'>
-          <div style="width:25%;height: 22.9em;float: left;">
-            <div @mouseover="mouseOver5" @mouseleave="mouseLeave" :style="peo5" class="stu2">
+          <div style="width:25%;float: left;">
+            <div @mouseover="mouseOver9" @mouseleave="mouseLeave" :style="peo9" class="stu3">
               <img class="picture" :src="pic2">
             </div>
           </div>
         </router-link>
         <router-link to='detailmes'>
-          <div style="width:25%;height: 22.9em;float: left;">
-            <div @mouseover="mouseOver6" @mouseleave="mouseLeave" :style="peo6" class="stu2">
+          <div style="width:25%;float: left;">
+            <div @mouseover="mouseOver10" @mouseleave="mouseLeave" :style="peo10" class="stu4">
               <img class="picture" :src="pic2">
             </div>
           </div>
@@ -182,32 +182,33 @@ export default {
   width: 100%;
   margin: 0 auto;
   float: top;
-  height: 25em;
-  margin-bottom: 7em;
+  margin-bottom: 3.5em;
+  overflow: auto;
 }
 .stu{
-  margin-top: 5em;
   width: 100%;
-  height: 22.9em;
   float: top;
+  margin-bottom: 3.5em;
+  overflow: auto;
 }
 .zuo{
   background-color: black;
   width: 65%;
   margin-left: 30%;
-  height: 100%;
+  overflow: auto;
 }
 .you{
   background-color: black;
   width: 65%;
   margin-left: 5%;
-  height: 100%;
+  overflow: auto;
 }
 .picture{
   width: 100%;
 }
 .pic{
   width: 100%;
+  height: auto;
 }
 .stu1{
   background-color: black;
@@ -215,11 +216,63 @@ export default {
   float: left;
   margin-left: 5%;
 }
-.stu2{
+.stu2,.stu3,.stu4{
   background-color: black;
   width: 90%;
   margin-left: 5%;
   float: left;
+}
+@media screen and (min-width: 3000px) {
+  .zuo{
+    width: 30%;
+    margin-left: 65%;
+  }
+  .you{
+    width: 30%;
+    margin-left: 5%;
+  }
+  .stu1{
+    width: 50%;
+    margin-left: 85%;
+  }
+  .stu2{
+    width: 50%;
+    margin-left: 45%;
+  }
+  .stu3{
+    width: 50%;
+    margin-left: 5%;
+  }
+  .stu4{
+    width: 50%;
+    margin-left: -35%;
+  }
+}
+@media screen and (min-width: 2000px) and (max-width:3000px){
+  .zuo{
+    width: 50%;
+    margin-left: 45%;
+  }
+  .you{
+    width: 50%;
+    margin-left: 5%;
+  }
+  .stu1{
+    width: 70%;
+    margin-left: 45%;
+  }
+  .stu2{
+    width: 70%;
+    margin-left: 25%;
+  }
+  .stu3{
+    width: 70%;
+    margin-left: 5%;
+  }
+  .stu4{
+    width: 70%;
+    margin-left: -15%;
+  }
 }
 @media screen and (max-width: 1000px) {
   .member{
