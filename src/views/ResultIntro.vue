@@ -84,22 +84,31 @@
       <div class="wrap" id="app-d">
         <span>应用实例</span>
         <div class="app">
-          <router-link to="appExample1" class="app-left">
+          <router-link :to="{
+                    path: '/appExample1',
+                    query: {content: p5}
+                }" class="app-left">
             <div >
               <img :src="pic5" alt="">
-              <div class="app-p"><p>{{ p5 }}{{ p5 }}</p></div>
+              <div class="app-p"><p>{{ p5 }}</p></div>
             </div>
           </router-link>
-          <router-link to="appExample1" class="app-center">
+          <router-link :to="{
+                    path: '/appExample1',
+                    query: {content: p6}
+                }" class="app-center">
           <div >
             <img :src="pic6" alt="">
-            <div class="app-p"><p>{{ p6 }}{{ p6 }}</p></div>
+            <div class="app-p"><p>{{ p6 }}</p></div>
           </div>
           </router-link>
-          <router-link to="appExample1" class="app-right">
+          <router-link :to="{
+                    path: '/appExample1',
+                    query: {content: p7}
+                }" class="app-right">
           <div >
             <img :src="pic2" alt="">
-            <div class="app-p"><p>{{ p7 }}{{ p7 }}</p></div>
+            <div class="app-p"><p>{{ p7 }}</p></div>
           </div>
           </router-link>
         </div>

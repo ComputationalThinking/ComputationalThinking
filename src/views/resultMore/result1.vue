@@ -2,11 +2,11 @@
     <div class="app-body">
         <div class="example">
             <div class="tittle" style="font-size: 30px">
-                实例
+                计算思维成果{{ id }}
             </div>
             <hr>
             <div class="content">
-                实例内容：{{ data }}
+                成果内容：计算思维在某些领域取得的一些成果。{{ data }}
             </div>
             <div class="back" @click="Back">返回>></div>
         </div>
@@ -14,13 +14,16 @@
 </template>
 <script>
 export default {
-  data () {
-    return {
-        data: '实例应用××××××××'
-    }
-  },
-  created () {
-        this.data = this.$route.query.content
+    data () {
+        return {
+            id: '',
+            data: '获得奖项如下：'
+        }
+    },
+    created () {
+        this.id = this.$route.query.id
+        if(this.$route.query.content != null)
+            this.data = this.$route.query.content
     },
   	methods: {
 		Back () {
