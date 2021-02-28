@@ -63,7 +63,7 @@
               </div>
             </router-link>
             <div class="content_txt" @click="changeContent(4)">
-              <div style="width:50%;height:50%;margin:0 auto;margin-top:25%;font-size:3em;font-weight:bolder;color:#fff">more</div>
+              <div class="more">more</div>
             </div>
           </div>
           <div style="width:50%;height:100%;float:left">
@@ -118,7 +118,7 @@
               </div>
             </router-link>
             <div class="content_txt" @click="changeContent(4)" style="background-color:#FD5F00">
-              <div style="width:50%;height:50%;margin:0 auto;margin-top:25%;font-size:3em;font-weight:bolder;color:#fff">more</div>
+              <div class="more">more</div>
             </div>
           </div>
           <div style="width:50%;height:100%;float:left">
@@ -173,7 +173,7 @@
               </div>
             </router-link>
             <div class="content_txt" @click="changeContent(4)" style="background-color:#FF9900">
-              <div style="width:50%;height:50%;margin:0 auto;margin-top:25%;font-size:3em;font-weight:bolder;color:#fff">more</div>
+              <div class="more">more</div>
             </div>
           </div>
           <div style="width:50%;height:100%;float:left">
@@ -228,7 +228,7 @@
               </div>
             </router-link>
             <div class="content_txt" @click="changeContent(4)" style="background-color:#66CC99">
-              <div style="width:50%;height:50%;margin:0 auto;margin-top:25%;font-size:3em;font-weight:bolder;color:#fff">more</div>
+              <div class="more">more</div>
             </div>
           </div>
           <div style="width:50%;height:100%;float:left">
@@ -544,6 +544,15 @@ body {
   white-space: nowrap;
   float:left;
 }
+.more{
+  width:50%;
+  height:50%;
+  margin:0 auto;
+  margin-top:25%;
+  font-size:3em;
+  font-weight:bolder;
+  color:#fff;
+}
 .content_head:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -554,12 +563,24 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (max-width: 1350px) {
+  .more{
+    margin-top: 30%;
+    font-size: 2.75em;
+  }
 }
 @media screen and (max-width: 1250px) {
+  .more{
+    margin-top: 35%;
+    font-size: 2.5em;
+  }
 }
 @media screen and (max-width: 1200px) {
 }
 @media screen and (max-width: 1100px) {
+  .more{
+    margin-top: 40%;
+    font-size: 2.25em;
+  }
 }
 @media screen and (max-width: 1000px) {
   .information_frame {
