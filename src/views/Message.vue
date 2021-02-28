@@ -23,7 +23,7 @@
           <div class="rightLabDynamic">
             <div class="dynamicBox">
               <p
-                @click="InformationDetailClick(a)"
+                @click="InformationDetailClick()"
                 class="dynamic"
                 v-for="(index, item) in dynamics"
                 :key="item"
@@ -61,7 +61,7 @@
                 <p class="intro">{{ infor1 }}</p>
               </div>
               <div class="leftBottom">
-                <div class="btn">
+                <div @click="InformationClick()" class="btn">
                   更多...
                 </div>
               </div>
@@ -120,7 +120,7 @@
           </div>
           <div class="rightForeDynamicBottom">
             <img :src="img4" alt="" />
-            <p class="img4Btn">More</p>
+            <p @click="InformationClick()" class="img4Btn">More</p>
           </div>
         </div>
       </div>
@@ -233,12 +233,14 @@ export default {
     }
   },
   methods: {
-    InformationDetailClick(a) {
+    InformationDetailClick() {
       this.$router.push({
-        path: 'information_detail',
-        params: {
-          editType: a
-        }
+        path: 'information_detail'
+      })
+    },
+    InformationClick() {
+      this.$router.push({
+        path: 'information'
       })
     }
   }
@@ -256,6 +258,9 @@ export default {
 section {
   width: 100%;
   margin-bottom: 40px;
+}
+.laboratory {
+  padding: 0 3%;
 }
 .laboratory .title1 {
   font-size: 28px;
@@ -319,6 +324,10 @@ section {
 }
 /* 国内动态部分 */
 /* 信息化教育 */
+.internal,
+.foreign {
+  padding: 0 3%;
+}
 .title11 {
   font-size: 28px;
   color: #666666;
@@ -368,6 +377,7 @@ section {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  cursor: pointer;
 }
 .inforEdu .rightInforEdu .bigBox .leftImgs .leftTop {
   flex: 1;
@@ -381,6 +391,7 @@ section {
   align-items: center;
   column-gap: 4px;
   transition: 0.4s;
+  cursor: pointer;
 }
 .inforEdu .rightInforEdu .bigBox .leftImgs .leftBottom {
   flex: 1;
@@ -425,6 +436,7 @@ section {
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
   transition: 0.4s;
+  cursor: pointer;
 }
 .inforEdu .rightInforEdu .bigBox .rightImgs img {
   width: 100%;

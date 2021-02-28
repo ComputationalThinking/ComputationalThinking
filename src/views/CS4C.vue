@@ -335,4 +335,9 @@ template {
     width: 1000px;
   }
 }
+@media screen and (max-width: 1200px) {
+  .title1 {
+    font-size: 30px;
+  }
+}
 </style>
