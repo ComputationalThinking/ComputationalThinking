@@ -1,45 +1,89 @@
 <template>
-  <div class="member">
+  <div class="member" style="margin:0 auto">
     <div class="word">
       <p class="word1">我们具有创造力</p>
       <p class="word2">来看看我们的团队</p>
       <hr class="hr">
     </div>
     <div class="teacher">
-      <router-link to='detailmes'><div @mouseover="mouseOver1" @mouseleave="mouseLeave" :style="peo1" class="zuo">
-        <img class="pic" :src="pic1">
-      </div></router-link>
-      <router-link to='detailmes'><div @mouseover="mouseOver2" @mouseleave="mouseLeave" :style="peo2" class="you">
-        <img class="pic" :src="pic1">
-      </div></router-link>
+      <router-link to='detailmes'>
+        <div style="width:50%;float: left;">
+          <div @mouseover="mouseOver1" @mouseleave="mouseLeave" :style="peo1" class="zuo">
+            <img class="pic" :src="pic1">
+          </div>
+        </div>
+      </router-link>
+      <router-link to='detailmes'>
+        <div style="width:50%;float: left;">
+          <div @mouseover="mouseOver2" @mouseleave="mouseLeave" :style="peo2" class="you">
+            <img class="pic" :src="pic1">
+          </div>
+        </div>
+      </router-link>
     </div>
     <div class="stu">
-      <router-link to='detailmes'><div @mouseover="mouseOver3" @mouseleave="mouseLeave" :style="peo3" class="stu1">
-        <img class="picture" :src="pic2">
-      </div></router-link>
-      <router-link to='detailmes'><div @mouseover="mouseOver4" @mouseleave="mouseLeave" :style="peo4" class="stu2">
-        <img class="picture" :src="pic2">
-      </div></router-link>
-      <router-link to='detailmes'><div @mouseover="mouseOver5" @mouseleave="mouseLeave" :style="peo5" class="stu2">
-        <img class="picture" :src="pic2">
-      </div></router-link>
-      <router-link to='detailmes'><div @mouseover="mouseOver6" @mouseleave="mouseLeave" :style="peo6" class="stu2">
-        <img class="picture" :src="pic2">
-      </div></router-link>
+      <div style="width:80%;margin:0 auto">
+        <router-link to='detailmes'>
+          <div style="width:25%;height: 22.9em;float: left;">
+            <div @mouseover="mouseOver3" @mouseleave="mouseLeave" :style="peo3" class="stu1">
+              <img class="picture" :src="pic2">
+            </div>
+          </div>
+        </router-link>
+        <router-link to='detailmes'>
+          <div style="width:25%;height: 22.9em;float: left;">
+            <div @mouseover="mouseOver4" @mouseleave="mouseLeave" :style="peo4" class="stu2">
+              <img class="picture" :src="pic2">
+            </div>
+          </div>
+        </router-link>
+        <router-link to='detailmes'>
+          <div style="width:25%;height: 22.9em;float: left;">
+            <div @mouseover="mouseOver5" @mouseleave="mouseLeave" :style="peo5" class="stu2">
+              <img class="picture" :src="pic2">
+            </div>
+          </div>
+        </router-link>
+        <router-link to='detailmes'>
+          <div style="width:25%;height: 22.9em;float: left;">
+            <div @mouseover="mouseOver6" @mouseleave="mouseLeave" :style="peo6" class="stu2">
+              <img class="picture" :src="pic2">
+            </div>
+          </div>
+        </router-link>
+      </div>
     </div>
     <div class="stu">
-      <router-link to='detailmes'><div @mouseover="mouseOver7" @mouseleave="mouseLeave" :style="peo7" class="stu1">
-        <img class="picture" :src="pic2">
-      </div></router-link>
-      <router-link to='detailmes'><div @mouseover="mouseOver8" @mouseleave="mouseLeave" :style="peo8" class="stu2">
-        <img class="picture" :src="pic2">
-      </div></router-link>
-      <router-link to='detailmes'><div @mouseover="mouseOver9" @mouseleave="mouseLeave" :style="peo9" class="stu2">
-        <img class="picture" :src="pic2">
-      </div></router-link>
-      <router-link to='detailmes'><div @mouseover="mouseOver10" @mouseleave="mouseLeave" :style="peo10" class="stu2">
-        <img class="picture" :src="pic2">
-      </div></router-link>
+      <div style="width:80%;margin:0 auto">
+        <router-link to='detailmes'>
+          <div style="width:25%;height: 22.9em;float: left;">
+            <div @mouseover="mouseOver3" @mouseleave="mouseLeave" :style="peo3" class="stu1">
+              <img class="picture" :src="pic2">
+            </div>
+          </div>
+        </router-link>
+        <router-link to='detailmes'>
+          <div style="width:25%;height: 22.9em;float: left;">
+            <div @mouseover="mouseOver4" @mouseleave="mouseLeave" :style="peo4" class="stu2">
+              <img class="picture" :src="pic2">
+            </div>
+          </div>
+        </router-link>
+        <router-link to='detailmes'>
+          <div style="width:25%;height: 22.9em;float: left;">
+            <div @mouseover="mouseOver5" @mouseleave="mouseLeave" :style="peo5" class="stu2">
+              <img class="picture" :src="pic2">
+            </div>
+          </div>
+        </router-link>
+        <router-link to='detailmes'>
+          <div style="width:25%;height: 22.9em;float: left;">
+            <div @mouseover="mouseOver6" @mouseleave="mouseLeave" :style="peo6" class="stu2">
+              <img class="picture" :src="pic2">
+            </div>
+          </div>
+        </router-link>
+      </div>
     </div>
     <div class="white"></div>
   </div>
@@ -104,15 +148,6 @@ export default {
 </script>
 
 <style>
-body{
-  width: 100%;
-  overflow-x: hidden;
-}
-@media screen and (max-width: 1000px) {
-  body{
-    overflow-x: scroll;
-  }
-}
 </style>
 <style scoped>
 .white{
@@ -121,7 +156,7 @@ body{
   float: top;
 }
 .word{
-  margin-left: 10.3%;
+  text-align: center;
   color: black;
   width: 100%;
   height:10em;
@@ -129,13 +164,10 @@ body{
   margin-bottom: 3em;
 }
 .word1{
-  margin-left: 500px;
   font-size: 170%;
   margin-top: 1em;
 }
 .word2{
-  margin-left: 340px;
-  width: 100%;
   font-size: 400%;
   font-weight: 600;
   margin-top: 0.5em;
@@ -145,91 +177,49 @@ body{
   margin:2em auto;
   border:none;
   border-top:4px solid black;
-  margin-left: 400px;
 }
 .teacher{
   width: 100%;
-  margin-left: 10.3%;
+  margin: 0 auto;
   float: top;
-  height:19.61em;
-  display: flex;
-  margin-bottom: 0px;
+  height: 25em;
+  margin-bottom: 7em;
 }
 .stu{
-  margin-top: 3em;
+  margin-top: 5em;
   width: 100%;
   height: 22.9em;
   float: top;
-  display: flex;
-  margin-left: 10.3%;
 }
 .zuo{
-  margin-left: 75px;
   background-color: black;
-  width: 29em;
+  width: 65%;
+  margin-left: 30%;
   height: 100%;
-  float: left;
-  flex:1;
 }
 .you{
-  float: left;
   background-color: black;
-  width: 29em;
+  width: 65%;
+  margin-left: 5%;
   height: 100%;
-  flex:1;
-  margin-left: 25%;
 }
 .picture{
   width: 100%;
 }
+.pic{
+  width: 100%;
+}
 .stu1{
   background-color: black;
-  width: 17em;
+  width: 90%;
   float: left;
-  height: 23.7em;
-  flex:1;
+  margin-left: 5%;
 }
 .stu2{
   background-color: black;
-  margin-left: 2.3em;
-  width: 17em;
+  width: 90%;
+  margin-left: 5%;
   float: left;
-  height: 23.7em;
-  flex:1;
-}
-@media screen and (max-width: 1200px) {
-  .word1{
-    margin-left: 33%;
-  }
-  .word2{
-    margin-left: 17%;
-  }
-  .hr{
-    margin-left: 23%;
-  }
-  .teacher{
-    height: 11.81em;
-    margin-left: 9.2%;
-  }
-  .zuo{
-    margin-left: 105px;
-    width: 17em;
-  }
-  .you{
-    margin-left: 115px;
-    width: 17em;
-  }
-  .stu1,.stu2{
-    width: 10em;
-    height: 13.7em;
-  }
-  .stu{
-    height: 13.9em;
-    margin-left: 15.3%;
-  }
-  .pic{
-    width: 89%;
-  }
 }
 @media screen and (max-width: 1000px) {
   .member{
