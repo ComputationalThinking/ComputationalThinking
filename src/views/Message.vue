@@ -278,10 +278,11 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  column-gap: 4rem;
+  /* column-gap: 4rem; */
 }
 .laboratory .mainly .labDynamic .leftLabDynamic {
   flex: 1.1;
+  margin-right: 2%;
 }
 .laboratory .mainly .labDynamic .rightLabDynamic,
 .inforEdu .leftInforEdu,
@@ -294,6 +295,13 @@ section {
   /* background-color: #f8f8ff; */
   background-color: rgb(255, 255, 255);
 }
+.inforEdu .leftInforEdu,
+.foreDynamic .leftForeDynamic {
+  margin-right: 2%;
+}
+.laboratory .mainly .labDynamic .rightLabDynamic {
+  margin-left: 2%;
+}
 .laboratory .mainly .labDynamic .rightLabDynamic {
   position: relative;
   top: -15px;
@@ -303,6 +311,7 @@ section {
   height: 400px;
   padding: 30px 40px;
   border-radius: 8px;
+  margin-right: 2%;
 }
 .laboratory .mainly .labDynamic .rightLabDynamic .dynamic,
 .inforEdu .leftInforEdu .infor,
@@ -352,7 +361,7 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  column-gap: 4rem;
+  /* column-gap: 2rem; */
 }
 .inforEdu .rightInforEdu {
   flex: 1;
@@ -377,6 +386,7 @@ section {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
+  /* margin-right: 3%; */
   cursor: pointer;
 }
 .inforEdu .rightInforEdu .bigBox .leftImgs .leftTop {
@@ -436,6 +446,7 @@ section {
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
   transition: 0.4s;
+  /* margin-left: 10px; */
   cursor: pointer;
 }
 .inforEdu .rightInforEdu .bigBox .rightImgs img {
@@ -463,7 +474,7 @@ section {
   flex-wrap: wrap;
 }
 .activities .act {
-  width: 28%;
+  width: 25%;
   height: 350px;
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
@@ -504,13 +515,15 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  column-gap: 4rem;
+  /* column-gap: 2rem; */
 }
 .foreDynamic .leftForeDynamic {
   flex: 1;
+  margin-right: 2%;
 }
 .foreDynamic .rightForeDynamic {
   flex: 1;
+  margin-left: 2%;
 }
 .title11 {
   margin-bottom: 40px;
@@ -579,6 +592,16 @@ section {
 .dynamic:hover,
 .infor:hover {
   color: #0066cc;
+}
+.leftLabDynamic,
+.leftInforEdu,
+.leftForeDynamic {
+  margin-right: 2%;
+}
+.rightLabDynamic,
+.rightInforEdu,
+.rightForeDynamic {
+  margin-left: 2%;
 }
 @media screen and (max-width: 1000px) {
   .message {
