@@ -278,7 +278,7 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  column-gap: 2rem;
+  column-gap: 4rem;
 }
 .laboratory .mainly .labDynamic .leftLabDynamic {
   flex: 1.1;
@@ -352,7 +352,7 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  column-gap: 2rem;
+  column-gap: 4rem;
 }
 .inforEdu .rightInforEdu {
   flex: 1;
@@ -463,7 +463,7 @@ section {
   flex-wrap: wrap;
 }
 .activities .act {
-  width: 25%;
+  width: 28%;
   height: 350px;
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
@@ -504,7 +504,7 @@ section {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  column-gap: 2rem;
+  column-gap: 4rem;
 }
 .foreDynamic .leftForeDynamic {
   flex: 1;
