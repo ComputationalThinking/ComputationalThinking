@@ -426,7 +426,10 @@ export default {
    .app img{
     height: 220px;
     }
-
+  .involve-center p{
+      line-height: 28px;
+      font-size: 15px;
+    }
   }
   @media screen and (max-width: 1000px) {
   .introduction-top{
@@ -443,8 +446,8 @@ export default {
     height: 200px;
   }
   .involve-center p{
-    line-height: 22px;
-    font-size: 15px;
+    line-height: 24px;
+    font-size: 16px;
   }
 }
 </style>
