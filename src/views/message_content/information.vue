@@ -48,7 +48,7 @@
             >
               <div class="content_head">
                 <div class="head_img">图片1</div>
-                <div class="head_text">{{search_title}}</div>
+                <div class="head_text">{{ search_title }}</div>
               </div>
             </router-link>
             <router-link
@@ -58,8 +58,10 @@
               }"
             >
               <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">{{search_title}}</div>
-                <div class="content_title_text">{{content}}</div>
+                <div class="head_text" style="padding-top:4%">
+                  {{ search_title }}
+                </div>
+                <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
             <div class="content_txt" @click="changeContent(4)">
@@ -75,8 +77,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片2</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
             <router-link
@@ -87,8 +94,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片3</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
           </div>
@@ -103,7 +115,7 @@
             >
               <div class="content_head">
                 <div class="head_img">图片1</div>
-                <div class="head_text">{{search_title}}</div>
+                <div class="head_text">{{ search_title }}</div>
               </div>
             </router-link>
             <router-link
@@ -113,11 +125,17 @@
               }"
             >
               <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">{{search_title}}</div>
-                <div class="content_title_text">{{content}}</div>
+                <div class="head_text" style="padding-top:4%">
+                  {{ search_title }}
+                </div>
+                <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
-            <div class="content_txt" @click="changeContent(4)" style="background-color:#FD5F00">
+            <div
+              class="content_txt"
+              @click="changeContent(4)"
+              style="background-color:#FD5F00"
+            >
               <div class="more">more</div>
             </div>
           </div>
@@ -130,8 +148,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片2</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
             <router-link
@@ -142,8 +165,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片3</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
           </div>
@@ -158,7 +186,7 @@
             >
               <div class="content_head">
                 <div class="head_img">图片1</div>
-                <div class="head_text">{{search_title}}</div>
+                <div class="head_text">{{ search_title }}</div>
               </div>
             </router-link>
             <router-link
@@ -168,11 +196,17 @@
               }"
             >
               <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">{{search_title}}</div>
-                <div class="content_title_text">{{content}}</div>
+                <div class="head_text" style="padding-top:4%">
+                  {{ search_title }}
+                </div>
+                <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
-            <div class="content_txt" @click="changeContent(4)" style="background-color:#FF9900">
+            <div
+              class="content_txt"
+              @click="changeContent(4)"
+              style="background-color:#FF9900"
+            >
               <div class="more">more</div>
             </div>
           </div>
@@ -185,8 +219,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片2</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
             <router-link
@@ -197,8 +236,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片3</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
           </div>
@@ -213,7 +257,7 @@
             >
               <div class="content_head">
                 <div class="head_img">图片1</div>
-                <div class="head_text">{{search_title}}</div>
+                <div class="head_text">{{ search_title }}</div>
               </div>
             </router-link>
             <router-link
@@ -223,11 +267,17 @@
               }"
             >
               <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">{{search_title}}</div>
-                <div class="content_title_text">{{content}}</div>
+                <div class="head_text" style="padding-top:4%">
+                  {{ search_title }}
+                </div>
+                <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
-            <div class="content_txt" @click="changeContent(4)" style="background-color:#66CC99">
+            <div
+              class="content_txt"
+              @click="changeContent(4)"
+              style="background-color:#66CC99"
+            >
               <div class="more">more</div>
             </div>
           </div>
@@ -240,8 +290,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片2</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
             <router-link
@@ -252,8 +307,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片3</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
           </div>
@@ -310,7 +370,8 @@ export default {
       time: '2021/2/17 23:09',
       search_title: '实验室成员获得了xxxxx',
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.'
     }
   },
   methods: {
@@ -487,7 +548,7 @@ body {
   width: 80%;
   height: 35%;
   border-radius: 1em;
-  background-color:#fff;
+  background-color: #fff;
   float: left;
   margin: 5%;
   cursor: pointer;
@@ -502,13 +563,13 @@ body {
   margin: 5%;
   cursor: pointer;
 }
-.head_img{
+.head_img {
   width: 100%;
   height: 80%;
   background-color: black;
   /* float: left; */
 }
-.head_text{
+.head_text {
   /* position: absolute; */
   width: 80%;
   height: 20%;
@@ -519,7 +580,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.content_title_text{
+.content_title_text {
   width: 80%;
   height: 70%;
   margin: 0 auto;
@@ -527,31 +588,31 @@ body {
   line-height: 1.25em;
   overflow: hidden;
 }
-.content_title_img{
+.content_title_img {
   width: 70%;
   height: 100%;
-  background-color:#000;
+  background-color: #000;
   float: left;
 }
-.content_title{
+.content_title {
   width: 30%;
   padding: 2.5%;
   font-size: 1.25em;
-  margin:0 auto;
-  font-weight:bolder;
+  margin: 0 auto;
+  font-weight: bolder;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  float:left;
+  float: left;
 }
-.more{
-  width:50%;
-  height:50%;
-  margin:0 auto;
-  margin-top:25%;
-  font-size:3em;
-  font-weight:bolder;
-  color:#fff;
+.more {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  margin-top: 25%;
+  font-size: 3em;
+  font-weight: bolder;
+  color: #fff;
 }
 .content_head:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -563,13 +624,13 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (max-width: 1350px) {
-  .more{
+  .more {
     margin-top: 30%;
     font-size: 2.75em;
   }
 }
 @media screen and (max-width: 1250px) {
-  .more{
+  .more {
     margin-top: 35%;
     font-size: 2.5em;
   }
@@ -577,7 +638,7 @@ body {
 @media screen and (max-width: 1200px) {
 }
 @media screen and (max-width: 1100px) {
-  .more{
+  .more {
     margin-top: 40%;
     font-size: 2.25em;
   }
