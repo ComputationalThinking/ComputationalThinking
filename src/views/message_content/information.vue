@@ -324,13 +324,17 @@
               <router-link
                 :to="{
                   path: '/information_detail',
-                  query: { id: search_title, name: 'vue' }
+                  query: {
+                    id: message[0].title,
+                    content: message[0].content,
+                    name: 'vue'
+                  }
                 }"
               >
-                <li v-for="(item, index) of list" :key="index">
-                  <span style="margin-left:2%">{{ search_title }}</span>
+                <li v-for="(message, index) of message" :key="index">
+                  <span style="margin-left:2%">{{ message.title }}</span>
                   <span style="float:right;margin-right:2%;color:#999">{{
-                    time
+                    message.time
                   }}</span>
                 </li>
               </router-link>
@@ -366,6 +370,17 @@ export default {
         { show: false },
         { show: false }
       ],
+      message: [
+        {
+          id: 1,
+          title: '实验室成员获得了xxxxx',
+          content:
+            '华龙网-新重庆客户端12月31日13时42分讯（许义丽）深化媒体融合传播，强化新闻舆论宣传。近日，重庆理工大学第三届校媒领军论坛如期举行。学校党委副书记张晓洪，纪委书记、监察专员张绍荣，华龙网教育频道主编、重庆舆情研究院院长王大伦，及学校相关负责人、教师通讯员、学生记者代表共300余人出席会议。会议由重庆理工大学党委宣传部副部长、党委网络工作部副部长李洪普主持。',
+          time: '2021/2/17 23:09',
+          author: '',
+          sort: ''
+        }
+      ],
       currentPage: 1,
       time: '2021/2/17 23:09',
       search_title: '实验室成员获得了xxxxx',
@@ -399,6 +414,16 @@ export default {
       this.id = routerParams
       console.log('接收的参数为:' + this.id)
     }
+  },
+  created() {
+    const that = this
+    this.$axios
+      .get('http://localhost:8081/News/information')
+      .then(function(response) {
+        // that.message = response.data
+        that.message = response.data
+        // console.log(response)
+      })
   }
 }
 </script>

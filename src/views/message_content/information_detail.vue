@@ -1,7 +1,7 @@
 <template>
   <div class="detail_frame">
     <div class="body">
-      <div class="head_title">{{ news.id }}</div>
+      <div class="head_title">{{ news.title }}</div>
       <div class="head_time">{{ news.time }}</div>
       <hr />
       <div class="text">
@@ -33,11 +33,11 @@ export default {
       ]
     }
   },
-  // created () {
-  // 	this.id = this.$route.query.id
-  // 	if(this.$route.query.content != null)
-  // 		this.content = this.$route.query.content
-  // },
+  created() {
+    this.news.title = this.$route.query.id
+    if (this.$route.query.content != null)
+      this.news.content = this.$route.query.content
+  },
   methods: {
     Back() {
       this.$router.go(-1)
@@ -52,16 +52,16 @@ export default {
     // 		console.log (error);
     //   });
     // }
-  },
-  created() {
-    var that = this
-    this.$axios
-      .get('http://localhost:8081/News/information_detail')
-      .then(function(response) {
-        that.news = response.data
-        // console.log(response)
-      })
   }
+  // created() {
+  //   var that = this
+  //   this.$axios
+  //     .get('http://localhost:8081/News/information_detail')
+  //     .then(function(response) {
+  //       that.news = response.data
+  //       // console.log(response)
+  //     })
+  // }
 }
 </script>
 <style></style>
