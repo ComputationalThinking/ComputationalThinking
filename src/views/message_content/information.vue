@@ -345,7 +345,7 @@
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
               :current-page.sync="currentPage"
-              :page-size="100"
+              :page-size="11"
               :hide-on-single-page="true"
               layout="prev, pager, next, jumper"
               :total="1000"
@@ -418,7 +418,7 @@ export default {
   created() {
     const that = this
     this.$axios
-      .get('http://localhost:8081/News/information')
+      .get('http://localhost:8083/News/information')
       .then(function(response) {
         // that.message = response.data
         that.message = response.data
