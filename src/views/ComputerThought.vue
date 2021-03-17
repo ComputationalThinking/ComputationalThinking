@@ -1,588 +1,403 @@
 <template>
-  <div class="message">
-    <section class="laboratory">
-      <p class="title1">实验室动态</p>
-      <div class="mainly">
-        <div class="labDynamic">
-          <div class="leftLabDynamic">
-            <el-carousel
-              :interval="2000"
-              indicator-position="outside"
-              height="300px"
-            >
-              <el-carousel-item v-for="(index, item) in images" :key="item">
-                <!-- <h3 class="medium">{{ item }}</h3> -->
-                <img
-                  :src="index.pic"
-                  alt=""
-                  style="width: 100%; height: 100%;"
-                />
-              </el-carousel-item>
-            </el-carousel>
+  <div class="Thought">
+    <!-- <h1>This is an 计算机思维 page</h1> -->
+    <div class="thought-body">
+      <div class="thougut-top">
+      <el-carousel :interval="4000" indicator-position="outside" height="420px">
+        <el-carousel-item v-for="(index,item) in images" :key="item">
+          <!-- <h3 class="medium">{{ item }}</h3> -->
+          <img :src="index.pic" alt="" style="width: 100%; height: 100%;">
+        </el-carousel-item>
+      </el-carousel>
+    </div>
+    <div class="wrap" id="intro">
+      <div class="introduction-left">
+        <span>计算思维简介</span>
+        <p>{{ introduction }}</p>
+      </div>
+      <div class="introduction-right">
+        <img :src="picture1" alt="">
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="wrap-top">
+        <p  class="wrap-top-p">计算思维历史</p>
+      </div>
+      <div class="history-bottom">
+        <div class="history">
+          <div class="history-l">
+            <img :src="img7" alt="">
           </div>
-          <div class="rightLabDynamic">
-            <div class="dynamicBox">
-              <p
-                @click="InformationDetailClick()"
-                class="dynamic"
-                v-for="(index, item) in dynamics"
-                :key="item"
-              >
-                <span class="title">{{ index.title }}</span>
-                <span class="time">{{ index.time }}</span>
-              </p>
-            </div>
+          <div class="history-l">
+            <p>{{ para1 }}</p>
+          </div>
+        </div>
+        <div class="history">
+          <div class="history-l">
+            <p>{{ para2 }}</p>
+          </div>
+          <div class="history-l">
+            <img :src="img13" alt="">
           </div>
         </div>
       </div>
-    </section>
-    <section class="internal">
-      <p class="title11">国内动态</p>
-      <p class="title12">信息化教育</p>
-      <div class="inforEdu">
-        <div class="leftInforEdu">
-          <div class="information">
-            <p
-              @click="InformationDetailClick()"
-              class="infor"
-              v-for="(index, item) in informations"
-              :key="item"
-            >
-              <span class="title">{{ index.title }}</span>
-              <span class="time">{{ index.time }}</span>
-            </p>
-          </div>
+    </div>
+    <div class="wrap">
+      <div class="wrap-top">
+        <p  class="wrap-top-p">聚焦</p>
+      </div>
+      <div class="focus-bottom">
+        <div class="focus-bottom-content">
+          <p>提出者</p>
+          <img :src="img4" alt="">
+          <div class="focus-p">{{ para9 }}</div>
         </div>
-        <div class="rightInforEdu">
-          <div class="bigBox">
-            <div class="leftImgs">
-              <div class="leftTop">
-                <img :src="img1" alt="" />
-                <p class="intro">{{ infor1 }}</p>
-              </div>
-              <div class="leftBottom">
-                <div @click="InformationClick()" class="btn">
-                  更多...
-                </div>
-              </div>
-            </div>
-            <div class="rightImgs">
-              <img :src="img2" alt="" />
-              <p class="intro">{{ infor2 }}</p>
-            </div>
-          </div>
+        <div class="focus-bottom-content">
+          <p>特点</p>
+          <img :src="img5" alt="">
+          <div class="focus-p">{{ para4 }}<br>{{ para5 }}<br>{{ para6 }}<br>{{ para7 }}<br>{{ para8 }}</div>
+        </div>
+        <div class="focus-bottom-content">
+          <p>计算思维</p>
+          <img :src="img6" alt="">
+          <div class="focus-p">操作模式<br>计算思维用途<br>计算思维是一种递归思维<br>抽象和分解<br>计算思维利用启发式推理来寻求解答，就是在不确定情况下的规划、学习和调度。</div>
         </div>
       </div>
-      <p class="title13" style="width:40px;">活 动</p>
-      <div class="activities">
-        <div
-          class="act"
-          v-for="(item, index) in acts[currentIndex]"
-          :key="index"
-        >
-          <img :src="item.currentImg" alt="" class="img" />
-          <div class="intro">
-            <p class="title4" style="margin-bottom:20px;margin-top:10px;">
-              {{ item.title }}
-            </p>
-            <p class="title5">{{ item.intro }}</p>
-          </div>
+    </div>
+    <div class="wrap" id="learn-what">
+      <div class="wrap-top">
+        <p  class="wrap-top-p">学什么</p>
+      </div>
+      <div class="learn-bottom">
+        <div class="learn-img">
+          <div class="learn"><img :src="img9" alt=""></div>
+          <div class="learn"><img :src="img10" alt=""></div>
+          <div class="learn"><img :src="img11" alt=""></div>
+          <div class="learn"><img :src="img12" alt=""></div>
+        </div>
+        <div class="learn-p">
+          <div class="learn-i" id="learn-one"><p>什么人类比计算机做的好？</p></div>
+          <div class="learn-i" id="learn-two"><p>什么计算机比人类做的好？</p></div>
+          <div class="learn-i" id="learn-three"><p>什么是可计算的？</p></div>
+          <div class="learn-i" id="learn-four"><p>递归思维</p></div>
         </div>
       </div>
-    </section>
-    <section class="foreign">
-      <p class="title11">国外动态</p>
-      <div class="foreDynamic">
-        <div class="leftForeDynamic">
-          <div class="information">
-            <p
-              @click="InformationDetailClick()"
-              class="infor"
-              v-for="(index, item) in foreigns"
-              :key="item"
-            >
-              <span class="title">{{ index.title }}</span>
-              <span class="time">{{ index.time }}</span>
-            </p>
-          </div>
+    </div>
+    <div class="wrap">
+      <div class="wrap-top">
+        <p  class="wrap-top-p">运用领域</p>
+      </div>
+      <div class="field-bottom">
+        <div class="field-botttom-content">
+          <img :src="img1" alt="">
+          <div class="field-botttom-content-p">计算思维</div>
         </div>
-        <div class="rightForeDynamic">
-          <div class="rightForeDynamicTop">
-            <img :src="img3" alt="" />
-            <div class="img3Intro">
-              <p class="img3Intro1">
-                {{ infor3 }}
-              </p>
-              <p class="img3Intro2">
-                {{ infor4 }}
-              </p>
-            </div>
-          </div>
-          <div class="rightForeDynamicBottom">
-            <img :src="img4" alt="" />
-            <p @click="InformationClick()" class="img4Btn">More</p>
-          </div>
+        <div class="field-botttom-content">
+          <img :src="img2" alt="">
+          <div class="field-botttom-content-p">计算思维</div>
+        </div>
+        <div class="field-botttom-content">
+          <img :src="img3" alt="">
+          <div class="field-botttom-content-p">计算思维</div>
         </div>
       </div>
-    </section>
+    </div>
+    </div>
+   
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Message',
+  name: 'Thought',
   data() {
     return {
-      currentIndex: 0,
-      img1: require('@/assets/images/u5.png'),
-      img2: require('@/assets/images/u6.png'),
-      img3: require('@/assets/images/u8.png'),
-      img4: require('@/assets/images/u9.png'),
-      infor1: 'ISTE计算思维能力标准...',
-      infor2:
-        '任正非对自己独特的经经历年和管理哲学的坚持，成就了华为过去的辉煌...',
-      infor3: 'ISTE Criteria for calculating thinking capacity',
-      infor4:
-        'ISTE Criteria for calculating thinking capacity Lorem ipsum dolor sit amet, Aenean laoreet. Proin gravida ...',
+      introduction: '计算思维是运用计算机科学的基础概念进行问题求解、系统设计、以及人类行为理解等涵盖计算机科学之广度的一系列思维活动，计算思维是运用计算机科学的基础概念进行问题求解、系统设计、以及人类行为理解等涵盖计算机科学之广度的一系列思维活动，由周以真于2006年3月首次提出。2010年，周以真教授又指出计算思维是与形式化问题及其解决方案相关的思维过程，其解决问题的表示形式应该能有效地被信息处理代理执行。',
+      history: '',
+      picture1: require('@/assets/images/introduction.jpg'),
+      picture2: require('@/assets/images/introduction.jpg'),
+      picture3: require('@/assets/images/introduction.jpg'),
       images: [
-        { pic: require('@/assets/images/u1.jpg') },
-        { pic: require('@/assets/images/u2.jpg') },
-        { pic: require('@/assets/images/u3.jpg') },
-        { pic: require('@/assets/images/u4.jpg') }
+        {pic: require('@/assets/images/pic2.jpg')},
+        {pic: require('@/assets/images/pic3.jpg')},
+        {pic: require('@/assets/images/pic4.jpg')},
+        {pic: require('@/assets/images/pic5.jpg')},
+        {pic: require('@/assets/images/pic6.jpg')},
+        {pic: require('@/assets/images/pic7.jpg')}
       ],
-      dynamics: [
-        { title: '实验室成员参与某某比赛荣获一等奖', time: '2020/10/25' },
-        { title: '实验室参与某某比赛荣获一等奖', time: '2020/10/25' },
-        { title: '喜迎实第一个国庆！', time: '2020/10/25' },
-        { title: '计算思维实验室招新啦！招新啦！', time: '2020/10/25' },
-        { title: '开学第一次试验', time: '2020/10/25' },
-        { title: '讲座！', time: '2020/10/25' },
-        { title: '实验室参与某某比赛荣获一等奖', time: '2020/10/25' },
-        { title: '喜迎实第一个国庆！', time: '2020/10/25' }
-      ],
-      informations: [
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' }
-      ],
-      foreigns: [
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' }
-      ],
-      acts: {
-        0: [
-          {
-            id: '1',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '2',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '3',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '4',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '5',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '6',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          }
-        ]
-      }
-    }
-  },
-  methods: {
-    InformationDetailClick() {
-      this.$router.push({
-        path: 'information_detail'
-      })
-    },
-    InformationClick() {
-      this.$router.push({
-        path: 'information'
-      })
+      img1: require('@/assets/images/pic2.jpg'),
+      img2: require('@/assets/images/m6.jpg'),
+      img3: require('@/assets/images/m5.jpg'),
+      img4: require('@/assets/images/m14.jpg'),
+      img5: require('@/assets/images/m15.jpg'),
+      img6: require('@/assets/images/m12.jpg'),
+      img7: require('@/assets/images/pic8.jpg'),
+      img8: require('@/assets/images/pic9.jpg'),
+      img9: require('@/assets/images/m16.jpg'),
+      img10: require('@/assets/images/m17.jpg'),
+      img11: require('@/assets/images/m18.jpg'),
+      img12: require('@/assets/images/m19.jpg'),
+      img13: require('@/assets/images/pic9.jpg'),
+      para1: '2006年3月，美国卡内基·梅隆大学计算机科学系主任周以真（Jeannette M. Wing）教授在美国计算机权威期刊《Communications of the ACM》杂志上给出，并定义的计算思维（Computational Thinking）。周教授认为：计算思维是运用计算机科学的基础概念进行问题求解、系统设计、以及人类行为理解等涵盖计算机科学之广度的一系列思维活动。',
+      para2: '以上是关于计算思维的一个总定义，周教授为了让人们更易于理解，又将它更进一步地定义为：通过约简、嵌入、转化和仿真等方法，把一个看来困难的问题重新阐释成一个我们知道问题怎样解决的方法；是一种递归思维，是一种并行处理，是一种把代码译成数据又能把数据译成代码，是一种多维分析推广的类型检查方法；是一种采用抽象和分解来控制庞杂的任务或进行巨大复杂系统设计的方法，是基于关注分离的方法（SoC方法）；是一种选择合适的方式去陈述一个问题，或对一个问题的相关方面建模使其易于处理的思维方法；是按照预防、保护及通过冗余、容错、纠错的方式，并从最坏情况进行系统恢复的一种思维方法；是利用启发式推理寻求解答，也即在不确定情况下的规划、学习和调度的思维方法；是利用海量数据来加快计算，在时间和空间之间，在处理能力和存储容量之间进行折衷的思维方法。',
+      para3: '优点: 计算思维建立在计算过程的能力和限制之上，由人由机器执行。计算方法和模型使我们敢于去处理那些原本无法由个人独立完成的问题求解和系统设计。',
+      para4: '概念化，不是程序化。',
+      para5: '根本的，不是刻板的技能。',
+      para6: '是人的，不是计算机的思维方式。',
+      para7: '数学与工程思维的互补与融合。',
+      para8: '是思想，不是人造物。',
+      para9: '2006年3月，美国卡内基·梅隆大学计算机科学系主任周以真（Jeannette M. Wing）教授在美国计算机权威期刊《Communications of the ACM》杂志上给出，并定义的计算思维（Computational Thinking）。'
     }
   }
 }
 </script>
 
+
 <style scoped>
-/* 实验室动态部分 */
-.message {
-  width: 100vw;
-  height: 2600px;
-  padding: 5% 8%;
-  background-color: rgb(245, 249, 250);
-}
-section {
-  width: 100%;
-  margin-bottom: 40px;
-}
-.laboratory {
-  padding: 0 3%;
-}
-.laboratory .title1 {
-  font-size: 28px;
-  color: #666666;
-  border-left: 6px solid #3385ad;
-  padding: 2px 10px;
-  margin-bottom: 30px;
-}
-.laboratory .mainly {
-  width: 100%;
-}
-.laboratory .mainly .labDynamic {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
-}
-.laboratory .mainly .labDynamic .leftLabDynamic {
-  flex: 1.1;
-}
-.laboratory .mainly .labDynamic .rightLabDynamic,
-.inforEdu .leftInforEdu,
-.foreDynamic .leftForeDynamic {
-  flex: 1;
-  position: relative;
-  /* top: -15px; */
-  height: 300px;
-  padding: 30px 40px;
-  /* background-color: #f8f8ff; */
-  background-color: rgb(255, 255, 255);
-}
-.laboratory .mainly .labDynamic .rightLabDynamic {
-  position: relative;
-  top: -15px;
-}
-.inforEdu .leftInforEdu,
-.foreDynamic .leftForeDynamic {
-  height: 400px;
-  padding: 30px 40px;
-  border-radius: 8px;
-}
-.laboratory .mainly .labDynamic .rightLabDynamic .dynamic,
-.inforEdu .leftInforEdu .infor,
-.foreDynamic .leftForeDynamic .infor {
-  border-bottom: 1px solid #919090;
-  padding: 8px 5px;
-  padding-top: 0px;
-  margin-bottom: 8px;
-  width: 100%;
-  cursor: pointer;
-  /* .laboratory .mainly .labDynamic .rightLabDynamic .dynamic .title {
-  text-align: left;
-} */
-}
-.laboratory .mainly .labDynamic .rightLabDynamic .dynamic .time,
-.inforEdu .leftInforEdu .infor .time,
-.foreDynamic .leftForeDynamic .infor .time {
-  float: right;
-}
-/* 国内动态部分 */
-/* 信息化教育 */
-.internal,
-.foreign {
-  padding: 0 3%;
-}
-.title11 {
-  font-size: 28px;
-  color: #666666;
-  border-left: 6px solid #3385ad;
-  padding: 2px 10px;
-  margin-bottom: 20px;
-}
-.title12,
-.title13 {
-  font-size: 17px;
-  width: 90px;
-  color: #0066cc;
-  border-bottom: 1px solid #0066cc;
-  padding-bottom: 4px;
-  position: relative;
-  left: 20px;
-  margin-bottom: 20px;
-}
-.inforEdu {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
-}
-.inforEdu .rightInforEdu {
-  flex: 1;
-  height: 400px;
-  /* position: relative;
-  top: -15px; */
-}
-.inforEdu .rightInforEdu .bigBox {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  column-gap: 2rem;
-}
-.inforEdu .rightInforEdu .bigBox .leftImgs,
-.inforEdu .rightInforEdu .bigBox .rightImgs {
-  flex: 1;
-  height: 100%;
-}
-.inforEdu .rightInforEdu .bigBox .leftImgs {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  cursor: pointer;
-}
-.inforEdu .rightInforEdu .bigBox .leftImgs .leftTop {
-  flex: 1;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  border-radius: 8px;
-  padding: 0 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  column-gap: 4px;
-  transition: 0.4s;
-  cursor: pointer;
-}
-.inforEdu .rightInforEdu .bigBox .leftImgs .leftBottom {
-  flex: 1;
-  width: 100%;
-  font-size: 28px;
-  border-radius: 8px;
-  /* padding: 40% 0; */
-  /* position: relative;
-  top: 45%; */
-  color: white;
-  background-color: rgb(47, 181, 225);
-  /* margin: 0 auto; */
-  cursor: pointer;
-  transition: 0.4s;
-}
-.inforEdu .rightInforEdu .bigBox .leftImgs .leftTop:hover,
-.inforEdu .rightInforEdu .bigBox .leftImgs .leftBottom:hover,
-.inforEdu .rightInforEdu .bigBox .rightImgs:hover,
-.rightForeDynamicBottom p:hover,
-.rightForeDynamicTop:hover {
-  /* box-shadow: 5px 5px 15px #868686; */
-  box-shadow: 2px 2px 8px #a7a7a7;
-}
-.inforEdu .rightInforEdu .bigBox .leftImgs .leftBottom .btn {
-  width: 100%;
-  font-size: 28px;
-  border-radius: 8px;
-  text-align: center;
-  line-height: 120px;
-}
-.inforEdu .rightInforEdu .bigBox .leftImgs .leftTop img {
-  flex: 3;
-  width: 100%;
-  height: 80%;
-}
-.inforEdu .rightInforEdu .bigBox .leftImgs .leftTop p {
-  flex: 1;
-  padding: 0 5%;
-}
-.inforEdu .rightInforEdu .bigBox .rightImgs {
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-  border-radius: 8px;
-  transition: 0.4s;
-  cursor: pointer;
-}
-.inforEdu .rightInforEdu .bigBox .rightImgs img {
-  width: 100%;
-  height: 80%;
-}
-.inforEdu .rightInforEdu .bigBox .rightImgs p {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 14px;
-  padding: 0 10px;
-}
-/* 活动 */
-.title13 {
-  margin-top: 50px;
-}
-.activities {
-  width: 100%;
-  padding: 30px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 60px;
-  row-gap: 20px;
-  flex-wrap: wrap;
-}
-.activities .act {
-  width: 25%;
-  height: 350px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 4px;
-  /* float: left; */
-  /* margin-right: 40px; */
-  margin-bottom: 20px;
-  transition: 0.4s;
-  cursor: pointer;
-  border: 1px solid #dddddd;
-}
-.activities .act:hover {
-  /* box-shadow: 5px 5px 15px #868686; */
-  box-shadow: 2px 2px 8px #a7a7a7;
-}
-.activities .act img {
-  width: 100%;
-  height: 50%;
-}
-.activities .act .intro {
-  width: 100%;
-  padding: 10px;
-  text-align: center;
-}
-.activities .act .intro .title4 {
-  color: #333333;
-  font-size: 20px;
-  line-height: 20px;
-  margin-bottom: 8px;
-}
-.activities .act .intro .title5 {
-  color: #333333;
-  font-size: 14px;
-}
-/* 国外动态 */
-.foreDynamic {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
-}
-.foreDynamic .leftForeDynamic {
-  flex: 1;
-}
-.foreDynamic .rightForeDynamic {
-  flex: 1;
-}
-.title11 {
-  margin-bottom: 40px;
-}
-.rightForeDynamic {
-  flex: 1;
-  height: 100%;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  /* row-gap: 1rem; */
-}
-.rightForeDynamicTop {
-  flex: 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  column-gap: 1rem;
-  background-color: rgb(255, 255, 255);
-  border-radius: 4px;
-  cursor: pointer;
-}
-.rightForeDynamicBottom {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.rightForeDynamicTop img {
-  flex: 2;
-  width: 30%;
-  height: 100%;
-}
-.rightForeDynamicTop .img3Intro {
-  flex: 1;
-}
-.rightForeDynamicTop .img3Intro1 {
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-.rightForeDynamicTop .img3Intro2 {
-  font-size: 6px;
-}
-.rightForeDynamicBottom img {
-  flex: 1;
-  height: 80%;
-  width: 80%;
-  cursor: pointer;
-}
-.rightForeDynamicBottom p {
-  flex: 1;
-  background-color: #23cf9f;
-  height: 70%;
-  width: 75%;
-  border-radius: 8px;
-  color: white;
-  font-size: 50px;
-  text-align: center;
-  /* position: relative; */
-  line-height: 160px;
-  cursor: pointer;
-  /* top: -3px; */
-}
-.dynamic:hover,
-.infor:hover {
-  color: #0066cc;
-}
-@media screen and (max-width: 1000px) {
-  .message {
-    width: 1000px;
+  .Thought{
+    /* padding: 20px; */
+    width: 100%;
+    /* margin: 0 auto; */
   }
-}
+  .thought-body{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .thought-top{
+    /* margin-bottom: 30px; */
+    margin-top: 300px;
+  }
+  #intro{
+    height: auto;
+  }
+  .wrap{
+    padding: 20px;
+    width: 100%;
+    margin-top: 30px;
+    height: fit-content;
+    /* border: 1px solid rgb(132, 134, 134); */
+  }
+  .introduction-left{
+    width: 50%;
+    height: auto;
+    float: left;
+    /* padding-top: 30px; */
+    margin-left: 5%;
+  }
+  .introduction-left span{
+    font-size: 260%;
+  }
+  .introduction-left p{
+    margin-top: 50px;
+    font-size: 100%;
+    line-height: 29px;
+  }
+  .introduction-right{
+    width: auto;
+    height: auto;
+  }
+  .introduction-right img{
+    width: 27%;
+    height: auto;
+    margin-top: 1%;
+    margin-left: 9%;
+  }
+  .wrap-top{
+    width: fit-content;
+    border-bottom: 1px solid rgb(54, 54, 54);
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 230%;
+  }
+  .history-bottom{
+    /* border: 5px solid rgb(138, 138, 139); */
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .history{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  .history-l{
+    width: 50%;
+    height: auto;
+    /* float: left; */
+    border: 1px solid rgb(138, 138, 139);
+    background: rgb(233, 233, 232);
+   
+  }
+  .history-l p{
+     padding: 30px;
+     line-height: 25px;
+  }
+  .history-l img{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .focus-bottom{
+    /* border: 1px solid rgb(138, 138, 139); */
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .focus-bottom-content{
+    width: 25%;
+    margin: 20px;
+    text-align: center;
+  }
+  .focus-bottom-content img{
+    width: 100%;
+    height: 280px;
+  }
+  .focus-bottom-content p{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+  .focus-p{
+    width: 100%;
+    height: 250px;
+    /* border: 1px solid rgb(138, 138, 139); */
+    margin-top: 15px;
+    background: rgb(233, 233, 232);
+    padding: 20px;
+    text-align: left;
+    line-height: 30px;
+  }
+  #learn-what{
+    background: rgb(233, 233, 232);
+  }
+  .learn-bottom{
+    /* border: 5px solid rgb(138, 138, 139); */
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    /* margin: 30px; */
+    /* margin-top: 30px; */
+   
+  }
+  .learn-img{
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid rgb(138, 138, 139);
+    display: flex;
+    justify-content: space-around;
+  }
+  .learn{
+    width: 15%;
+    height: 170px;
+  }
+  .learn img{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .learn-p{
+    width: 100%;
+    height: auto;
+    border-top: 1px solid rgb(138, 138, 139);
+    display: flex;
+    justify-content: space-around;
+  }
+  .learn-i{
+    width: 15%;
+    padding: 30px;
+    height: 170px;
+    border: 1px solid rgb(138, 138, 139);
+    text-align: center;
+  }
+  #learn-one{
+    background: rgb(233, 194, 202);
+  }
+  #learn-two{
+    background: rgb(255, 255, 255);
+  }
+  #learn-three{
+    background: rgb(127, 223, 191);
+  }
+  #learn-four{
+    background: rgb(255, 255, 255);
+  }
+  .field-bottom{
+    /* border: 1px solid rgb(138, 138, 139); */
+    width: 100%;
+    height: auto;
+    /* margin: 0 auto; */
+    /* margin-top: 30px; */
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+    padding: 10px;
+  }
+  .field-botttom-content{
+    width: 26%;
+    height: auto;
+    /* border: 1px solid rgb(138, 138, 139); */
+   
+  }
+  .field-botttom-content img{
+    width: 100%;
+    height: 230px;
+  }
+  .field-botttom-content-p{
+    margin-top: 20px;
+    padding: 30px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid rgb(138, 138, 139);
+    background: rgb(231, 233, 233);
+    line-height: 30px;
+  }
+  @media screen and (max-width: 1700px) {
+    .focus-p{
+     height: 300px;
+    }
+  }
+  @media screen and (max-width: 1500px) {
+    .focus-p{
+     height: 320px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .wrap{
+      margin-top: 116px;
+    }
+    .focus-p{
+     height: 350px;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+      .focus-p{
+     height: 390px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .Thought{
+      width: 1000px;
+    }
+    .thought-body{
+      widows: 800px;
+    }
+    .wrap{
+      margin-top: 30px;
+    }
+    .focus-p{
+     height: 390px;
+    }
+  }
+  @media screen and (max-width: 990px) {
+    .wrap{
+      margin-top: 100px;
+    }
+  }
 </style>
