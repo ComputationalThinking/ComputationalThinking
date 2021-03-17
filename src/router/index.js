@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import news from '../views/message_content/information_detail.vue'
 
 Vue.use(VueRouter)
 
@@ -18,20 +19,17 @@ const routes = [
   {
     path: '/HomeReturn',
     name: 'HomeReturn',
-    component: () =>
-      import('../views/Home.vue')
+    component: () => import('../views/Home.vue')
   },
   {
     path: '/information',
     name: 'Information',
-    component: () =>
-      import('../views/message_content/information.vue')
+    component: () => import('../views/message_content/information.vue')
   },
   {
     path: '/information_detail',
     name: 'Information_detail',
-    component: () =>
-    import('../views/message_content/information_detail.vue')
+    component: () => import('../views/message_content/information_detail.vue')
   },
   {
     path: '/computerthought',
@@ -39,8 +37,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/ComputerThought.vue')
+    component: () => import('../views/ComputerThought.vue')
   },
   {
     path: '/laboratory',
@@ -86,6 +83,11 @@ const routes = [
     path: '/result1',
     name: 'result1',
     component: () => import('../views/resultMore/result1.vue')
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: news
   }
 ]
 

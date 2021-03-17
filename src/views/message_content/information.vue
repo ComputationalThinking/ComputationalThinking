@@ -48,7 +48,7 @@
             >
               <div class="content_head">
                 <div class="head_img">图片1</div>
-                <div class="head_text">{{search_title}}</div>
+                <div class="head_text">{{ search_title }}</div>
               </div>
             </router-link>
             <router-link
@@ -58,8 +58,10 @@
               }"
             >
               <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">{{search_title}}</div>
-                <div class="content_title_text">{{content}}</div>
+                <div class="head_text" style="padding-top:4%">
+                  {{ search_title }}
+                </div>
+                <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
             <div class="content_txt" @click="changeContent(4)">
@@ -75,8 +77,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片2</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
             <router-link
@@ -87,8 +94,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片3</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
           </div>
@@ -103,7 +115,7 @@
             >
               <div class="content_head">
                 <div class="head_img">图片1</div>
-                <div class="head_text">{{search_title}}</div>
+                <div class="head_text">{{ search_title }}</div>
               </div>
             </router-link>
             <router-link
@@ -113,11 +125,17 @@
               }"
             >
               <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">{{search_title}}</div>
-                <div class="content_title_text">{{content}}</div>
+                <div class="head_text" style="padding-top:4%">
+                  {{ search_title }}
+                </div>
+                <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
-            <div class="content_txt" @click="changeContent(4)" style="background-color:#FD5F00">
+            <div
+              class="content_txt"
+              @click="changeContent(4)"
+              style="background-color:#FD5F00"
+            >
               <div class="more">more</div>
             </div>
           </div>
@@ -130,8 +148,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片2</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
             <router-link
@@ -142,8 +165,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片3</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
           </div>
@@ -158,7 +186,7 @@
             >
               <div class="content_head">
                 <div class="head_img">图片1</div>
-                <div class="head_text">{{search_title}}</div>
+                <div class="head_text">{{ search_title }}</div>
               </div>
             </router-link>
             <router-link
@@ -168,11 +196,17 @@
               }"
             >
               <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">{{search_title}}</div>
-                <div class="content_title_text">{{content}}</div>
+                <div class="head_text" style="padding-top:4%">
+                  {{ search_title }}
+                </div>
+                <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
-            <div class="content_txt" @click="changeContent(4)" style="background-color:#FF9900">
+            <div
+              class="content_txt"
+              @click="changeContent(4)"
+              style="background-color:#FF9900"
+            >
               <div class="more">more</div>
             </div>
           </div>
@@ -185,8 +219,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片2</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
             <router-link
@@ -197,8 +236,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片3</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
           </div>
@@ -213,7 +257,7 @@
             >
               <div class="content_head">
                 <div class="head_img">图片1</div>
-                <div class="head_text">{{search_title}}</div>
+                <div class="head_text">{{ search_title }}</div>
               </div>
             </router-link>
             <router-link
@@ -223,11 +267,17 @@
               }"
             >
               <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">{{search_title}}</div>
-                <div class="content_title_text">{{content}}</div>
+                <div class="head_text" style="padding-top:4%">
+                  {{ search_title }}
+                </div>
+                <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
-            <div class="content_txt" @click="changeContent(4)" style="background-color:#66CC99">
+            <div
+              class="content_txt"
+              @click="changeContent(4)"
+              style="background-color:#66CC99"
+            >
               <div class="more">more</div>
             </div>
           </div>
@@ -240,8 +290,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片2</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
             <router-link
@@ -252,8 +307,13 @@
             >
               <div class="content_img">
                 <div class="content_title_img">图片3</div>
-                <div class="content_title">{{search_title}}</div>
-                <div class="content_title_text" style="width:30%;height:70%;padding:5%;padding-top:0">{{content}}</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
               </div>
             </router-link>
           </div>
@@ -264,13 +324,17 @@
               <router-link
                 :to="{
                   path: '/information_detail',
-                  query: { id: search_title, name: 'vue' }
+                  query: {
+                    id: message[0].title,
+                    content: message[0].content,
+                    name: 'vue'
+                  }
                 }"
               >
-                <li v-for="(item, index) of list" :key="index">
-                  <span style="margin-left:2%">{{ search_title }}</span>
+                <li v-for="(message, index) of message" :key="index">
+                  <span style="margin-left:2%">{{ message.title }}</span>
                   <span style="float:right;margin-right:2%;color:#999">{{
-                    time
+                    message.time
                   }}</span>
                 </li>
               </router-link>
@@ -281,7 +345,7 @@
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
               :current-page.sync="currentPage"
-              :page-size="100"
+              :page-size="11"
               :hide-on-single-page="true"
               layout="prev, pager, next, jumper"
               :total="1000"
@@ -306,11 +370,23 @@ export default {
         { show: false },
         { show: false }
       ],
+      message: [
+        {
+          id: 1,
+          title: '实验室成员获得了xxxxx',
+          content:
+            '华龙网-新重庆客户端12月31日13时42分讯（许义丽）深化媒体融合传播，强化新闻舆论宣传。近日，重庆理工大学第三届校媒领军论坛如期举行。学校党委副书记张晓洪，纪委书记、监察专员张绍荣，华龙网教育频道主编、重庆舆情研究院院长王大伦，及学校相关负责人、教师通讯员、学生记者代表共300余人出席会议。会议由重庆理工大学党委宣传部副部长、党委网络工作部副部长李洪普主持。',
+          time: '2021/2/17 23:09',
+          author: '',
+          sort: ''
+        }
+      ],
       currentPage: 1,
       time: '2021/2/17 23:09',
       search_title: '实验室成员获得了xxxxx',
       list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.'
     }
   },
   methods: {
@@ -338,6 +414,16 @@ export default {
       this.id = routerParams
       console.log('接收的参数为:' + this.id)
     }
+  },
+  created() {
+    const that = this
+    this.$axios
+      .get('http://localhost:8083/News/information')
+      .then(function(response) {
+        // that.message = response.data
+        that.message = response.data
+        // console.log(response)
+      })
   }
 }
 </script>
@@ -487,7 +573,7 @@ body {
   width: 80%;
   height: 35%;
   border-radius: 1em;
-  background-color:#fff;
+  background-color: #fff;
   float: left;
   margin: 5%;
   cursor: pointer;
@@ -502,13 +588,13 @@ body {
   margin: 5%;
   cursor: pointer;
 }
-.head_img{
+.head_img {
   width: 100%;
   height: 80%;
   background-color: black;
   /* float: left; */
 }
-.head_text{
+.head_text {
   /* position: absolute; */
   width: 80%;
   height: 20%;
@@ -519,7 +605,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.content_title_text{
+.content_title_text {
   width: 80%;
   height: 70%;
   margin: 0 auto;
@@ -527,31 +613,31 @@ body {
   line-height: 1.25em;
   overflow: hidden;
 }
-.content_title_img{
+.content_title_img {
   width: 70%;
   height: 100%;
-  background-color:#000;
+  background-color: #000;
   float: left;
 }
-.content_title{
+.content_title {
   width: 30%;
   padding: 2.5%;
   font-size: 1.25em;
-  margin:0 auto;
-  font-weight:bolder;
+  margin: 0 auto;
+  font-weight: bolder;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  float:left;
+  float: left;
 }
-.more{
-  width:50%;
-  height:50%;
-  margin:0 auto;
-  margin-top:25%;
-  font-size:3em;
-  font-weight:bolder;
-  color:#fff;
+.more {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  margin-top: 25%;
+  font-size: 3em;
+  font-weight: bolder;
+  color: #fff;
 }
 .content_head:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -563,13 +649,13 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 @media screen and (max-width: 1350px) {
-  .more{
+  .more {
     margin-top: 30%;
     font-size: 2.75em;
   }
 }
 @media screen and (max-width: 1250px) {
-  .more{
+  .more {
     margin-top: 35%;
     font-size: 2.5em;
   }
@@ -577,7 +663,7 @@ body {
 @media screen and (max-width: 1200px) {
 }
 @media screen and (max-width: 1100px) {
-  .more{
+  .more {
     margin-top: 40%;
     font-size: 2.25em;
   }
