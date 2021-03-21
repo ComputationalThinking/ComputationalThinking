@@ -19,27 +19,27 @@
       >
         <div class="message_text">相关资讯情况</div>
         <div class="line"></div>
-        <div
-          @click="MessageInformationClick()"
-          class="message"
-          style="margin-left:15%;background-color: #4C5870;"
+        <router-link :to="{ path: '/information_lab' }">
+          <div
+            class="message"
+            style="margin-left:15%;background-color: #4C5870;"
+          >
+            实验室资讯
+          </div>
+        </router-link>
+        <router-link
+          :to="{
+            path: '/information_nation',
+            query: { PageId: 0 }
+          }"
         >
-          实验室资讯
-        </div>
-        <div
-          @click="MessageClick()"
-          class="message"
-          style="background-color: #A2A9AF;"
-        >
-          国内资讯
-        </div>
-        <div
-          @click="MessageClick()"
-          class="message"
-          style="background-color: #fff;color:#5C5C5C"
-        >
-          国外资讯
-        </div>
+          <div class="message" style="background-color: #A2A9AF;">国内资讯</div>
+        </router-link>
+        <router-link :to="{ path: '/information_foreign' }">
+          <div class="message" style="background-color: #fff;color:#5C5C5C">
+            国外资讯
+          </div>
+        </router-link>
       </div>
       <div
         class="body"
@@ -181,9 +181,6 @@ export default {
   methods: {
     MessageClick() {
       this.$router.push({ path: '/Message' })
-    },
-    MessageInformationClick() {
-      this.$router.push({ path: '/Information' })
     },
     LaboratoryClick() {
       this.$router.push({ path: '/Laboratory' })

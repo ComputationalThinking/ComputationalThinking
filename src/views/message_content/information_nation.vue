@@ -2,9 +2,11 @@
   <div class="information_frame">
     <div class="left">
       <ul>
-        <li class="li_first" @click="changeTitle($event), changeContent(0)">
-          实验室资讯
-        </li>
+        <router-link :to="{ path: '/information_lab' }">
+          <li class="li_first">
+            实验室资讯
+          </li>
+        </router-link>
         <li @click="leftNationClick()">
           国内资讯
           <span v-show="!leftHidden" style="float:right;padding-right:10px"
@@ -16,25 +18,46 @@
         </li>
         <div v-show="leftHidden" class="lefthidden">
           <ul>
-            <li @click="changeTitle($event), changeContent(1)">
-              国内信息化教育
-            </li>
-            <li @click="changeTitle($event), changeContent(2)">
-              国内实时活动资讯
-            </li>
+            <router-link
+              :to="{
+                path: '/information_nation',
+                query: { PageId: 0 }
+              }"
+            >
+              <li @click="changeContent(0), changeTitle($event)">
+                国内信息化教育
+              </li>
+            </router-link>
+            <router-link
+              :to="{
+                path: '/information_nation',
+                query: { PageId: 1 }
+              }"
+            >
+              <li @click="changeContent(1), changeTitle($event)">
+                国内实时活动资讯
+              </li>
+            </router-link>
           </ul>
         </div>
-        <li @click="changeTitle($event), changeContent(3)">国外资讯</li>
+        <router-link :to="{ path: '/information_foreign' }">
+          <li style="color:#fff">国外资讯</li>
+        </router-link>
       </ul>
     </div>
     <div class="right">
       <div class="right_title">
-        <div class="title_text">{{ title }}</div>
+        <div class="title_text">{{ PageTitle }}</div>
         <div class="title_search">
           <input />
-          <span @click="changeContent(4)"
-            ><i class="fa fa-search" aria-hidden="true"></i
-          ></span>
+          <router-link
+            :to="{
+              path: '/information_search',
+              query: { PageTitle: PageTitle }
+            }"
+          >
+            <span><i class="fa fa-search" aria-hidden="true"></i></span>
+          </router-link>
         </div>
       </div>
       <div class="right_content">
@@ -64,8 +87,15 @@
                 <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
-            <div class="content_txt" @click="changeContent(4)">
-              <div class="more">more</div>
+            <div class="content_txt" style="background-color:#FD5F00">
+              <router-link
+                :to="{
+                  path: '/information_search',
+                  query: { PageTitle: PageTitle }
+                }"
+              >
+                <div class="more">more</div>
+              </router-link>
             </div>
           </div>
           <div style="width:50%;height:100%;float:left">
@@ -131,226 +161,52 @@
                 <div class="content_title_text">{{ content }}</div>
               </div>
             </router-link>
-            <div
-              class="content_txt"
-              @click="changeContent(4)"
-              style="background-color:#FD5F00"
-            >
-              <div class="more">more</div>
-            </div>
-          </div>
-          <div style="width:50%;height:100%;float:left">
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_img">
-                <div class="content_title_img">图片2</div>
-                <div class="content_title">{{ search_title }}</div>
-                <div
-                  class="content_title_text"
-                  style="width:30%;height:70%;padding:5%;padding-top:0"
-                >
-                  {{ content }}
-                </div>
-              </div>
-            </router-link>
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_img">
-                <div class="content_title_img">图片3</div>
-                <div class="content_title">{{ search_title }}</div>
-                <div
-                  class="content_title_text"
-                  style="width:30%;height:70%;padding:5%;padding-top:0"
-                >
-                  {{ content }}
-                </div>
-              </div>
-            </router-link>
-          </div>
-        </div>
-        <div style="width:100%;height:100%" v-show="content_boolean[2].show">
-          <div style="width:50%;height:100%;float:left">
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_head">
-                <div class="head_img">图片1</div>
-                <div class="head_text">{{ search_title }}</div>
-              </div>
-            </router-link>
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">
-                  {{ search_title }}
-                </div>
-                <div class="content_title_text">{{ content }}</div>
-              </div>
-            </router-link>
-            <div
-              class="content_txt"
-              @click="changeContent(4)"
-              style="background-color:#FF9900"
-            >
-              <div class="more">more</div>
-            </div>
-          </div>
-          <div style="width:50%;height:100%;float:left">
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_img">
-                <div class="content_title_img">图片2</div>
-                <div class="content_title">{{ search_title }}</div>
-                <div
-                  class="content_title_text"
-                  style="width:30%;height:70%;padding:5%;padding-top:0"
-                >
-                  {{ content }}
-                </div>
-              </div>
-            </router-link>
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_img">
-                <div class="content_title_img">图片3</div>
-                <div class="content_title">{{ search_title }}</div>
-                <div
-                  class="content_title_text"
-                  style="width:30%;height:70%;padding:5%;padding-top:0"
-                >
-                  {{ content }}
-                </div>
-              </div>
-            </router-link>
-          </div>
-        </div>
-        <div style="width:100%;height:100%" v-show="content_boolean[3].show">
-          <div style="width:50%;height:100%;float:left">
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_head">
-                <div class="head_img">图片1</div>
-                <div class="head_text">{{ search_title }}</div>
-              </div>
-            </router-link>
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_txt" style="background-color:#fff">
-                <div class="head_text" style="padding-top:4%">
-                  {{ search_title }}
-                </div>
-                <div class="content_title_text">{{ content }}</div>
-              </div>
-            </router-link>
-            <div
-              class="content_txt"
-              @click="changeContent(4)"
-              style="background-color:#66CC99"
-            >
-              <div class="more">more</div>
-            </div>
-          </div>
-          <div style="width:50%;height:100%;float:left">
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_img">
-                <div class="content_title_img">图片2</div>
-                <div class="content_title">{{ search_title }}</div>
-                <div
-                  class="content_title_text"
-                  style="width:30%;height:70%;padding:5%;padding-top:0"
-                >
-                  {{ content }}
-                </div>
-              </div>
-            </router-link>
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <div class="content_img">
-                <div class="content_title_img">图片3</div>
-                <div class="content_title">{{ search_title }}</div>
-                <div
-                  class="content_title_text"
-                  style="width:30%;height:70%;padding:5%;padding-top:0"
-                >
-                  {{ content }}
-                </div>
-              </div>
-            </router-link>
-          </div>
-        </div>
-        <div style="width:100%;height:100%" v-show="content_boolean[4].show">
-          <div class="page">
-            <ul>
+            <div class="content_txt" style="background-color:#FF9900">
               <router-link
                 :to="{
-                  path: '/information_detail',
-                  query: {
-                    id: message[0].title,
-                    content: message[0].content,
-                    name: 'vue'
-                  }
+                  path: '/information_search',
+                  query: { PageTitle: PageTitle }
                 }"
               >
-                <li v-for="(message, index) of message" :key="index">
-                  <span style="margin-left:2%">{{ message.title }}</span>
-                  <span style="float:right;margin-right:2%;color:#999">{{
-                    message.time
-                  }}</span>
-                </li>
+                <div class="more">more</div>
               </router-link>
-            </ul>
+            </div>
           </div>
-          <div class="page_number">
-            <el-pagination
-              @size-change="handleSizeChange"
-              @current-change="handleCurrentChange"
-              :current-page.sync="currentPage"
-              :page-size="11"
-              :hide-on-single-page="true"
-              layout="prev, pager, next, jumper"
-              :total="1000"
+          <div style="width:50%;height:100%;float:left">
+            <router-link
+              :to="{
+                path: '/information_detail',
+                query: { id: search_title, content: content, name: 'vue' }
+              }"
             >
-            </el-pagination>
+              <div class="content_img">
+                <div class="content_title_img">图片2</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
+              </div>
+            </router-link>
+            <router-link
+              :to="{
+                path: '/information_detail',
+                query: { id: search_title, content: content, name: 'vue' }
+              }"
+            >
+              <div class="content_img">
+                <div class="content_title_img">图片3</div>
+                <div class="content_title">{{ search_title }}</div>
+                <div
+                  class="content_title_text"
+                  style="width:30%;height:70%;padding:5%;padding-top:0"
+                >
+                  {{ content }}
+                </div>
+              </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -362,14 +218,8 @@ export default {
   data() {
     return {
       leftHidden: false,
-      title: '实验室资讯',
-      content_boolean: [
-        { show: true },
-        { show: false },
-        { show: false },
-        { show: false },
-        { show: false }
-      ],
+      PageTitle: '实验室资讯',
+      content_boolean: [{ show: true }, { show: false }],
       message: [
         {
           id: 1,
@@ -394,10 +244,10 @@ export default {
       this.leftHidden = !this.leftHidden
     },
     changeTitle(e) {
-      this.title = e.target.innerHTML + ''
+      this.PageTitle = e.target.innerHTML + ''
     },
     changeContent(index) {
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 2; i++) {
         this.content_boolean[i].show = false
       }
       this.content_boolean[index].show = !this.content_boolean[index].show
@@ -417,13 +267,19 @@ export default {
   },
   created() {
     const that = this
-    this.$axios
-      .get('http://localhost:8083/News/information')
-      .then(function(response) {
-        // that.message = response.data
-        that.message = response.data
-        // console.log(response)
-      })
+    var n = that.$route.query.PageId
+    if (n == 0) {
+      this.PageTitle = '国内信息化教育'
+    } else {
+      this.PageTitle = '国内实时活动资讯'
+    }
+    // this.$axios
+    //   .get('http://localhost:8083/News/information')
+    //   .then(function(response) {
+    //     // that.message = response.data
+    //     that.message = response.data
+    //     // console.log(response)
+    //   })
   }
 }
 </script>
@@ -441,7 +297,7 @@ body {
 <style scoped>
 .left {
   width: 20%;
-  height: 43.5em;
+  height: 39.15em;
   background-color: #2888b0;
   float: left;
   color: white;
@@ -477,10 +333,11 @@ body {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: white;
+  color: #fff;
 }
 .right {
   width: 80%;
-  height: 43.5em;
+  height: 39em;
   background-color: #f4f7f8;
   float: left;
 }
