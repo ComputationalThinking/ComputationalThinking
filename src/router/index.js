@@ -22,9 +22,24 @@ const routes = [
     component: () => import('../views/Home.vue')
   },
   {
-    path: '/information',
-    name: 'Information',
-    component: () => import('../views/message_content/information.vue')
+    path: '/information_search',
+    name: 'Information_search',
+    component: () => import('../views/message_content/information_search.vue')
+  },
+  {
+    path: '/information_foreign',
+    name: 'Information_foreign',
+    component: () => import('../views/message_content/information_foreign.vue')
+  },
+  {
+    path: '/information_nation',
+    name: 'Information_nation',
+    component: () => import('../views/message_content/information_nation.vue')
+  },
+  {
+    path: '/information_lab',
+    name: 'Information_lab',
+    component: () => import('../views/message_content/information_lab.vue')
   },
   {
     path: '/information_detail',
