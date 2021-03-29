@@ -4,6 +4,11 @@
       <p class="word1">我们具有创造力</p>
       <p class="word2">来看看我们的团队</p>
       <hr class="hr" />
+      <div>
+        <el-input v-model="input" placeholder="请输入名字" style="width:400px;margin-right:10px"></el-input>
+        <el-button type="goon" icon="el-icon-search">搜索</el-button>
+      </div>
+      <p class="word2">指 导 老 师</p>
     </div>
     <div class="teacher">
       <router-link to="detailmes">
@@ -31,6 +36,7 @@
         </div>
       </router-link>
     </div>
+    <p class="word2" style="margin-bottom:20px;margin-top:50px">学 生 成 员</p>
     <div class="stu">
       <div style="width:80%;margin:0 auto">
         <router-link to="detailmes">
@@ -144,6 +150,16 @@ export default {
   name: 'member',
   data() {
     return {
+      member: [
+        {
+          id: 1,
+          title: '实验室成员获得了xxxxx',
+          content:
+            '华龙网-新重庆客户端12月31日13时42分讯（许义丽）深化媒体融合传播，强化新闻舆论宣传。近日，重庆理工大学第三届校媒领军论坛如期举行。学校党委副书记张晓洪，纪委书记、监察专员张绍荣，华龙网教育频道主编、重庆舆情研究院院长王大伦，及学校相关负责人、教师通讯员、学生记者代表共300余人出席会议。会议由重庆理工大学党委宣传部副部长、党委网络工作部副部长李洪普主持。',
+          time: '2021/2/17 23:09',
+          pic2: require('@/assets/images/ren1.png')
+        }
+      ],
       pic1: require('@/assets/images/ren2.png'),
       pic2: require('@/assets/images/ren1.png'),
       peo1: '',
@@ -225,9 +241,11 @@ export default {
   margin-top: 1em;
 }
 .word2 {
+  text-align: center;
   font-size: 400%;
   font-weight: 600;
   margin-top: 0.5em;
+  color: #000;
 }
 .hr {
   width: 25em;
@@ -239,7 +257,7 @@ export default {
   width: 100%;
   margin: 0 auto;
   float: top;
-  margin-bottom: 3.5em;
+  margin-top: 13em;
   overflow: auto;
 }
 .stu {
