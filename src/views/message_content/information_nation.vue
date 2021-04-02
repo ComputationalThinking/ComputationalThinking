@@ -20,7 +20,7 @@
           <ul>
             <router-link
               :to="{
-                path: '/information_nation',
+                path: '/message',
                 query: { PageId: 0 }
               }"
             >
@@ -30,7 +30,7 @@
             </router-link>
             <router-link
               :to="{
-                path: '/information_nation',
+                path: '/message',
                 query: { PageId: 1 }
               }"
             >
@@ -40,7 +40,7 @@
             </router-link>
           </ul>
         </div>
-        <router-link :to="{ path: '/information_foreign' }">
+        <router-link :to="{ path: '/message' }">
           <li style="color:#fff">国外资讯</li>
         </router-link>
       </ul>
