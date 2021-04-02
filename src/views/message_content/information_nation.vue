@@ -164,7 +164,7 @@
             <div class="content_txt" style="background-color:#FF9900">
               <router-link
                 :to="{
-                  path: '/information_search',
+                  path: '/message',
                   query: { PageTitle: PageTitle }
                 }"
               >

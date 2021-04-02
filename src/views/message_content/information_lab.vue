@@ -90,7 +90,7 @@
             <div class="content_txt">
               <router-link
                 :to="{
-                  path: '/information_search',
+                  path: '/message',
                   query: { PageTitle: PageTitle }
                 }"
               >
