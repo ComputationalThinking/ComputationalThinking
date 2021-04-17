@@ -37,6 +37,9 @@
       </router-link>
     </div>
     <p class="word2" style="margin-bottom:20px;margin-top:50px">学 生 成 员</p>
+    <li v-for="(member, index) of member" :key="index">
+      <span style="margin-left:2%">{{ member.pic2 }}</span>
+    </li>
     <div class="stu">
       <div style="width:80%;margin:0 auto">
         <router-link to="detailmes">

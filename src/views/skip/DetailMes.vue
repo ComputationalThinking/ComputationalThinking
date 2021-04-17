@@ -10,38 +10,21 @@
       <div class="con2">
         <p class="title">个人简介：</p>
         <br /><br /><br />
-        <p>杨娟(Juan Yang)<br />Sichuan</p>
+        <p v-html="name"></p>
         <br />
-        <p>
-          Faculty of Psychology,<br />Southwest University,Chongqing, China<br />No.2
-          Tiansheng Road, Beibei, Chongqing, China, 400715
-        </p>
+        <p v-html="role"></p>
         <br />
-        <p>Tel: +86-23-68367697</p>
+        <p>Tel: +86-{{tel}}</p>
         <br />
-        <p>E-mail: valleyqq@swu.edu.cn;yangjuan923@yahoo.com</p>
+        <p>E-mail: {{email}}</p>
         <br />
       </div>
     </div>
     <div class="xia">
       <br />
-      <p style="line-height:30px">
-        EMPLOYMENT & EDUCATION ——— Professor of Psychology, Social Psychology,
-        2014-present, Southwest University, China. Visiting Scholar, 2013-2014,
-        Department of Psychology, Peking University. Associate professorof
-        Psychology, Basic Psychology, 2011-2014, Southwest University, China.
-        Lecturer, Basic Psychology, 2009-2011, Southwest University, China.
-        Visiting Ph.D. student, 2008-2009, Douglas Hospital, McGill University,
-        Canada. Ph.D., Developmental and Educational Psychology, 2009, Southwest
-        University, China. B.A., Educational Psychology, 2004, Sichuan Normal
-        University, China.
-      </p>
-      <br />
-      <p>AWARDS & HONORS</p>
-      <br />
-      <p>Excellent Doctoral thesis, Chongqing Educational commission, 2010</p>
+      <p style="line-height:30px" v-html="content"></p>
     </div>
-    <router-link to="member"><p class="return">返回 >></p></router-link>
+    <p class="return"><router-link to="member">返回 >></router-link></p>
     <div class="white"></div>
   </div>
 </template>
@@ -51,7 +34,12 @@ export default {
   name: 'detailmes',
   data() {
     return {
-      pic1: require('@/assets/images/男.jpg')
+      pic1: require('@/assets/images/男.jpg'),
+      name:'杨娟(Juan Yang)<br>Sichuan',
+      tel:'12345678',
+      email:'valleyqq@swu.edu.cn;yangjuan923@yahoo.com',
+      role:'Faculty of Psychology,<br>Southwest University,Chongqing, China<br>No.2 Tiansheng Road, Beibei, Chongqing, China, 400715',
+      content:'EMPLOYMENT & EDUCATION ——— Professor of Psychology, Social Psychology,2014-present, Southwest University, China. Visiting Scholar, 2013-2014,Department of Psychology, Peking University. Associate professor of Psychology, Basic Psychology, 2011-2014, Southwest University, China.Lecturer, Basic Psychology, 2009-2011, Southwest University, China.Visiting Ph.D. student, 2008-2009, Douglas Hospital, McGill University,Canada. Ph.D., Developmental and Educational Psychology, 2009, Southwest University, China. B.A., Educational Psychology, 2004, Sichuan Normal University, China.<br><br>AWARDS & HONORS<br><br>Excellent Doctoral thesis, Chongqing Educational commission, 2010'
     }
   }
 }
@@ -115,6 +103,7 @@ export default {
   float: top;
   width: 63%;
   min-width: 800px;
+  word-wrap: break-word;
 }
 @media screen and (max-width: 1000px) {
   .detailmes {
