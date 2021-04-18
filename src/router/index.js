@@ -65,6 +65,11 @@ const routes = [
     component: () => import('../views/skip/Member.vue')
   },
   {
+    path: '/membersearch',
+    name: 'MemberSearch',
+    component: () => import('../views/skip/MemberSearch.vue')
+  },
+  {
     path: '/detailmes',
     name: 'DetailMes',
     component: () => import('../views/skip/DetailMes.vue')

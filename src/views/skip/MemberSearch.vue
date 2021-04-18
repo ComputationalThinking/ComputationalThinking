@@ -1,21 +1,9 @@
 <template>
-  <div class="member" style="margin:0 auto">
+  <div class="membersearch" style="margin:0 auto">
     <div class="word">
       <p class="word1">我们具有创造力</p>
       <p class="word2">来看看我们的团队</p>
       <hr class="hr" />
-      <div>
-        <!-- <el-input v-model="search_name" placeholder="请输入名字" style="width:400px;margin-right:10px" @input="change()"></el-input> -->
-        <input v-model="search_name"/>
-        <router-link
-          :to="{
-            path: '/membersearch',
-            query: { name: search_name }
-          }"
-        >
-          <span><i class="fa fa-search" aria-hidden="true"></i></span>
-        </router-link>
-      </div>
       <p class="word2">指 导 老 师</p>
     </div>
     <div class="teacher">
@@ -61,10 +49,10 @@
 
 <script>
 export default {
-  name: 'member',
+  name: 'membersearch',
   data() {
     return {
-      search_name:'',
+      key:'',
       teachers: [],
       students: [],
       pic1: require('@/assets/images/ren2.png'),
@@ -129,41 +117,45 @@ export default {
     }
   },
   created() {
+    this.key = this.$route.query.name
     const that = this
     this.$axios
-      .get('http://localhost:8083/member/memberFindByCondition?attribute=identity&key=1')
+      .get('http://localhost:8083/member/memberSearch?name='+this.key)
       .then(function(response1) {
         that.teachers = response1.data
       })
+    // this.$axios
+    //   .get('http://localhost:8083/member/memberFindByCondition?attribute=identity&key=1')
+    //   .then(function(response1) {
+    //     that.teachers = response1.data
+    //   })  
     this.$axios
-      .get('http://localhost:8083/member/memberFindByCondition?attribute=identity&key=0')
+      .get('http://localhost:8083/member/memberFindByCondition?attribute=identity&key=1')
       .then(function(response2) {
-        that.students = response2.data
-      })
-  },
-  change(){
-    this.$forceUpdate()
-  }
+          that.teachers = that.teachers.filter(val=>{
+                return new Set(response2.data).has(val)
+            })
+        })
+   },
+   doIntersection(firstArray, secondArray) {
+        var hashmap = {};
+        var intersectionArray = [];
+        firstArray.forEach(function (element) {
+        hashmap[element] = 1;
+        });
+        secondArray.forEach(function (element) {
+            if (hashmap[element] === 1) {
+            intersectionArray.push(element);
+            hashmap[element]++;
+            }
+        });
+        return intersectionArray;
+    },
 }
 </script>
 
 <style></style>
 <style scoped>
-input {
-  border-radius: 1em;
-  width: 30em;
-  margin-top: 0.5em;
-  height: 2em;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #2888b0;
-  margin-right: 1em;
-  padding-left: 10px;
-  color: #999;
-  font-size: 1em;
-  outline: none;
-  background-color: #f2f2f2;
-}
 .word {
   text-align: center;
   color: black;
@@ -193,7 +185,7 @@ input {
   width: 100%;
   margin: 0 auto;
   float: top;
-  margin-top: 13em;
+  margin-top: 8.5em;
   overflow: auto;
 }
 .stu {
