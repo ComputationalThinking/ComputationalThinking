@@ -5,7 +5,6 @@
       <p class="word2">来看看我们的团队</p>
       <hr class="hr" />
       <div>
-        <!-- <el-input v-model="search_name" placeholder="请输入名字" style="width:400px;margin-right:10px" @input="change()"></el-input> -->
         <input v-model="search_name"/>
         <router-link
           :to="{
@@ -21,18 +20,16 @@
     <div class="teacher">
       <div class="hh2">
         <li v-for="(teacher, index1) of teachers" :key="index1" style="list-style: none;">
-          <router-link to="detailmes">
-            <div style="width:50%;float: left;">
-              <div
-                @mouseover="mouseOver1"
-                @mouseleave="mouseLeave"
-                :style="peo1"
-                class="zuo"
-              >
+          <div style="width:50%;float: left;">
+            <div class="zuo"
+              @mouseover="mouseOver($event)"
+              @mouseleave="mouseLeave($event)"
+            >
+              <router-link :to="{path: '/detailmes',query: {id: teacher.id}}">
                 <img class="pic" :src="pic1" />
-              </div>
+              </router-link>
             </div>
-          </router-link>
+          </div>
         </li>
       </div>
     </div>
@@ -40,18 +37,16 @@
     <div class="stu">
       <div class="hh2">
         <li v-for="(student, index2) of students" :key="index2" style="list-style: none;">
-          <router-link :to="{path: '/detailmes',query: {id: 2}}">
-            <div style="width:25%;float: left;">
-              <div
-                @mouseover="mouseOver3"
-                @mouseleave="mouseLeave"
-                :style="peo3"
-                class="stu1"
-              >
+          <div style="width:25%;float: left;">
+            <div class="stu1"
+              @mouseover="mouseOver($event)"
+              @mouseleave="mouseLeave($event)"
+            >
+              <router-link :to="{path: '/detailmes',query: {id: student.id}}">
                 <img class="picture" :src="pic2" />
-              </div>
+              </router-link>
             </div>
-          </router-link>
+          </div>
         </li>
       </div>
     </div>
@@ -69,60 +64,14 @@ export default {
       students: [],
       pic1: require('@/assets/images/ren2.png'),
       pic2: require('@/assets/images/ren1.png'),
-      peo1: '',
-      peo2: '',
-      peo3: '',
-      peo4: '',
-      peo5: '',
-      peo6: '',
-      peo7: '',
-      peo8: '',
-      peo9: '',
-      peo10: '',
     }
   },
   methods: {
-    mouseOver1() {
-      this.peo1 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
+    mouseOver($event) {
+      $event.currentTarget.style='opacity:85%;box-shadow: 10px 10px 5px #888888;'
     },
-    mouseOver2() {
-      this.peo2 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseOver3() {
-      this.peo3 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseOver4() {
-      this.peo4 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseOver5() {
-      this.peo5 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseOver6() {
-      this.peo6 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseOver7() {
-      this.peo7 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseOver8() {
-      this.peo8 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseOver9() {
-      this.peo9 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseOver10() {
-      this.peo10 = 'opacity:85%;box-shadow: 10px 10px 5px #888888;'
-    },
-    mouseLeave() {
-      this.peo1 = ''
-      this.peo2 = ''
-      this.peo3 = ''
-      this.peo4 = ''
-      this.peo5 = ''
-      this.peo6 = ''
-      this.peo7 = ''
-      this.peo8 = ''
-      this.peo9 = ''
-      this.peo10 = ''
+    mouseLeave($event) {
+      $event.currentTarget.style=''
     },
     Back() {
       this.$router.go(-1)
