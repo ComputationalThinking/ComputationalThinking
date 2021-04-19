@@ -2,7 +2,9 @@
   <div class="result-introduction">
     <div class="introduction-top" :style="backgroundDiv">
       <!-- <img :src="pic1" alt=""> -->
-      <div class="top-p"><p>成果介绍</p></div>
+      <div class="top-p">
+        <p>成果介绍</p>
+      </div>
     </div>
     <div class="intro">
       <!-- <h1>this is 成果介绍页面</h1> -->
@@ -10,31 +12,31 @@
         <span>国内外赛事：</span>
         <div>
           <div class="race">
-            <h3>标题1</h3>
+            <h3>{{ list1.title }}</h3>
             <img :src="pic1" alt="" />
-            <div class="race-p" @click="open">
-              国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××
+            <div class="race-p" @click="race1">
+              {{ list1.content }}
             </div>
           </div>
           <div class="race">
-            <h3>标题2</h3>
+            <h3>{{ list2.title }}</h3>
             <img :src="pic2" alt="" />
-            <div class="race-p" @click="open">
-              国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××
+            <div class="race-p" @click="race2">
+              {{ list2.content }}
             </div>
           </div>
           <div class="race">
-            <h3>标题3</h3>
+            <h3>{{ list3.title }}</h3>
             <img :src="pic3" alt="" />
-            <div class="race-p" @click="open">
-              国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××
+            <div class="race-p" @click="race3">
+              {{ list3.content }}
             </div>
           </div>
           <div class="race">
-            <h3>标题4</h3>
+            <h3>{{ list4.title }}</h3>
             <img :src="pic4" alt="" />
-            <div class="race-p" @click="open">
-              国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××国际竞赛一等奖，创下新高。×××××××××××××××××××××××××
+            <div class="race-p" @click="race4">
+              {{ list4.content }}
             </div>
           </div>
         </div>
@@ -45,25 +47,27 @@
           <div class="result-left">
             <img :src="pic7" alt="" />
             <span>LAST NEWS</span>
-            <div class="result-left-p" @click="open2">{{ p2 }}</div>
+            <div class="result-left-p" @click="resu1">
+              {{ result1.content }}
+            </div>
           </div>
           <div class="result-right">
             <div class="result-right-detail">
               <div class="detail-left"><img :src="pic11" alt="" /></div>
-              <div class="detail-right" @click="open2">
-                {{ p2 }}
+              <div class="detail-right" @click="resu2">
+                {{ result2.content }}
               </div>
             </div>
             <div class="result-right-detail">
               <div class="detail-left"><img :src="pic9" alt="" /></div>
-              <div class="detail-right" @click="open2">
-                {{ p2 }}
+              <div class="detail-right" @click="resu3">
+                {{ result3.content }}
               </div>
             </div>
             <div class="result-right-detail">
               <div class="detail-left"><img :src="pic10" alt="" /></div>
-              <div class="detail-right" @click="open2">
-                {{ p2 }}
+              <div class="detail-right" @click="resu4">
+                {{ result4.content }}
               </div>
             </div>
           </div>
@@ -78,7 +82,7 @@
         <div class="involve-center">
           <p style="font-size: 30px;">涉及领域：</p>
           <br />
-          <p>{{ p3 }}</p>
+          <p>{{ relation.content }}</p>
         </div>
         <div class="involve-right"><img :src="pic13" alt="" /></div>
       </div>
@@ -88,42 +92,42 @@
           <router-link
             :to="{
               path: '/appExample1',
-              query: { content: p5 }
+              query: { id: app1.id, title: app1.title, content: app1.content }
             }"
             class="app-left"
           >
             <div>
               <img :src="pic5" alt="" />
               <div class="app-p">
-                <p>{{ p5 }}</p>
+                <p>{{ app1.title }}</p>
               </div>
             </div>
           </router-link>
           <router-link
             :to="{
               path: '/appExample1',
-              query: { content: p6 }
+              query: { id: app2.id, title: app2.title, content: app2.content }
             }"
             class="app-center"
           >
             <div>
               <img :src="pic6" alt="" />
               <div class="app-p">
-                <p>{{ p6 }}</p>
+                <p>{{ app2.title }}</p>
               </div>
             </div>
           </router-link>
           <router-link
             :to="{
               path: '/appExample1',
-              query: { content: p7 }
+              query: { id: app3.id, title: app3.title, content: app3.content }
             }"
             class="app-right"
           >
             <div>
               <img :src="pic2" alt="" />
               <div class="app-p">
-                <p>{{ p7 }}</p>
+                <p>{{ app3.title }}</p>
               </div>
             </div>
           </router-link>
@@ -154,32 +158,276 @@ export default {
       pic11: require('@/assets/images/m11.jpg'),
       pic12: require('@/assets/images/m12.jpg'),
       pic13: require('@/assets/images/m13.jpg'),
-      p1:
-        '成果×××××××××××××××××× 成果×××××××××××××××××× 成果×××××××××××××××××× 成果××××××××××××××××××',
-      p2:
-        '计算思维具有概念化、抽象化、有限性、自动化、可解释性、关联性等特征，是融合了数学、工程与科学思维的一种跨学科思维。',
-      p3:
-        '计算思维是应用可用于计算机学科中，比如计算机编程，计算机应用等领域。计算思维吸取了问题解决所采用的一般数学思维方法，现实世界中巨大复杂系统的设计与评估的一般工程思维方法，以及复杂性、智能、心理、人类行为的理解等的一般科学思维方法。计算思维建立在计算过程的能力和限制之上，由人由机器执行。计算方法和模型使我们敢于去处理那些原本无法由个人独立完成的问题求解和系统设计。',
-      p4: '实例××××××××××××××××××××××× ',
       p5: '计算机领域的研究',
       p6: '人工智能领域的研究',
-      p7: '教育教学的研究等'
+      p7: '教育教学的研究等',
+      list1: {
+        id: 0,
+        title: '',
+        content: '',
+        time: '',
+        hot: 0,
+        participant_member: '',
+        sort: 0,
+        achieve_name: '',
+        img: ''
+      },
+      list2: {
+        id: 0,
+        title: '',
+        content: '',
+        time: '',
+        hot: 0,
+        participant_member: '',
+        sort: 0,
+        achieve_name: '',
+        img: ''
+      },
+      list3: {
+        id: 0,
+        title: '',
+        content: '',
+        time: '',
+        hot: 0,
+        participant_member: '',
+        sort: 0,
+        achieve_name: '',
+        img: ''
+      },
+      list4: {
+        id: 0,
+        title: '',
+        content: '',
+        time: '',
+        hot: 0,
+        participant_member: '',
+        sort: 0,
+        achieve_name: '',
+        img: ''
+      },
+      result1: {
+        id: 0,
+        title: '',
+        content: '',
+        time: '',
+        hot: 0,
+        participant_member: '',
+        sort: 0,
+        achieve_name: '',
+        img: ''
+      },
+      result2: {
+        id: 0,
+        title: '',
+        content: '',
+        time: '',
+        hot: 0,
+        participant_member: '',
+        sort: 0,
+        achieve_name: '',
+        img: ''
+      },
+      result3: {
+        id: 0,
+        title: '',
+        content: '',
+        time: '',
+        hot: 0,
+        participant_member: '',
+        sort: 0,
+        achieve_name: '',
+        img: ''
+      },
+      result4: {
+        id: 0,
+        title: '',
+        content: '',
+        time: '',
+        hot: 0,
+        participant_member: '',
+        sort: 0,
+        achieve_name: '',
+        img: ''
+      },
+      relation: {
+        content: '',
+        img: ''
+      },
+      app1: {
+        id: 0,
+        title: '',
+        img: ''
+      },
+      app2: {
+        id: 0,
+        title: '',
+        img: ''
+      },
+      app3: {
+        id: 0,
+        title: '',
+        img: ''
+      }
     }
   },
+  created() {
+    const that = this
+    this.$axios
+      .get('http://localhost:8083/achieve/getDataBySort?sort=0')
+      .then(function(response1) {
+        that.form = response1.data
+        that.list1.time = that.form[0].time
+        that.list1.title = that.form[0].title
+        that.list1.content = that.form[0].content
+        that.list2.time = that.form[1].time
+        that.list2.title = that.form[1].title
+        that.list2.content = that.form[1].content
+        that.list3.time = that.form[2].time
+        that.list3.title = that.form[2].title
+        that.list3.content = that.form[2].content
+        that.list4.time = that.form[3].time
+        that.list4.title = that.form[3].title
+        that.list4.content = that.form[3].content
+      })
+    this.$axios
+      .get('http://localhost:8083/achieve/getDataBySort?sort=1')
+      .then(function(response2) {
+        that.form = response2.data
+        that.result1.time = that.form[0].time
+        that.result1.title = that.form[0].title
+        that.result1.content = that.form[0].content
+        that.result1.participant_member = that.form[0].participantMember
+        that.result1.achieve_name = that.form[0].achieveName
+        that.result2.time = that.form[1].time
+        that.result2.title = that.form[1].title
+        that.result2.content = that.form[1].content
+        that.result2.participant_member = that.form[1].participantMember
+        that.result2.achieve_name = that.form[1].achieveName
+        that.result3.time = that.form[2].time
+        that.result3.title = that.form[2].title
+        that.result3.content = that.form[2].content
+        that.result3.participant_member = that.form[2].participantMember
+        that.result3.achieve_name = that.form[2].achieveName
+        that.result4.time = that.form[3].time
+        that.result4.title = that.form[3].title
+        that.result4.content = that.form[3].content
+        that.result4.participant_member = that.form[3].participantMember
+        that.result4.achieve_name = that.form[3].achieveName
+      }),
+      this.$axios
+        .get('http://localhost:8083/achieve/getDataBySort?sort=2')
+        .then(function(response3) {
+          that.form = response3.data
+          that.relation.content = that.form[0].content
+        }),
+      this.$axios
+        .get('http://localhost:8083/achieve/getDataBySort?sort=3')
+        .then(function(response4) {
+          that.form = response4.data
+          that.app1.id = that.form[0].id
+          that.app1.title = that.form[0].title
+          that.app2.id = that.form[1].id
+          that.app2.title = that.form[1].title
+          that.app3.id = that.form[2].id
+          that.app3.title = that.form[2].title
+        })
+  },
   methods: {
-    open() {
+    race1() {
       this.$alert(
-        '计算机思维设计大赛第一名<br>计算机思维设计大赛第一名<br>计算机思维设计大赛第一名<br>计算机思维设计大赛第一名<br>',
-        '赛事',
+        '内容：' + this.list1.content + '<br>时间：' + this.list1.time,
+        this.list1.title,
         {
           dangerouslyUseHTMLString: true
         }
       )
     },
-    open2() {
+    race2() {
       this.$alert(
-        '成果：×××<br>时间：×××<br>参赛人：×××<br>国际影响：×××<br>',
-        '取得成果',
+        '内容：' + this.list2.content + '<br>时间：' + this.list2.time,
+        this.list2.title,
+        {
+          dangerouslyUseHTMLString: true
+        }
+      )
+    },
+    race3() {
+      this.$alert(
+        '内容：' + this.list3.content + '<br>时间：' + this.list3.time,
+        this.list3.title,
+        {
+          dangerouslyUseHTMLString: true
+        }
+      )
+    },
+    race4() {
+      this.$alert(
+        '内容：' + this.list4.content + '<br>时间：' + this.list4.time,
+        this.list4.title,
+        {
+          dangerouslyUseHTMLString: true
+        }
+      )
+    },
+    resu1() {
+      this.$alert(
+        '成果内容：' +
+          this.result1.content +
+          '<br>时间：' +
+          this.result1.time +
+          '<br>参赛人：' +
+          this.result1.participant_member +
+          '<br>获得奖项：' +
+          this.result1.achieve_name,
+        this.result1.title,
+        {
+          dangerouslyUseHTMLString: true
+        }
+      )
+    },
+    resu2() {
+      this.$alert(
+        '成果内容：' +
+          this.result2.content +
+          '<br>时间：' +
+          this.result2.time +
+          '<br>参赛人：' +
+          this.result2.participant_member +
+          '<br>获得奖项：' +
+          this.result2.achieve_name,
+        this.result1.title,
+        {
+          dangerouslyUseHTMLString: true
+        }
+      )
+    },
+    resu3() {
+      this.$alert(
+        '成果内容：' +
+          this.result3.content +
+          '<br>时间：' +
+          this.result3.time +
+          '<br>参赛人：' +
+          this.result3.participant_member +
+          '<br>获得奖项：' +
+          this.result3.achieve_name,
+        this.result3.title,
+        {
+          dangerouslyUseHTMLString: true
+        }
+      )
+    },
+    resu4() {
+      this.$alert(
+        '成果内容：' +
+          this.result4.content +
+          '<br>时间：' +
+          this.result4.time +
+          '<br>参赛人：' +
+          this.result4.participant_member +
+          '<br>获得奖项：' +
+          this.result4.achieve_name,
+        this.result4.title,
         {
           dangerouslyUseHTMLString: true
         }

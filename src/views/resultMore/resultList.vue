@@ -15,94 +15,31 @@
           </div>
         </div>
       </div>
-      <router-link
-        :to="{
-          path: '/result1',
-          query: { id: id, content: data, name: 'vue' }
-        }"
-      >
-        <div class="list">
-          <div class="list-left"><img :src="pic1" alt="" /></div>
-          <div class="list-right">{{ data }}</div>
-        </div>
-      </router-link>
-      <router-link
-        :to="{
-          path: '/result1',
-          query: { id: id, content: data, name: 'vue' }
-        }"
-      >
-        <div class="list">
-          <div class="list-left"><img :src="pic2" alt="" /></div>
-          <div class="list-right">{{ data }}</div>
-        </div>
-      </router-link>
-      <router-link
-        :to="{
-          path: '/result1',
-          query: { id: id, content: data, name: 'vue' }
-        }"
-      >
-        <div class="list">
-          <div class="list-left"><img :src="pic3" alt="" /></div>
-          <div class="list-right">{{ data }}</div>
-        </div>
-      </router-link>
-      <router-link
-        :to="{
-          path: '/result1',
-          query: { id: id, content: data, name: 'vue' }
-        }"
-      >
-        <div class="list">
-          <div class="list-left"><img :src="pic4" alt="" /></div>
-          <div class="list-right">{{ data }}</div>
-        </div>
-      </router-link>
-      <router-link
-        :to="{
-          path: '/result1',
-          query: { id: id, content: data, name: 'vue' }
-        }"
-      >
-        <div class="list">
-          <div class="list-left"><img :src="pic1" alt="" /></div>
-          <div class="list-right">{{ data }}</div>
-        </div>
-      </router-link>
-      <router-link
-        :to="{
-          path: '/result1',
-          query: { id: id, content: data, name: 'vue' }
-        }"
-      >
-        <div class="list">
-          <div class="list-left"><img :src="pic2" alt="" /></div>
-          <div class="list-right">{{ data }}</div>
-        </div>
-      </router-link>
-      <router-link
-        :to="{
-          path: '/result1',
-          query: { id: id, content: data, name: 'vue' }
-        }"
-      >
-        <div class="list">
-          <div class="list-left"><img :src="pic3" alt="" /></div>
-          <div class="list-right">{{ data }}</div>
-        </div>
-      </router-link>
-      <router-link
-        :to="{
-          path: '/result1',
-          query: { id: id, content: data, name: 'vue' }
-        }"
-      >
-        <div class="list">
-          <div class="list-left"><img :src="pic4" alt="" /></div>
-          <div class="list-right">{{ data }}</div>
-        </div>
-      </router-link>
+      <ul>
+        <li
+          v-for="(database, index) of databases"
+          :key="index"
+          style="list-style: none"
+        >
+          <router-link
+            :to="{
+              path: '/result1',
+              query: {
+                id: database.id,
+                name: 'vue'
+              }
+            }"
+          >
+            <div class="list">
+              <div class="list-left"><img :src="pic1" alt="" /></div>
+              <div class="list-right">
+                <span>{{ database.title }}</span>
+                <span>{{ database.time }}</span>
+              </div>
+            </div>
+          </router-link>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -110,8 +47,16 @@
 export default {
   data() {
     return {
-      data: '获得奖项××××××××',
-      id: '1',
+      id: 1,
+      title: '真实世界挑战赛',
+      content: '',
+      databases: [
+        {
+          id: 1,
+          title: '',
+          time: ''
+        }
+      ],
       pic1: require('@/assets/images/m1.jpg'),
       pic2: require('@/assets/images/m2.jpg'),
       pic3: require('@/assets/images/m3.jpg'),
@@ -123,6 +68,14 @@ export default {
       pic9: require('@/assets/images/m9.jpg'),
       pic10: require('@/assets/images/m10.jpg')
     }
+  },
+  creat() {
+    const that = this
+    this.$axios
+      .get('http://localhost:8083/achieve/getDataBySort?=1')
+      .then(function(response) {
+        that.form = response.data.data //??
+      })
   },
   methods: {
     Back() {
@@ -138,6 +91,12 @@ export default {
 .resultList {
   width: 80%;
   margin: 0 auto;
+}
+.resultList ul {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
 }
 .top {
   width: 100%;
@@ -193,7 +152,9 @@ export default {
 }
 .list-right {
   width: 75%;
-  padding: 30px;
+  font-size: 30px;
+  padding-top: 70px;
+  text-align: center;
 }
 @media screen and (max-width: 1000px) {
   .resultBody {

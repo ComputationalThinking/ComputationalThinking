@@ -1,10 +1,10 @@
 <template>
   <div class="app-body">
     <div class="example">
-      <div class="tittle" style="font-size: 30px">计算思维成果{{ id }}</div>
+      <div class="tittle" style="font-size: 30px">{{ database.title }}</div>
       <hr />
       <div class="content">
-        成果内容：计算思维在某些领域取得的一些成果。{{ data }}
+        {{ database.content }}
       </div>
       <div class="back" @click="Back">返回>></div>
     </div>
@@ -14,13 +14,23 @@
 export default {
   data() {
     return {
-      id: '',
-      data: '获得奖项如下：'
+      database: {
+        id: 0,
+        title: '',
+        content: ''
+      }
     }
   },
   created() {
     this.id = this.$route.query.id
-    if (this.$route.query.content != null) this.data = this.$route.query.content
+    const that = this
+    this.$axios
+      .get('http://localhost:8083/achieve/giveID?id=' + this.id)
+      .then(function(response) {
+        that.form = response.data
+        that.database.title = that.form.title
+        that.database.content = that.form.content
+      })
   },
   methods: {
     Back() {
