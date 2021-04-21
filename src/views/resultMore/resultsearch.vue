@@ -3,29 +3,6 @@
     <div class="resultList">
       <div class="top">
         <div class="back" @click="Back">返回>></div>
-        <div class="search">
-          <input
-            type="text"
-            class="search-full"
-            name="result"
-            v-model="searchtitle"
-          />
-          <div class="search-right">
-            <router-link
-              :to="{
-                path: '/resultsearch',
-                query: { title: searchtitle }
-              }"
-            >
-              <span
-                v-show="true"
-                style="float:left;padding-left:10px;margin-top:5px;"
-              >
-                <i class="fa fa-search" id="search-i" aria-hidden="true"></i>
-              </span>
-            </router-link>
-          </div>
-        </div>
       </div>
       <ul>
         <li
@@ -60,18 +37,16 @@
 export default {
   data() {
     return {
-      id: 1,
-      title: '真实世界挑战赛',
-      content: '',
       databases: [],
-      searchtitle: '',
+      key: '',
       pic1: require('@/assets/images/m1.jpg')
     }
   },
   created() {
+    this.key = this.$route.query.title
     const that = this
     this.$axios
-      .get('http://localhost:8083/achieve/getDataBySort?sort=1')
+      .get('http://localhost:8083/achieve/getDataByTitle?title=' + this.key)
       .then(function(response) {
         that.databases = response.data
       })
@@ -105,32 +80,12 @@ export default {
   justify-content: space-around;
 }
 .back {
-  margin-left: 25px;
-  width: 60%;
+  /* margin-left: 10px; */
+  width: 95%;
   text-align: left;
 }
 .back:hover {
   color: rgb(87, 153, 228);
-  cursor: pointer;
-}
-.search {
-  width: 40%;
-  height: 30px;
-  padding-left: 40px;
-}
-.search-full {
-  width: 70%;
-  height: 30px;
-  border-radius: 10px;
-  outline: none;
-  float: left;
-}
-.search-right {
-  width: 10%;
-  height: 30px;
-  float: left;
-}
-.search-right:hover {
   cursor: pointer;
 }
 .list {
