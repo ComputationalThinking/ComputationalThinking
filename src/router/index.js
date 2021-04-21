@@ -108,6 +108,11 @@ const routes = [
     path: '/news',
     name: 'news',
     component: news
+  },
+  {
+    path: '/resultsearch',
+    name: 'resultsearch',
+    component: () => import('../views/resultMore/resultsearch.vue')
   }
 ]
 
