@@ -8,13 +8,20 @@
     </div>
     <div class="teacher">
       <div class="hh2">
-        <li v-for="(teacher, index1) of teachers" :key="index1" style="list-style: none;">
+        <li
+          v-for="(teacher, index1) of teachers"
+          :key="index1"
+          style="list-style: none;"
+        >
           <div style="width:50%;float: left;">
-            <div class="zuo"
+            <div
+              class="zuo"
               @mouseover="mouseOver($event)"
               @mouseleave="mouseLeave($event)"
             >
-              <router-link :to="{path: '/detailmes',query: {id: teacher.id}}">
+              <router-link
+                :to="{ path: '/detailmes', query: { id: teacher.id } }"
+              >
                 <img class="pic" :src="pic1" />
               </router-link>
             </div>
@@ -25,13 +32,20 @@
     <p class="word2" style="margin-bottom:20px">学 生 成 员</p>
     <div class="stu">
       <div class="hh2">
-        <li v-for="(student, index2) of students" :key="index2" style="list-style: none;">
+        <li
+          v-for="(student, index2) of students"
+          :key="index2"
+          style="list-style: none;"
+        >
           <div style="width:25%;float: left;">
-            <div class="stu1"
+            <div
+              class="stu1"
               @mouseover="mouseOver($event)"
               @mouseleave="mouseLeave($event)"
             >
-              <router-link :to="{path: '/detailmes',query: {id: student.id}}">
+              <router-link
+                :to="{ path: '/detailmes', query: { id: student.id } }"
+              >
                 <img class="picture" :src="pic2" />
               </router-link>
             </div>
@@ -49,19 +63,20 @@ export default {
   name: 'membersearch',
   data() {
     return {
-      key:'',
+      key: '',
       teachers: [],
       students: [],
       pic1: require('@/assets/images/ren2.png'),
-      pic2: require('@/assets/images/ren1.png'),
+      pic2: require('@/assets/images/ren1.png')
     }
   },
   methods: {
     mouseOver($event) {
-      $event.currentTarget.style='opacity:85%;box-shadow: 10px 10px 5px #888888;'
+      $event.currentTarget.style =
+        'opacity:85%;box-shadow: 10px 10px 5px #888888;'
     },
     mouseLeave($event) {
-      $event.currentTarget.style=''
+      $event.currentTarget.style = ''
     },
     Back() {
       this.$router.go(-1)
@@ -71,30 +86,34 @@ export default {
     this.key = this.$route.query.name
     const that = this
     this.$axios
-      .get('http://localhost:8083/member/memberSearch1AndByName?name='+this.key)
+      .get(
+        'http://localhost:8083/member/memberSearch1AndByName?name=' + this.key
+      )
       .then(function(response) {
         that.teachers = response.data
       })
     this.$axios
-      .get('http://localhost:8083/member/memberSearch0AndByName?name='+this.key)
+      .get(
+        'http://localhost:8083/member/memberSearch0AndByName?name=' + this.key
+      )
       .then(function(response) {
         that.students = response.data
       })
-   },
-   doIntersection(firstArray, secondArray) {
-        var hashmap = {};
-        var intersectionArray = [];
-        firstArray.forEach(function (element) {
-        hashmap[element] = 1;
-        });
-        secondArray.forEach(function (element) {
-            if (hashmap[element] === 1) {
-            intersectionArray.push(element);
-            hashmap[element]++;
-            }
-        });
-        return intersectionArray;
-    },
+  },
+  doIntersection(firstArray, secondArray) {
+    var hashmap = {}
+    var intersectionArray = []
+    firstArray.forEach(function(element) {
+      hashmap[element] = 1
+    })
+    secondArray.forEach(function(element) {
+      if (hashmap[element] === 1) {
+        intersectionArray.push(element)
+        hashmap[element]++
+      }
+    })
+    return intersectionArray
+  }
 }
 </script>
 
@@ -142,9 +161,9 @@ export default {
   margin-bottom: 3.5em;
   overflow: auto;
 }
-.hh2{
-  width:80%;
-  margin:0 auto;
+.hh2 {
+  width: 80%;
+  margin: 0 auto;
 }
 .zuo {
   background-color: black;
@@ -168,12 +187,12 @@ export default {
   margin-bottom: 4em;
 }
 @media screen and (min-width: 3000px) {
-  .hh2{
+  .hh2 {
     width: 35%;
   }
 }
 @media screen and (min-width: 2000px) and (max-width: 3000px) {
-  .hh2{
+  .hh2 {
     width: 65%;
   }
 }
