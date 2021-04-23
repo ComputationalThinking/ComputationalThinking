@@ -1,6 +1,5 @@
 <template>
   <div class="detailmes">
-    
     <div class="shang">
       <div class="con1">
         <div class="kuang"></div>
@@ -15,9 +14,9 @@
         <br />
         <p v-html="information.role" style="width:70%"></p>
         <br />
-        <p style="width:70%">Tel: +86-{{information.tel}}</p>
+        <p style="width:70%">Tel: +86-{{ information.tel }}</p>
         <br />
-        <p style="width:70%">E-mail: {{information.email}}</p>
+        <p style="width:70%">E-mail: {{ information.email }}</p>
         <br />
       </div>
     </div>
@@ -35,16 +34,17 @@ export default {
   name: 'detailmes',
   data() {
     return {
-      id:5,
+      id: 5,
       pic1: require('@/assets/images/男.jpg'),
-      information:
-        {
-          name:'杨娟(Juan Yang)<br>Sichuan',
-          tel:'12345678',
-          email:'valleyqq@swu.edu.cn;yangjuan923@yahoo.com',
-          role:'Faculty of Psychology,<br>Southwest University,Chongqing, China<br>No.2 Tiansheng Road, Beibei, Chongqing, China, 400715',
-          content:'EMPLOYMENT & EDUCATION ——— Professor of Psychology, Social Psychology,2014-present, Southwest University, China. Visiting Scholar, 2013-2014,Department of Psychology, Peking University. Associate professor of Psychology, Basic Psychology, 2011-2014, Southwest University, China.Lecturer, Basic Psychology, 2009-2011, Southwest University, China.Visiting Ph.D. student, 2008-2009, Douglas Hospital, McGill University,Canada. Ph.D., Developmental and Educational Psychology, 2009, Southwest University, China. B.A., Educational Psychology, 2004, Sichuan Normal University, China.<br><br>AWARDS & HONORS<br><br>Excellent Doctoral thesis, Chongqing Educational commission, 2010'
-        }
+      information: {
+        name: '杨娟(Juan Yang)<br>Sichuan',
+        tel: '12345678',
+        email: 'valleyqq@swu.edu.cn;yangjuan923@yahoo.com',
+        role:
+          'Faculty of Psychology,<br>Southwest University,Chongqing, China<br>No.2 Tiansheng Road, Beibei, Chongqing, China, 400715',
+        content:
+          'EMPLOYMENT & EDUCATION ——— Professor of Psychology, Social Psychology,2014-present, Southwest University, China. Visiting Scholar, 2013-2014,Department of Psychology, Peking University. Associate professor of Psychology, Basic Psychology, 2011-2014, Southwest University, China.Lecturer, Basic Psychology, 2009-2011, Southwest University, China.Visiting Ph.D. student, 2008-2009, Douglas Hospital, McGill University,Canada. Ph.D., Developmental and Educational Psychology, 2009, Southwest University, China. B.A., Educational Psychology, 2004, Sichuan Normal University, China.<br><br>AWARDS & HONORS<br><br>Excellent Doctoral thesis, Chongqing Educational commission, 2010'
+      }
     }
   },
   created() {
@@ -54,12 +54,11 @@ export default {
       .get('http://localhost:8083/member/memberGiveID?id=' + this.id)
       .then(function(response) {
         that.form = response.data
-
-        that.information.name=that.form.name
-        that.information.role=that.form.role
-        that.information.tel=that.form.tel
-        that.information.email=that.form.email
-        that.information.content=that.form.content
+        that.information.name = that.form.name
+        that.information.role = that.form.role
+        that.information.tel = that.form.tel
+        that.information.email = that.form.email
+        that.information.content = that.form.content
       })
   },
   methods: {

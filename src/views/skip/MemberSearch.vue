@@ -99,20 +99,6 @@ export default {
       .then(function(response) {
         that.students = response.data
       })
-  },
-  doIntersection(firstArray, secondArray) {
-    var hashmap = {}
-    var intersectionArray = []
-    firstArray.forEach(function(element) {
-      hashmap[element] = 1
-    })
-    secondArray.forEach(function(element) {
-      if (hashmap[element] === 1) {
-        intersectionArray.push(element)
-        hashmap[element]++
-      }
-    })
-    return intersectionArray
   }
 }
 </script>

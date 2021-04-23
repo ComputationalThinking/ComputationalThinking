@@ -28,8 +28,10 @@
                 v-for="(index, item) in dynamics"
                 :key="item"
               >
-                <span class="title">{{ index.title }}</span>
-                <span class="time">{{ index.time }}</span>
+                <span class="title" v-html="index.title">{{
+                  index.title
+                }}</span>
+                <span class="time" v-html="index.time">{{ index.time }}</span>
               </p>
             </div>
           </div>
@@ -48,8 +50,8 @@
               v-for="(index, item) in informations"
               :key="item"
             >
-              <span class="title">{{ index.title }}</span>
-              <span class="time">{{ index.time }}</span>
+              <span class="title" v-html="index.title">{{ index.title }}</span>
+              <span class="time" v-html="index.title">{{ index.time }}</span>
             </p>
           </div>
         </div>
@@ -101,8 +103,8 @@
               v-for="(index, item) in foreigns"
               :key="item"
             >
-              <span class="title">{{ index.title }}</span>
-              <span class="time">{{ index.time }}</span>
+              <span class="title" v-html="index.title">{{ index.title }}</span>
+              <span class="time" v-html="index.title">{{ index.time }}</span>
             </p>
           </div>
         </div>
@@ -242,6 +244,38 @@ export default {
       this.$router.push({
         path: 'information'
       })
+    },
+    created() {
+      const that = this
+      this.$axios
+        .get('http://localhost:8083/News/serach?sort=0&title=""')
+        .then(function(response1) {
+          that.dynamics = response1.data
+          that.index.title = that.dynamics.title
+          that.index.time = that.dynamics.time
+        })
+      this.$axios
+        .get('http://localhost:8083/News/serach?sort=1&title=""')
+        .then(function(response2) {
+          that.informations = response2.data
+          that.index.title = that.informations.title
+          that.index.time = that.informations.time
+        })
+      this.$axios
+        .get('http://localhost:8083/News/serach?sort=2&title=""')
+        .then(function(response3) {
+          that.foreigns = response3.data
+          that.index.title = that.foreigns.title
+          that.index.time = that.foreigns.time
+        })
+    },
+    methods: {
+      Back() {
+        this.$router.go(-1)
+      }
+    },
+    change() {
+      this.$forceUpdate()
     }
   }
 }
