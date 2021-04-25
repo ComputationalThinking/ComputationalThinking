@@ -287,8 +287,8 @@ template {
 .container .containerLeft i:hover {
   position: relative;
   top: -5px;
-  box-shadow: 2px 2px 8px #a7a7a7;
   cursor: pointer;
+  box-shadow: 2px 2px 8px #a7a7a7;
 }
 .container .containerRight {
   flex: 1.8;

@@ -22,17 +22,23 @@
           </div>
           <div class="rightLabDynamic">
             <div class="dynamicBox">
-              <p
-                @click="InformationDetailClick()"
-                class="dynamic"
-                v-for="(index, item) in dynamics"
-                :key="item"
+              <router-link
+                :to="{
+                  path: '/information_detail',
+                  query: { id: search_title, content: content, name: 'vue' }
+                }"
               >
-                <span class="title" v-html="index.title">{{
-                  index.title
-                }}</span>
-                <span class="time" v-html="index.time">{{ index.time }}</span>
-              </p>
+                <p
+                  class="dynamic"
+                  v-for="(index, item) in dynamics"
+                  :key="item"
+                >
+                  <span class="title" v-html="index.title">{{
+                    index.title
+                  }}</span>
+                  <span class="time" v-html="index.time">{{ index.time }}</span>
+                </p>
+              </router-link>
             </div>
           </div>
         </div>
@@ -44,15 +50,23 @@
       <div class="inforEdu">
         <div class="leftInforEdu">
           <div class="information">
-            <p
-              @click="InformationDetailClick()"
-              class="infor"
-              v-for="(index, item) in informations"
-              :key="item"
+            <router-link
+              :to="{
+                path: '/information_detail',
+                query: { id: search_title, content: content, name: 'vue' }
+              }"
             >
-              <span class="title" v-html="index.title">{{ index.title }}</span>
-              <span class="time" v-html="index.title">{{ index.time }}</span>
-            </p>
+              <p
+                class="infor"
+                v-for="(index, item) in informations"
+                :key="item"
+              >
+                <span class="title" v-html="index.title">{{
+                  index.title
+                }}</span>
+                <span class="time" v-html="index.time">{{ index.time }}</span>
+              </p>
+            </router-link>
           </div>
         </div>
         <div class="rightInforEdu">
@@ -63,9 +77,16 @@
                 <p class="intro">{{ infor1 }}</p>
               </div>
               <div class="leftBottom">
+                <!-- <router-link
+                  :to="{
+                    path: '/information_search',
+                    query: { PageTitle: PageTitle }
+                  }"
+                > -->
                 <div @click="InformationClick()" class="btn">
                   更多...
                 </div>
+                <!-- </router-link> -->
               </div>
             </div>
             <div class="rightImgs">
@@ -97,15 +118,19 @@
       <div class="foreDynamic">
         <div class="leftForeDynamic">
           <div class="information">
-            <p
-              @click="InformationDetailClick()"
-              class="infor"
-              v-for="(index, item) in foreigns"
-              :key="item"
+            <router-link
+              :to="{
+                path: '/information_detail',
+                query: { id: search_title, content: content, name: 'vue' }
+              }"
             >
-              <span class="title" v-html="index.title">{{ index.title }}</span>
-              <span class="time" v-html="index.title">{{ index.time }}</span>
-            </p>
+              <p class="infor" v-for="(index, item) in foreigns" :key="item">
+                <span class="title" v-html="index.title">{{
+                  index.title
+                }}</span>
+                <span class="time" v-html="index.title">{{ index.time }}</span>
+              </p>
+            </router-link>
           </div>
         </div>
         <div class="rightForeDynamic">
@@ -186,6 +211,10 @@ export default {
         { title: 'Computeational thinking will...', time: '2020/11/11' },
         { title: 'Computeational thinking will...', time: '2020/11/11' }
       ],
+      search_title: '实验室成员参与某某比赛获得一等奖',
+      content:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.',
+      PageTitle: '国内信息化教育',
       acts: {
         0: [
           {
@@ -242,7 +271,7 @@ export default {
     },
     InformationClick() {
       this.$router.push({
-        path: 'information'
+        path: 'information_search'
       })
     },
     created() {
