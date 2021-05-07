@@ -102,14 +102,27 @@
       </div>
       <p class="title13" style="width:40px;">活 动</p>
       <div class="activities">
-        <div class="act" v-for="(item, index) in acts" :key="index">
-          <img :src="img5" alt="" class="img" />
-          <div class="intro">
-            <p class="title4" style="margin-bottom:20px;margin-top:10px;">
-              {{ item.title }}
-            </p>
-            <p class="title5">{{ item.content }}</p>
-          </div>
+        <div class="act" v-for="(index, item) in acts" :key="item">
+          <router-link
+            :to="{
+              path: '/information_detail',
+              query: {
+                id: index.id,
+                title: index.title,
+                content: index.content,
+                time: index.time,
+                name: 'vue'
+              }
+            }"
+          >
+            <img :src="img5" alt="" class="img" />
+            <div class="intro">
+              <p class="title4" style="margin-bottom:20px;margin-top:10px;">
+                {{ index.title }}
+              </p>
+              <p class="title5">{{ index.content }}</p>
+            </div>
+          </router-link>
         </div>
       </div>
     </section>
