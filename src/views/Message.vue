@@ -22,23 +22,25 @@
           </div>
           <div class="rightLabDynamic">
             <div class="dynamicBox">
-              <router-link
-                :to="{
-                  path: '/information_detail',
-                  query: { id: search_title, content: content, name: 'vue' }
-                }"
-              >
-                <p
-                  class="dynamic"
-                  v-for="(index, item) in dynamics"
-                  :key="item"
+              <p class="dynamic" v-for="(index, item) in dynamics" :key="item">
+                <router-link
+                  :to="{
+                    path: '/information_detail',
+                    query: {
+                      id: index.id,
+                      title: index.title,
+                      content: index.content,
+                      time: index.time,
+                      name: 'vue'
+                    }
+                  }"
                 >
                   <span class="title" v-html="index.title">{{
                     index.title
                   }}</span>
                   <span class="time" v-html="index.time">{{ index.time }}</span>
-                </p>
-              </router-link>
+                </router-link>
+              </p>
             </div>
           </div>
         </div>
@@ -50,23 +52,25 @@
       <div class="inforEdu">
         <div class="leftInforEdu">
           <div class="information">
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <p
-                class="infor"
-                v-for="(index, item) in informations"
-                :key="item"
+            <p class="infor" v-for="(index, item) in informations" :key="item">
+              <router-link
+                :to="{
+                  path: '/information_detail',
+                  query: {
+                    id: index.id,
+                    title: index.title,
+                    content: index.content,
+                    time: index.time,
+                    name: 'vue'
+                  }
+                }"
               >
                 <span class="title" v-html="index.title">{{
                   index.title
                 }}</span>
                 <span class="time" v-html="index.time">{{ index.time }}</span>
-              </p>
-            </router-link>
+              </router-link>
+            </p>
           </div>
         </div>
         <div class="rightInforEdu">
@@ -98,17 +102,13 @@
       </div>
       <p class="title13" style="width:40px;">活 动</p>
       <div class="activities">
-        <div
-          class="act"
-          v-for="(item, index) in acts[currentIndex]"
-          :key="index"
-        >
-          <img :src="item.currentImg" alt="" class="img" />
+        <div class="act" v-for="(item, index) in acts" :key="index">
+          <img :src="img5" alt="" class="img" />
           <div class="intro">
             <p class="title4" style="margin-bottom:20px;margin-top:10px;">
               {{ item.title }}
             </p>
-            <p class="title5">{{ item.intro }}</p>
+            <p class="title5">{{ item.content }}</p>
           </div>
         </div>
       </div>
@@ -118,19 +118,25 @@
       <div class="foreDynamic">
         <div class="leftForeDynamic">
           <div class="information">
-            <router-link
-              :to="{
-                path: '/information_detail',
-                query: { id: search_title, content: content, name: 'vue' }
-              }"
-            >
-              <p class="infor" v-for="(index, item) in foreigns" :key="item">
+            <p class="infor" v-for="(index, item) in foreigns" :key="item">
+              <router-link
+                :to="{
+                  path: '/information_detail',
+                  query: {
+                    id: index.id,
+                    title: index.title,
+                    content: index.content,
+                    time: index.time,
+                    name: 'vue'
+                  }
+                }"
+              >
                 <span class="title" v-html="index.title">{{
                   index.title
                 }}</span>
                 <span class="time" v-html="index.title">{{ index.time }}</span>
-              </p>
-            </router-link>
+              </router-link>
+            </p>
           </div>
         </div>
         <div class="rightForeDynamic">
@@ -165,6 +171,7 @@ export default {
       img2: require('@/assets/images/u6.png'),
       img3: require('@/assets/images/u8.png'),
       img4: require('@/assets/images/u9.png'),
+      img5: require('@/assets/images/u7.png'),
       infor1: 'ISTE计算思维能力标准...',
       infor2:
         '任正非对自己独特的经经历年和管理哲学的坚持，成就了华为过去的辉煌...',
@@ -177,91 +184,38 @@ export default {
         { pic: require('@/assets/images/u3.jpg') },
         { pic: require('@/assets/images/u4.jpg') }
       ],
-      dynamics: [
-        { title: '实验室成员参与某某比赛荣获一等奖', time: '2020/10/25' },
-        { title: '实验室参与某某比赛荣获一等奖', time: '2020/10/25' },
-        { title: '喜迎实第一个国庆！', time: '2020/10/25' },
-        { title: '计算思维实验室招新啦！招新啦！', time: '2020/10/25' },
-        { title: '开学第一次试验', time: '2020/10/25' },
-        { title: '讲座！', time: '2020/10/25' },
-        { title: '实验室参与某某比赛荣获一等奖', time: '2020/10/25' },
-        { title: '喜迎实第一个国庆！', time: '2020/10/25' }
-      ],
-      informations: [
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' },
-        { title: '计算思维将被纳入PISA2021测试', time: '2020/11/11' }
-      ],
-      foreigns: [
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' },
-        { title: 'Computeational thinking will...', time: '2020/11/11' }
-      ],
+      dynamics: [],
+      informations: [],
+      foreigns: [],
       search_title: '实验室成员参与某某比赛获得一等奖',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.',
       PageTitle: '国内信息化教育',
-      acts: {
-        0: [
-          {
-            id: '1',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '2',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '3',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '4',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '5',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          },
-          {
-            id: '6',
-            currentImg: require('@/assets/images/u7.png'),
-            title: '活动一',
-            intro:
-              '借助信息技术的力量，教育攻击能力大大增强，使学习主体从在校学生向社会公众扩展，教育阶段从展，教育阶段从学校教育向终身教育延伸，真正实现“人人皆学，处处能学，时时可学”'
-          }
-        ]
-      }
+      acts: []
     }
+  },
+  created() {
+    const that = this
+    this.$axios
+      .get('http://localhost:8083/News/searchBySort?sort=0')
+      .then(function(response1) {
+        that.dynamics = response1.data
+      }),
+      this.$axios
+        .get('http://localhost:8083/News/searchBySort?sort=1')
+        .then(function(response2) {
+          that.informations = response2.data
+        }),
+      this.$axios
+        .get('http://localhost:8083/News/searchBySort?sort=2')
+        .then(function(response3) {
+          that.acts = response3.data
+        }),
+      this.$axios
+        .get('http://localhost:8083/News/searchBySort?sort=3')
+        .then(function(response4) {
+          that.foreigns = response4.data
+        })
   },
   methods: {
     InformationDetailClick() {
@@ -274,30 +228,30 @@ export default {
         path: 'information_search'
       })
     },
-    created() {
-      const that = this
-      this.$axios
-        .get('http://localhost:8083/News/serach?sort=0&title=""')
-        .then(function(response1) {
-          that.dynamics = response1.data
-          that.index.title = that.dynamics.title
-          that.index.time = that.dynamics.time
-        })
-      this.$axios
-        .get('http://localhost:8083/News/serach?sort=1&title=""')
-        .then(function(response2) {
-          that.informations = response2.data
-          that.index.title = that.informations.title
-          that.index.time = that.informations.time
-        })
-      this.$axios
-        .get('http://localhost:8083/News/serach?sort=2&title=""')
-        .then(function(response3) {
-          that.foreigns = response3.data
-          that.index.title = that.foreigns.title
-          that.index.time = that.foreigns.time
-        })
-    },
+    // created() {
+    //   const that = this
+    //   this.$axios
+    //     .get('http://localhost:8083/News/serach?sort=0&title=""')
+    //     .then(function(response1) {
+    //       that.dynamics = response1.data
+    //       that.index.title = that.dynamics.title
+    //       that.index.time = that.dynamics.time
+    //     })
+    //   this.$axios
+    //     .get('http://localhost:8083/News/serach?sort=1&title=""')
+    //     .then(function(response2) {
+    //       that.informations = response2.data
+    //       that.index.title = that.informations.title
+    //       that.index.time = that.informations.time
+    //     })
+    //   this.$axios
+    //     .get('http://localhost:8083/News/serach?sort=2&title=""')
+    //     .then(function(response3) {
+    //       that.foreigns = response3.data
+    //       that.index.title = that.foreigns.title
+    //       that.index.time = that.foreigns.time
+    //     })
+    // },
     methods: {
       Back() {
         this.$router.go(-1)
