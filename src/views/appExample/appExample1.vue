@@ -2,7 +2,7 @@
   <div class="app-body">
     <div class="example">
       <div class="tittle" style="font-size: 30px">
-        {{ database.id }} 实例:{{ database.title }}
+        实例:{{ database.title }}
       </div>
       <hr />
       <div class="content">实例内容：{{ database.content }}</div>

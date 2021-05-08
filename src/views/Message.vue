@@ -210,22 +210,22 @@ export default {
   created() {
     const that = this
     this.$axios
-      .get('http://localhost:8083/News/searchBySort?sort=0')
+      .get('http://localhost:8083/News/searchBySort?sort=0&length=7')
       .then(function(response1) {
         that.dynamics = response1.data
       }),
       this.$axios
-        .get('http://localhost:8083/News/searchBySort?sort=1')
+        .get('http://localhost:8083/News/searchBySort?sort=1&length=10')
         .then(function(response2) {
           that.informations = response2.data
         }),
       this.$axios
-        .get('http://localhost:8083/News/searchBySort?sort=2')
+        .get('http://localhost:8083/News/searchBySort?sort=2&length=6')
         .then(function(response3) {
           that.acts = response3.data
         }),
       this.$axios
-        .get('http://localhost:8083/News/searchBySort?sort=3')
+        .get('http://localhost:8083/News/searchBySort?sort=3&length=10')
         .then(function(response4) {
           that.foreigns = response4.data
         })
@@ -281,7 +281,7 @@ export default {
 /* 实验室动态部分 */
 .message {
   width: 100vw;
-  height: 2600px;
+  height: auto;
   padding: 5% 8%;
   background-color: rgb(245, 249, 250);
 }
