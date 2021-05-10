@@ -15,28 +15,28 @@
             <h3>{{ list1.title }}</h3>
             <img :src="pic1" alt="" />
             <div class="race-p" @click="race1">
-              {{ list1.content }}
+              {{ list1.time }}
             </div>
           </div>
           <div class="race">
             <h3>{{ list2.title }}</h3>
             <img :src="pic2" alt="" />
             <div class="race-p" @click="race2">
-              {{ list2.content }}
+              {{ list2.time }}
             </div>
           </div>
           <div class="race">
             <h3>{{ list3.title }}</h3>
             <img :src="pic3" alt="" />
             <div class="race-p" @click="race3">
-              {{ list3.content }}
+              {{ list3.time }}
             </div>
           </div>
           <div class="race">
             <h3>{{ list4.title }}</h3>
             <img :src="pic4" alt="" />
             <div class="race-p" @click="race4">
-              {{ list4.content }}
+              {{ list4.time }}
             </div>
           </div>
         </div>

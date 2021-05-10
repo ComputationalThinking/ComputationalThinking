@@ -130,14 +130,7 @@ export default {
       picture1: require('@/assets/images/introduction.jpg'),
       picture2: require('@/assets/images/introduction.jpg'),
       picture3: require('@/assets/images/introduction.jpg'),
-      images: [
-        { pic: require('@/assets/images/pic2.jpg') },
-        { pic: require('@/assets/images/pic3.jpg') },
-        { pic: require('@/assets/images/pic4.jpg') },
-        { pic: require('@/assets/images/pic5.jpg') },
-        { pic: require('@/assets/images/pic6.jpg') },
-        { pic: require('@/assets/images/pic7.jpg') }
-      ],
+      images: [],
       img1: require('@/assets/images/pic2.jpg'),
       img2: require('@/assets/images/m6.jpg'),
       img3: require('@/assets/images/m5.jpg'),
@@ -165,6 +158,14 @@ export default {
       para9:
         '2006年3月，美国卡内基·梅隆大学计算机科学系主任周以真（Jeannette M. Wing）教授在美国计算机权威期刊《Communications of the ACM》杂志上给出，并定义的计算思维（Computational Thinking）。'
     }
+  },
+  created() {
+    const that = this
+    this.$axios
+      .get('http://localhost:8083/carousel/getDataByPage?key=2')
+      .then(function(response5) {
+        that.images = response5.data
+      })
   }
 }
 </script>

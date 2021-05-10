@@ -16,7 +16,7 @@
                   :src="index.pic"
                   alt=""
                   style="width: 100%; height: 100%;"
-                />
+                /><!-- 后台图片显示到前端?????? -->
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -38,7 +38,7 @@
                   <span class="title" v-html="index.title">{{
                     index.title
                   }}</span>
-                  <span class="time" v-html="index.time">{{ index.time }}</span>
+                  <!-- <span class="time" v-html="index.time">{{ index.time }}</span> -->
                 </router-link>
               </p>
             </div>
@@ -120,7 +120,7 @@
               <p class="title4" style="margin-bottom:20px;margin-top:10px;">
                 {{ index.title }}
               </p>
-              <p class="title5">{{ index.content }}</p>
+              <p class="title5">{{ index.author }}</p>
             </div>
           </router-link>
         </div>
@@ -147,7 +147,7 @@
                 <span class="title" v-html="index.title">{{
                   index.title
                 }}</span>
-                <span class="time" v-html="index.title">{{ index.time }}</span>
+                <!-- <span class="time" v-html="index.title">{{ index.time }}</span> -->
               </router-link>
             </p>
           </div>
@@ -191,12 +191,13 @@ export default {
       infor3: 'ISTE Criteria for calculating thinking capacity',
       infor4:
         'ISTE Criteria for calculating thinking capacity Lorem ipsum dolor sit amet, Aenean laoreet. Proin gravida ...',
-      images: [
-        { pic: require('@/assets/images/u1.jpg') },
-        { pic: require('@/assets/images/u2.jpg') },
-        { pic: require('@/assets/images/u3.jpg') },
-        { pic: require('@/assets/images/u4.jpg') }
-      ],
+      // images: [
+      //   { pic: require('@/assets/images/u1.jpg') },
+      //   { pic: require('@/assets/images/u2.jpg') },
+      //   { pic: require('@/assets/images/u3.jpg') },
+      //   { pic: require('@/assets/images/u4.jpg') }
+      // ],
+      images: [],
       dynamics: [],
       informations: [],
       foreigns: [],
@@ -228,6 +229,11 @@ export default {
         .get('http://localhost:8083/News/searchBySort?sort=3&length=10')
         .then(function(response4) {
           that.foreigns = response4.data
+        }),
+      this.$axios
+        .get('http://localhost:8083/carousel/getDataByPage?key=1')
+        .then(function(response5) {
+          that.images = response5.data
         })
   },
   methods: {
