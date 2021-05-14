@@ -13,7 +13,7 @@
               <el-carousel-item v-for="(index, item) in images" :key="item">
                 <!-- <h3 class="medium">{{ item }}</h3> -->
                 <img
-                  :src="index.pic"
+                  :src="src"
                   alt=""
                   style="width: 100%; height: 100%;"
                 /><!-- 后台图片显示到前端?????? -->
@@ -100,7 +100,7 @@
           </div>
         </div>
       </div>
-      <p class="title13" style="width:40px;">活 动</p>
+      <p class="title13" style="width:40px;">活 动{{ pict.p1 }}</p>
       <div class="activities">
         <div class="act" v-for="(index, item) in acts" :key="item">
           <router-link
@@ -205,7 +205,15 @@ export default {
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.',
       PageTitle: '国内信息化教育',
-      acts: []
+      acts: [],
+      src:
+        'src\\main\\java\\com\\example\\project_\\markerhub\\Image\\6cf807bc-c916-478e-a114-62ba088ec72c.jpg',
+      pict: {
+        p1: '',
+        p2: '',
+        p3: '',
+        p4: ''
+      }
     }
   },
   created() {
@@ -234,7 +242,9 @@ export default {
         .get('http://localhost:8083/carousel/getDataByPage?key=1')
         .then(function(response5) {
           that.images = response5.data
+          that.pict.p1 = that.images[0].content
         })
+    this.getImg()
   },
   methods: {
     InformationDetailClick() {
@@ -247,37 +257,26 @@ export default {
         path: 'information_search'
       })
     },
-    // created() {
-    //   const that = this
-    //   this.$axios
-    //     .get('http://localhost:8083/News/serach?sort=0&title=""')
-    //     .then(function(response1) {
-    //       that.dynamics = response1.data
-    //       that.index.title = that.dynamics.title
-    //       that.index.time = that.dynamics.time
-    //     })
-    //   this.$axios
-    //     .get('http://localhost:8083/News/serach?sort=1&title=""')
-    //     .then(function(response2) {
-    //       that.informations = response2.data
-    //       that.index.title = that.informations.title
-    //       that.index.time = that.informations.time
-    //     })
-    //   this.$axios
-    //     .get('http://localhost:8083/News/serach?sort=2&title=""')
-    //     .then(function(response3) {
-    //       that.foreigns = response3.data
-    //       that.index.title = that.foreigns.title
-    //       that.index.time = that.foreigns.time
-    //     })
-    // },
-    methods: {
-      Back() {
-        this.$router.go(-1)
-      }
+    Back() {
+      this.$router.go(-1)
     },
     change() {
       this.$forceUpdate()
+    },
+    getImg() {
+      this.$axios
+        .get('http://localhost:8083/carousel/getImg', {
+          params: {
+            address: this.src
+          },
+          responseType: 'blob'
+        })
+        .then(res => {
+          let blob = new Blob([res.data], {
+            type: 'image/jpg;image/png;image/jpeg;image/*'
+          })
+          this.src = URL.createObjectURL(blob)
+        })
     }
   }
 }
